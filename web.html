@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Polling</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/bootstrap-slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/bootstrap-slider.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/css/bootstrap-slider.min.css" integrity="sha256-dXHafC+HTlEpRnrt+UjknVf5gRji+RofwsBhGpJ43NA=" crossorigin="anonymous" />
+</head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<body>
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div>
+                <h1>Polling Balance</h1>
+                <p>Explore Interesting Fact Behind Election Prediction</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=container>
+    <div class="row">
+        <div class="col-sm-7">
+            <!-- main view -->
+            <div>
+                <h3>Who will win votes?</h3>
+                <svg  id="result_chart"></svg>
+            </div>
+            <!-- slider -->
+
+            <div class="slider_box">
+                <span>0%&nbsp;&nbsp;</span>
+                <input id="ex1" data-slider-id='Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/>
+                <span>&nbsp;&nbsp;100%</span>
+
+
+            </div>
+            <div class=balance_by>
+                <b>Balance by:</b>
+            </div>
+
+
+        </div>
+        <!-- attributes -->
+        <div class="col-sm-5">
+            <div  class="chart" id="edu_level">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Last Grade in School"/>&nbsp;&nbsp;Last Grade in School:</p>
+                <svg  id="edu_level_chart"></svg>
+
+            </div>
+            <div  class="chart" id="gender">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Gender"/>&nbsp;&nbsp;Gender:</p>
+                <svg  id="gender_chart"></svg>
+            </div>
+            <div  class="chart" id="hispanic">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Latino or Hispanic Oringin"/>&nbsp;&nbsp;Latino or Hispanic Oringin:</p>
+                <svg  id="hispanic_chart"></svg>
+            </div>
+            <div  class="chart" id="race">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Race"/>&nbsp;&nbsp;Race:</p>
+                <svg  id="race_chart"></svg>
+            </div>
+            <div  class="chart" id="party">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Party"/>&nbsp;&nbsp;Party:</p>
+                <svg  id="party_chart"></svg>
+            </div>
+            <div  class="chart" id="income">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Anuual Family Income"/>&nbsp;&nbsp;Anuual Family Income(MUP126 2016:</p>
+                <svg  id="income_chart"></svg>
+            </div>
+            <div  class="chart" id="political_view">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Political View"/>&nbsp;&nbsp;Political View:(MUP126 2016)</p>
+                <svg id="political_view_chart"></svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Slider
+    $('#ex1').slider({
+        formatter: function(value) {
+            return  value+'%';
+        }
+    });
+
+    //check box
+    $(document).ready(function(){
+        $(".check_box").change(function(){
+            if (this.checked) {
+                // the checkbox is now checked
+                $(".balance_by").append($(this).attr("value")+", ");
+            }
+            else{
+                // the checkbox is now unchecked
+                var todelete=$(this).attr("value")+", ";
+                $(".balance_by").text(function ( i, txt ) {
+                    return txt.replace( todelete, '' );
+                });
+            }
+        });
+    });
+    var edudata = {
+        labels: [
+            'Not a high school graduate', 'High school graduate ', 'Some college education',
+            'College graduate', 'Postgraduate education'
+        ],
+        series: [
+            {
+                label: 'Current',
+                values: [2.3, 26.9, 31.3, 22.9, 15.8]
+            },
+            {
+                label: 'Baseline',
+                values: [14.2, 28.2, 29 , 17.9, 10.6]
+            }]
+
+    };
+
+    var chartWidth       = 200,
+        barHeight        = 15,
+        groupHeight      = barHeight * edudata.series.length,
+        gapBetweenGroups = 8,
+        spaceForLabels   = 180,
+        spaceForLegend   = 200;
+
+    // Zip the series data together (first values, second values, etc.)
+    var eduzippedData = [];
+    for (var i=0; i<edudata.labels.length; i++) {
+        for (var j=0; j<edudata.series.length; j++) {
+            eduzippedData.push(edudata.series[j].values[i]);
+        }
+    }
+
+    // Color scale
+    var color = d3.scale.category20();
+    var chartHeight = barHeight * eduzippedData.length + gapBetweenGroups * edudata.labels.length;
+
+    var x = d3.scale.linear()
+        .domain([0, d3.max(eduzippedData)])
+        .range([0, chartWidth]);
+
+    var y = d3.scale.linear()
+        .range([chartHeight + gapBetweenGroups, 0]);
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .tickFormat('')
+        .tickSize(0)
+        .orient("left");
+
+    // Specify the chart area and dimensions
+    var educhart = d3.select("#edu_level_chart")
+        .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+        .attr("height", chartHeight);
+
+    // Create bars
+    var bar = educhart.selectAll("g")
+        .data(eduzippedData)
+        .enter().append("g")
+        .attr("transform", function(d, i) {
+            return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/edudata.series.length))) + ")";
+        });
+
+    // Create rectangles of the correct width
+    bar.append("rect")
+        .attr("fill", function(d,i) { return color(i % edudata.series.length); })
+        .attr("class", "bar")
+        .attr("width", x)
+        .attr("height", barHeight - 1);
+
+    // Add text label in bar
+    bar.append("text")
+        .attr("x", function(d) { return x(d) - 3; })
+        .attr("y", barHeight / 2)
+        .attr("fill", "grey")
+        .attr("dy", ".35em")
+        .text(function(d) { return d+"%"; });
+
+    // Draw labels
+    bar.append("text")
+        .attr("class", "label")
+        .attr("x", function(d) { return - 10; })
+        .attr("y", groupHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d,i) {
+            if (i % edudata.series.length === 0)
+                return edudata.labels[Math.floor(i/edudata.series.length)];
+            else
+                return ""});
+
+    // educhart.append("g")
+    //       .attr("class", "y axis")
+    //       .attr("transform", "translate(" + spaceForLabels + ", " + -gapBetweenGroups/2 + ")")
+    //       .call(yAxis);
+
+    // Draw legend
+    var legendRectSize = 18,
+        legendSpacing  = 4;
+
+    var legend = educhart.selectAll('.legend')
+        .data(edudata.series)
+        .enter()
+        .append('g')
+        .attr('transform', function (d, i) {
+            var height = legendRectSize + legendSpacing;
+            var offset = -gapBetweenGroups/2;
+            var horz = spaceForLabels + chartWidth + 40 - legendRectSize;
+            var vert = i * height - offset;
+            return 'translate(' + horz + ',' + vert + ')';
+        });
+
+    legend.append('rect')
+        .attr('width', legendRectSize)
+        .attr('height', legendRectSize)
+        .style('fill', function (d, i) { return color(i); })
+        .style('stroke', function (d, i) { return color(i); });
+
+    legend.append('text')
+        .attr('class', 'legend')
+        .attr('x', legendRectSize + legendSpacing)
+        .attr('y', legendRectSize - legendSpacing)
+        .text(function (d) { return d.label; });
+
+    //gender
+    var genderdata = {
+        labels: [
+            'Male', 'Female'
+        ],
+        series: [
+            {
+                label: 'current',
+                values: [47, 53]
+            },
+            {
+                label: 'All Adults',
+                values: [49, 51]
+            }]
+
+    };
+
+    // Zip the series data together (first values, second values, etc.)
+    var genderzippedData = [];
+    for (var i=0; i<genderdata.labels.length; i++) {
+        for (var j=0; j<genderdata.series.length; j++) {
+            genderzippedData.push(genderdata.series[j].values[i]);
+        }
+    }
+
+    // Color scale
+    var chartHeight = barHeight * genderzippedData.length + gapBetweenGroups * genderdata.labels.length;
+
+    var x = d3.scale.linear()
+        .domain([0, d3.max(genderzippedData)])
+        .range([0, chartWidth]);
+
+    // Specify the chart area and dimensions
+    var genderchart = d3.select("#gender_chart")
+        .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+        .attr("height", chartHeight);
+
+    // Create bars
+    var bar = genderchart.selectAll("g")
+        .data(genderzippedData)
+        .enter().append("g")
+        .attr("transform", function(d, i) {
+            return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/genderdata.series.length))) + ")";
+        });
+
+    // Create rectangles of the correct width
+    bar.append("rect")
+        .attr("fill", function(d,i) { return color(i % genderdata.series.length); })
+        .attr("class", "bar")
+        .attr("width", x)
+        .attr("height", barHeight - 1);
+
+    // Add text label in bar
+    bar.append("text")
+        .attr("x", function(d) { return x(d) - 3; })
+        .attr("y", barHeight / 2)
+        .attr("fill", "grey")
+        .attr("dy", ".35em")
+        .text(function(d) { return d+"%"; });
+
+    // Draw labels
+    bar.append("text")
+        .attr("class", "label")
+        .attr("x", function(d) { return - 10; })
+        .attr("y", groupHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d,i) {
+            if (i % genderdata.series.length === 0)
+                return genderdata.labels[Math.floor(i/genderdata.series.length)];
+            else
+                return ""});
+
+    // genderchart.append("g")
+    //       .attr("class", "y axis")
+    //       .attr("transform", "translate(" + spaceForLabels + ", " + -gapBetweenGroups/2 + ")")
+    //       .call(yAxis);
+
+    //hispanic
+    var hispanicdata = {
+        labels: [
+            'Hispanic origin', 'Non-Hispanic origin'
+        ],
+        series: [
+            {
+                label: 'current',
+                values: [7.7, 91.5]
+            },
+            {
+                label: 'All Adults',
+                values: [16.7, 83.3]
+            }]
+
+    };
+
+    // Zip the series data together (first values, second values, etc.)
+    var hispaniczippedData = [];
+    for (var i=0; i<hispanicdata.labels.length; i++) {
+        for (var j=0; j<hispanicdata.series.length; j++) {
+            hispaniczippedData.push(hispanicdata.series[j].values[i]);
+        }
+    }
+
+    // Color scale
+    var chartHeight = barHeight * hispaniczippedData.length + gapBetweenGroups * hispanicdata.labels.length;
+
+    var x = d3.scale.linear()
+        .domain([0, d3.max(hispaniczippedData)])
+        .range([0, chartWidth]);
+
+    // Specify the chart area and dimensions
+    var hispanicchart = d3.select("#hispanic_chart")
+        .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+        .attr("height", chartHeight);
+
+    // Create bars
+    var bar = hispanicchart.selectAll("g")
+        .data(hispaniczippedData)
+        .enter().append("g")
+        .attr("transform", function(d, i) {
+            return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/hispanicdata.series.length))) + ")";
+        });
+
+    // Create rectangles of the correct width
+    bar.append("rect")
+        .attr("fill", function(d,i) { return color(i % hispanicdata.series.length); })
+        .attr("class", "bar")
+        .attr("width", x)
+        .attr("height", barHeight - 1);
+
+    // Add text label in bar
+    bar.append("text")
+        .attr("x", function(d) { return x(d) - 3; })
+        .attr("y", barHeight / 2)
+        .attr("fill", "grey")
+        .attr("dy", ".35em")
+        .text(function(d) { return d+"%"; });
+
+    // Draw labels
+    bar.append("text")
+        .attr("class", "label")
+        .attr("x", function(d) { return - 10; })
+        .attr("y", groupHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d,i) {
+            if (i % hispanicdata.series.length === 0)
+                return hispanicdata.labels[Math.floor(i/hispanicdata.series.length)];
+            else
+                return ""});
+    //race
+    var racedata = {
+        labels: [
+            'White', 'Black','Asian'
+        ],
+        series: [
+            {
+                label: 'current',
+                values: [78.6,11, 3]
+            },
+            {
+                label: 'All Adults',
+                values: [80, 14,6]
+            }]
+
+    };
+
+    // Zip the series data together (first values, second values, etc.)
+    var racezippedData = [];
+    for (var i=0; i<racedata.labels.length; i++) {
+        for (var j=0; j<racedata.series.length; j++) {
+            racezippedData.push(racedata.series[j].values[i]);
+        }
+    }
+
+    // Color scale
+    var chartHeight = barHeight * racezippedData.length + gapBetweenGroups * racedata.labels.length;
+
+    var x = d3.scale.linear()
+        .domain([0, d3.max(racezippedData)])
+        .range([0, chartWidth]);
+
+    // Specify the chart area and dimensions
+    var racechart = d3.select("#race_chart")
+        .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+        .attr("height", chartHeight);
+
+    // Create bars
+    var bar = racechart.selectAll("g")
+        .data(racezippedData)
+        .enter().append("g")
+        .attr("transform", function(d, i) {
+            return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/racedata.series.length))) + ")";
+        });
+
+    // Create rectangles of the correct width
+    bar.append("rect")
+        .attr("fill", function(d,i) { return color(i % racedata.series.length); })
+        .attr("class", "bar")
+        .attr("width", x)
+        .attr("height", barHeight - 1);
+
+    // Add text label in bar
+    bar.append("text")
+        .attr("x", function(d) { return x(d) - 3; })
+        .attr("y", barHeight / 2)
+        .attr("fill", "grey")
+        .attr("dy", ".35em")
+        .text(function(d) { return d+"%"; });
+
+    // Draw labels
+    bar.append("text")
+        .attr("class", "label")
+        .attr("x", function(d) { return - 10; })
+        .attr("y", groupHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d,i) {
+            if (i % racedata.series.length === 0)
+                return racedata.labels[Math.floor(i/racedata.series.length)];
+            else
+                return ""});
+    //party
+    var partydata = {
+        labels: [
+            'Republican', 'Democrat','Independent'
+            //'Something else'
+        ],
+        series: [
+            {
+                label: 'current',
+                values: [26.1, 33.6,29.3]
+            },
+            {
+                label: 'All Adults',
+                values: [28, 38,32]
+            }]
+
+    };
+
+    // Zip the series data together (first values, second values, etc.)
+    var partyzippedData = [];
+    for (var i=0; i<partydata.labels.length; i++) {
+        for (var j=0; j<partydata.series.length; j++) {
+            partyzippedData.push(partydata.series[j].values[i]);
+        }
+    }
+
+    // Color scale
+    var chartHeight = barHeight * partyzippedData.length + gapBetweenGroups * partydata.labels.length;
+
+    var x = d3.scale.linear()
+        .domain([0, d3.max(partyzippedData)])
+        .range([0, chartWidth]);
+
+    // Specify the chart area and dimensions
+    var partychart = d3.select("#party_chart")
+        .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+        .attr("height", chartHeight);
+
+    // Create bars
+    var bar = partychart.selectAll("g")
+        .data(partyzippedData)
+        .enter().append("g")
+        .attr("transform", function(d, i) {
+            return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/partydata.series.length))) + ")";
+        });
+
+    // Create rectangles of the correct width
+    bar.append("rect")
+        .attr("fill", function(d,i) { return color(i % partydata.series.length); })
+        .attr("class", "bar")
+        .attr("width", x)
+        .attr("height", barHeight - 1);
+
+    // Add text label in bar
+    bar.append("text")
+        .attr("x", function(d) { return x(d) - 3; })
+        .attr("y", barHeight / 2)
+        .attr("fill", "grey")
+        .attr("dy", ".35em")
+        .text(function(d) { return d+"%"; });
+
+    // Draw labels
+    bar.append("text")
+        .attr("class", "label")
+        .attr("x", function(d) { return - 10; })
+        .attr("y", groupHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d,i) {
+            if (i % partydata.series.length === 0)
+                return partydata.labels[Math.floor(i/partydata.series.length)];
+            else
+                return ""});
+    //income
+    var incomedata = {
+        labels: [
+            'Under $25,000', '$25,000 to just under $50,000','$50,000 to just under $100,000','$100,000 or more'
+        ],
+        series: [
+            {
+                label: 'current',
+                values: [8, 19,30,32]
+            },
+            {
+                label: 'All Adults',
+                values: [17.2, 22.9,32.11,27.8]
+            }]
+
+    };
+
+    // Zip the series data together (first values, second values, etc.)
+    var incomezippedData = [];
+    for (var i=0; i<incomedata.labels.length; i++) {
+        for (var j=0; j<incomedata.series.length; j++) {
+            incomezippedData.push(incomedata.series[j].values[i]);
+        }
+    }
+
+    // Color scale
+    var chartHeight = barHeight * incomezippedData.length + gapBetweenGroups * incomedata.labels.length;
+
+    var x = d3.scale.linear()
+        .domain([0, d3.max(incomezippedData)])
+        .range([0, chartWidth]);
+
+    // Specify the chart area and dimensions
+    var incomechart = d3.select("#income_chart")
+        .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+        .attr("height", chartHeight);
+
+    // Create bars
+    var bar = incomechart.selectAll("g")
+        .data(incomezippedData)
+        .enter().append("g")
+        .attr("transform", function(d, i) {
+            return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/incomedata.series.length))) + ")";
+        });
+
+    // Create rectangles of the correct width
+    bar.append("rect")
+        .attr("fill", function(d,i) { return color(i % incomedata.series.length); })
+        .attr("class", "bar")
+        .attr("width", x)
+        .attr("height", barHeight - 1);
+
+    // Add text label in bar
+    bar.append("text")
+        .attr("x", function(d) { return x(d) - 3; })
+        .attr("y", barHeight / 2)
+        .attr("fill", "grey")
+        .attr("dy", ".35em")
+        .text(function(d) { return d+"%"; });
+
+    // Draw labels
+    bar.append("text")
+        .attr("class", "label")
+        .attr("x", function(d) { return - 10; })
+        .attr("y", groupHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d,i) {
+            if (i % incomedata.series.length === 0)
+                return incomedata.labels[Math.floor(i/incomedata.series.length)];
+            else
+                return ""});
+    //political_view
+    var political_viewdata = {
+        labels: [
+            'Liberal', 'Moderate','Conservative'
+        ],
+        series: [
+            {
+                label: 'current',
+                values: [24,40,33]
+            },
+            {
+                label: 'All Adults',
+                values: [25, 40,35]
+            }]
+
+    };
+
+    // Zip the series data together (first values, second values, etc.)
+    var political_viewzippedData = [];
+    for (var i=0; i<political_viewdata.labels.length; i++) {
+        for (var j=0; j<political_viewdata.series.length; j++) {
+            political_viewzippedData.push(political_viewdata.series[j].values[i]);
+        }
+    }
+
+    // Color scale
+    var chartHeight = barHeight * political_viewzippedData.length + gapBetweenGroups * political_viewdata.labels.length;
+
+    var x = d3.scale.linear()
+        .domain([0, d3.max(political_viewzippedData)])
+        .range([0, chartWidth]);
+
+    // Specify the chart area and dimensions
+    var political_viewchart = d3.select("#political_view_chart")
+        .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+        .attr("height", chartHeight);
+
+    // Create bars
+    var bar = political_viewchart.selectAll("g")
+        .data(political_viewzippedData)
+        .enter().append("g")
+        .attr("transform", function(d, i) {
+            return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/political_viewdata.series.length))) + ")";
+        });
+
+    // Create rectangles of the correct width
+    bar.append("rect")
+        .attr("fill", function(d,i) { return color(i % political_viewdata.series.length); })
+        .attr("class", "bar")
+        .attr("width", x)
+        .attr("height", barHeight - 1);
+
+    // Add text label in bar
+    bar.append("text")
+        .attr("x", function(d) { return x(d) - 3; })
+        .attr("y", barHeight / 2)
+        .attr("fill", "grey")
+        .attr("dy", ".35em")
+        .text(function(d) { return d+"%"; });
+
+    // Draw labels
+    bar.append("text")
+        .attr("class", "label")
+        .attr("x", function(d) { return - 10; })
+        .attr("y", groupHeight / 2)
+        .attr("dy", ".35em")
+        .text(function(d,i) {
+            if (i % political_viewdata.series.length === 0)
+                return political_viewdata.labels[Math.floor(i/political_viewdata.series.length)];
+            else
+                return ""});
+</script>
+</body>
