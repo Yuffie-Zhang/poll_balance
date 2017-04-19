@@ -3,7 +3,8 @@
     padding-bottom: 1.25rem;
     margin-bottom: 2rem;
     border-bottom: .05rem solid #eee;
-    background-color: #ccf5ff;
+    background-color: #ADC7E8;
+
 }
 .item_name{
     font-size: 18px;
@@ -20,10 +21,12 @@
 }
 
 .chart text {
-    fill: white;
+    fill: grey;
     font: 10px sans-serif;
-    text-anchor:end;
+    text-anchor:start;
 }
+
+
 
 .chart .label {
     fill: black;
@@ -36,11 +39,28 @@
 }
 
 
+
 #Slider .slider-selection {
     background: #ADC7E8;
+
 
 }
 .slider_box{
     margin-bottom: 2rem;
 }
+.left{
+    position:fixed;
+}
+
+h3{
+    margin-bottom: 7rem;
+}
+#result_chart{
+    margin-bottom: 7rem;
+}
+.balance_list{
+    margin-bottom: 3rem;
+}
+
+
 

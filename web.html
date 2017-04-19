@@ -31,29 +31,26 @@
 </div>
 <div class=container>
     <div class="row">
-        <div class="col-sm-7">
-            <!-- main view -->
-            <div>
-                <h3>Who will win votes?</h3>
-                <svg  id="result_chart"></svg>
-            </div>
-            <!-- slider -->
+        <div class="col-sm-6" >
+                <!-- main view -->
+                <div id="result">
+                    <h3>Who will win the votes?</h3>
+                    <svg  id="result_chart"></svg>
+                </div>
 
-            <div class="slider_box">
-                <span>0%&nbsp;&nbsp;</span>
-                <input id="ex1" data-slider-id='Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/>
-                <span>&nbsp;&nbsp;100%</span>
+                <div class="balance_list">
+                    <b>Balance by:</b><span class="balance_by"/>
+                </div>
 
-
-            </div>
-            <div class=balance_by>
-                <b>Balance by:</b>
-            </div>
-
-
+                <!-- slider -->
+                <div class="slider_box">
+                    <span>0%&nbsp;&nbsp;</span>
+                    <input id="ex1" data-slider-id='Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/>
+                    <span>&nbsp;&nbsp;100%</span>
+                </div>
         </div>
         <!-- attributes -->
-        <div class="col-sm-5">
+        <div class="col-sm-6">
             <div  class="chart" id="edu_level">
                 <p class="item_name"><input type="checkbox" class="check_box" value="Last Grade in School"/>&nbsp;&nbsp;Last Grade in School:</p>
                 <svg  id="edu_level_chart"></svg>
@@ -76,11 +73,11 @@
                 <svg  id="party_chart"></svg>
             </div>
             <div  class="chart" id="income">
-                <p class="item_name"><input type="checkbox" class="check_box" value="Anuual Family Income"/>&nbsp;&nbsp;Anuual Family Income(MUP126 2016:</p>
+                <p class="item_name"><input type="checkbox" class="check_box" value="Annual Family Income"/>&nbsp;&nbsp;Annual Family Income(MUP126 2016):</p>
                 <svg  id="income_chart"></svg>
             </div>
             <div  class="chart" id="political_view">
-                <p class="item_name"><input type="checkbox" class="check_box" value="Political View"/>&nbsp;&nbsp;Political View:(MUP126 2016)</p>
+                <p class="item_name"><input type="checkbox" class="check_box" value="Political View"/>&nbsp;&nbsp;Political View(MUP126 2016):</p>
                 <svg id="political_view_chart"></svg>
             </div>
         </div>
@@ -112,6 +109,8 @@
             }
         });
     });
+
+    //education level chart
     var edudata = {
         labels: [
             'Not a high school graduate', 'High school graduate ', 'Some college education',
@@ -120,11 +119,11 @@
         series: [
             {
                 label: 'Current',
-                values: [2.3, 26.9, 31.3, 22.9, 15.8]
+                values: [2, 27, 32, 23, 16]
             },
             {
                 label: 'Baseline',
-                values: [14.2, 28.2, 29 , 17.9, 10.6]
+                values: [14, 28, 29 , 18, 11]
             }]
 
     };
@@ -152,15 +151,6 @@
         .domain([0, d3.max(eduzippedData)])
         .range([0, chartWidth]);
 
-    var y = d3.scale.linear()
-        .range([chartHeight + gapBetweenGroups, 0]);
-
-    var yAxis = d3.svg.axis()
-        .scale(y)
-        .tickFormat('')
-        .tickSize(0)
-        .orient("left");
-
     // Specify the chart area and dimensions
     var educhart = d3.select("#edu_level_chart")
         .attr("width", spaceForLabels + chartWidth + spaceForLegend)
@@ -176,14 +166,14 @@
 
     // Create rectangles of the correct width
     bar.append("rect")
-        .attr("fill", function(d,i) { return color(i % edudata.series.length); })
+        .attr("fill", function(d,i) { if(i%2==0) return "#1f77b4";else return"#aec7e8";})
         .attr("class", "bar")
         .attr("width", x)
         .attr("height", barHeight - 1);
 
     // Add text label in bar
     bar.append("text")
-        .attr("x", function(d) { return x(d) - 3; })
+        .attr("x", function(d) { return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("fill", "grey")
         .attr("dy", ".35em")
@@ -200,11 +190,6 @@
                 return edudata.labels[Math.floor(i/edudata.series.length)];
             else
                 return ""});
-
-    // educhart.append("g")
-    //       .attr("class", "y axis")
-    //       .attr("transform", "translate(" + spaceForLabels + ", " + -gapBetweenGroups/2 + ")")
-    //       .call(yAxis);
 
     // Draw legend
     var legendRectSize = 18,
@@ -288,7 +273,8 @@
 
     // Add text label in bar
     bar.append("text")
-        .attr("x", function(d) { return x(d) - 3; })
+        .attr("x", function(d) { return x(d) + 3; })
+
         .attr("y", barHeight / 2)
         .attr("fill", "grey")
         .attr("dy", ".35em")
@@ -319,11 +305,11 @@
         series: [
             {
                 label: 'current',
-                values: [7.7, 91.5]
+                values: [8, 92]
             },
             {
                 label: 'All Adults',
-                values: [16.7, 83.3]
+                values: [17, 83]
             }]
 
     };
@@ -365,7 +351,7 @@
 
     // Add text label in bar
     bar.append("text")
-        .attr("x", function(d) { return x(d) - 3; })
+        .attr("x", function(d) { return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("fill", "grey")
         .attr("dy", ".35em")
@@ -390,7 +376,7 @@
         series: [
             {
                 label: 'current',
-                values: [78.6,11, 3]
+                values: [85,12, 3]
             },
             {
                 label: 'All Adults',
@@ -436,7 +422,7 @@
 
     // Add text label in bar
     bar.append("text")
-        .attr("x", function(d) { return x(d) - 3; })
+        .attr("x", function(d) {return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("fill", "grey")
         .attr("dy", ".35em")
@@ -456,17 +442,16 @@
     //party
     var partydata = {
         labels: [
-            'Republican', 'Democrat','Independent'
-            //'Something else'
+            'Republican', 'Democrat','Independent','Something Else'
         ],
         series: [
             {
                 label: 'current',
-                values: [26.1, 33.6,29.3]
+                values: [27, 34,30,9]
             },
             {
                 label: 'All Adults',
-                values: [28, 38,32]
+                values: [28, 38,32,2]
             }]
 
     };
@@ -508,7 +493,7 @@
 
     // Add text label in bar
     bar.append("text")
-        .attr("x", function(d) { return x(d) - 3; })
+        .attr("x", function(d) { return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("fill", "grey")
         .attr("dy", ".35em")
@@ -528,7 +513,7 @@
     //income
     var incomedata = {
         labels: [
-            'Under $25,000', '$25,000 to just under $50,000','$50,000 to just under $100,000','$100,000 or more'
+            'Under $25,000', '$25,000 to $50,000','$50,000 to $100,000','$100,000 or more'
         ],
         series: [
             {
@@ -537,7 +522,7 @@
             },
             {
                 label: 'All Adults',
-                values: [17.2, 22.9,32.11,27.8]
+                values: [17, 23,32,28]
             }]
 
     };
@@ -579,7 +564,7 @@
 
     // Add text label in bar
     bar.append("text")
-        .attr("x", function(d) { return x(d) - 3; })
+        .attr("x", function(d) { return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("fill", "grey")
         .attr("dy", ".35em")
@@ -604,7 +589,7 @@
         series: [
             {
                 label: 'current',
-                values: [24,40,33]
+                values: [27,40,33]
             },
             {
                 label: 'All Adults',
@@ -650,7 +635,7 @@
 
     // Add text label in bar
     bar.append("text")
-        .attr("x", function(d) { return x(d) - 3; })
+        .attr("x", function(d) { return x(d) + 3; })
         .attr("y", barHeight / 2)
         .attr("fill", "grey")
         .attr("dy", ".35em")
@@ -667,5 +652,51 @@
                 return political_viewdata.labels[Math.floor(i/political_viewdata.series.length)];
             else
                 return ""});
+
+    //result chart
+    var data=[50,50];
+
+    var width = 360,
+        height = 300,
+        barWidth = 100;
+
+    var y = d3.scale.linear()
+        .range([height, 0])
+        .domain([0, d3.max(data)]);
+
+    var chart = d3.select("#result_chart")
+        .attr("width", width)
+        .attr("height", height+30)
+        .attr("transform", function(d, i) { return "translate(60,0)"; });
+
+    var bar=chart
+        .selectAll("g")
+        .data(data)
+        .enter()
+        .append("g")
+        .attr("transform", function(d, i) { return "translate(" + i * barWidth*2+ ",0)"; })
+        .attr("height",height);
+
+
+    bar.append("rect")
+        .attr("y", function(d) { return y(d); })
+        .attr("height", function(d) { return height - y(d); })
+        .attr("width", barWidth - 5)
+        .attr("fill", function(d,i) { if(i==0) return "#3989cb"; else return "#d75c5c";});
+
+    bar.append("text")
+        .attr("x", barWidth / 2)
+        .attr("y", function(d) { return y(d)+3; })
+        .attr("dy", "1.5em")
+        .attr("dx", "-1.1em")
+        .text(function(d) { return d+ "%";});
+
+    bar.append("text")
+        .attr("x", barWidth / 2)
+        .attr("y", height )
+        .attr("dy", "1.5em")
+        .attr("dx", "-1.95em")
+        .text(function(d,i) { if(i==0) return "H.Clinton"; else return "D.Trump";});
+
 </script>
 </body>
