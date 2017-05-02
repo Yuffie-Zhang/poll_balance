@@ -1,0 +1,58 @@
+{
+    "last_grade_in_school":
+        {
+            "Not a high school graduate":"14", //1+2
+            "High school graduate":"28", //3+4
+            "Some college education":"29",  //5+6
+            "College graduate":"18", //7
+            "Postgraduate education":"11" //8
+        }
+    ,
+    "age":{},
+    "gender":
+        {
+            "Male":"49",
+            "Female":"51"
+        }
+    ,
+    "hispanic_origin ":
+        {
+            "Hispanic origin":"17",
+            "Non-Hispanic origin":"83"
+        }
+    ,
+    "race":
+        {
+            "White":"80",
+            "Black":"14",
+            "Asian":"6"
+        }
+    ,
+    "party":
+        {
+            "Republican":"28",
+            "Democrat":"32",
+            "Independent":"38",
+            "Something else":"2"
+        }
+    ,
+    "state":
+      {
+
+      },
+    "annul_family_income":
+      {
+        "Under $25,000":"17",
+        "$25,000 to $50,000":"23",
+        "$50,000 to $100,000":"32",
+        "$100,000 or more":"28"
+
+      },
+    "Political View":
+      {
+        "Liberal":"25",
+        "Moderate":"40",
+        "Conservative":"35"
+      }
+
+}

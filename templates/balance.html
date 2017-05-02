@@ -1,0 +1,79 @@
+<div class=container>
+    <div class="row">
+        <div class="col-sm-6" >
+                <!-- main view -->
+                <div id="result">
+                    <h3>Who will win the votes?</h3>
+                    <svg  id="result_chart"></svg>
+                </div>
+
+                <div class="balance_list">
+                    <b>Balance by:</b><span class="balance_by"/>
+                </div>
+
+                <!-- slider -->
+                <div class="slider_box">
+                    <span>0%&nbsp;&nbsp;</span>
+                    <input id="ex1" data-slider-id='Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/>
+                    <span>&nbsp;&nbsp;100%</span>
+                </div>
+        </div>
+        <!-- attributes -->
+        <div class="col-sm-6">
+            <div  class="chart" id="edu_level">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Last Grade in School"/>&nbsp;&nbsp;Last Grade in School:</p>
+                <svg  id="edu_level_chart"></svg>
+
+            </div>
+            <div  class="chart" id="gender">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Gender"/>&nbsp;&nbsp;Gender:</p>
+                <svg  id="gender_chart"></svg>
+            </div>
+            <div  class="chart" id="hispanic">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Latino or Hispanic Oringin"/>&nbsp;&nbsp;Latino or Hispanic Oringin:</p>
+                <svg  id="hispanic_chart"></svg>
+            </div>
+            <div  class="chart" id="race">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Race"/>&nbsp;&nbsp;Race:</p>
+                <svg  id="race_chart"></svg>
+            </div>
+            <div  class="chart" id="party">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Party"/>&nbsp;&nbsp;Party:</p>
+                <svg  id="party_chart"></svg>
+            </div>
+            <div  class="chart" id="income">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Annual Family Income"/>&nbsp;&nbsp;Annual Family Income(MUP126 2016):</p>
+                <svg  id="income_chart"></svg>
+            </div>
+            <div  class="chart" id="political_view">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Political View"/>&nbsp;&nbsp;Political View(MUP126 2016):</p>
+                <svg id="political_view_chart"></svg>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Slider
+    $('#ex1').slider({
+        formatter: function(value) {
+            return  value+'%';
+        }
+    });
+
+    //check box
+    $(document).ready(function(){
+        $(".check_box").change(function(){
+            if (this.checked) {
+                // the checkbox is now checked
+                $(".balance_by").append($(this).attr("value")+", ");
+            }
+            else{
+                // the checkbox is now unchecked
+                var todelete=$(this).attr("value")+", ";
+                $(".balance_by").text(function ( i, txt ) {
+                    return txt.replace( todelete, '' );
+                });
+            }
+        });
+    });
+</script>
