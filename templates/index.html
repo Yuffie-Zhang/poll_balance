@@ -9,66 +9,72 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/bootstrap-slider.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/bootstrap-slider.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/css/bootstrap-slider.min.css" integrity="sha256-dXHafC+HTlEpRnrt+UjknVf5gRji+RofwsBhGpJ43NA=" crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.3/css/bootstrap-slider.min.css"
+          integrity="sha256-dXHafC+HTlEpRnrt+UjknVf5gRji+RofwsBhGpJ43NA=" crossorigin="anonymous"/>
 </head>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 <style>
 
 
-.header{
-    padding-bottom: 1.25rem;
-    margin-bottom: 2rem;
-    border-bottom: .05rem solid #eee;
-    background-color: #ADC7E8;
+    .header {
+        padding-bottom: 1.25rem;
+        margin-bottom: 2rem;
+        border-bottom: .05rem solid #eee;
+        background-color: #ADC7E8;
 
-}
-.item_name{
-    font-size: 18px;
-}
-.chart{
-    margin-bottom: 2rem;
-    border-bottom: .05rem solid #eee;
-}
-.chart .legend {
-    fill: black;
-    font: 14px sans-serif;
-    text-anchor: start;
-    font-size: 12px;
-}
+    }
 
+    .item_name {
+        font-size: 18px;
+    }
 
+    .chart {
+        margin-bottom: 2rem;
+        border-bottom: .05rem solid #eee;
+    }
 
+    .chart .legend {
+        fill: black;
+        font: 14px sans-serif;
+        text-anchor: start;
+        font-size: 12px;
+    }
 
+    #Slider .slider-selection {
+        background: #ADC7E8;
 
-#Slider .slider-selection {
-    background: #ADC7E8;
+    }
 
+    .slider_box {
+        margin-bottom: 2rem;
+    }
 
-}
-.slider_box{
-    margin-bottom: 2rem;
-}
-.left{
-    position:fixed;
-}
+    .left {
+        position: fixed;
+    }
 
-h3{
-    margin-bottom: 7rem;
-}
-#result_chart{
-    margin-bottom: 7rem;
-}
-.balance_list{
-    margin-bottom: 3rem;
-}
-.bar:hover {
-    fill: grey;
-}
+    h3 {
+        margin-bottom: 7rem;
+    }
+
+    #result_chart {
+        margin-bottom: 7rem;
+    }
+
+    .balance_list {
+        margin-bottom: 3rem;
+    }
+
+    .bar:hover {
+        fill: grey;
+    }
 
 </style>
 
 <body>
+<div class="test"></div>
 <div class="header">
     <div class="container">
         <div class="row">
@@ -81,637 +87,1342 @@ h3{
 </div>
 <div class=container>
     <div class="btn-group">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose a Polling Data
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li ><a onClick="window.location='index?dataisset=true'">   Sep 2012</a></li>
-      <li ><a onClick="window.location='index?dataisset=true'">  Aug 2016</a></li>
-    </ul>
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose a Polling Data
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a class="survey_datasource" value="MUP48"> Sep 2012</a></li>
+            <li><a class="survey_datasource" value="MUP126"> Aug 2016</a></li>
+        </ul>
     </div>
     <div class="btn-group">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose a Baseline Population
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a>All Adults</a></li>
-      <li><a>All Voters</a></li>
-    </ul>
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose a Baseline
+            Population
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a class="baseline_datasource" value="All_Adults">All Adults</a></li>
+            <li><a class="baseline_datasource" value="All_Voters">All Voters</a></li>
+        </ul>
     </div>
 </div>
-{% if (dataisset != None) %}
+
 {% include 'balance.html' %}
-{% endif %}
-
-<!--<script>-->
 
 
-    <!--//education level chart-->
-    <!--var edudata = {-->
-        <!--labels: [-->
-            <!--'Not a high school graduate', 'High school graduate ', 'Some college education',-->
-            <!--'College graduate', 'Postgraduate education'-->
-        <!--],-->
-        <!--series: [-->
-            <!--{-->
-                <!--label: 'Current',-->
-                <!--values: [2, 27, 32, 23, 16]-->
-            <!--},-->
-            <!--{-->
-                <!--label: 'Baseline',-->
-                <!--values: [14, 28, 29 , 18, 11]-->
-            <!--}]-->
+<script>
 
-    <!--};-->
 
-    <!--var chartWidth       = 200,-->
-        <!--barHeight        = 15,-->
-        <!--groupHeight      = barHeight * edudata.series.length,-->
-        <!--gapBetweenGroups = 8,-->
-        <!--spaceForLabels   = 180,-->
-        <!--spaceForLegend   = 200;-->
+    var chartWidth = 200,
+        barHeight = 15,
+        groupHeight = barHeight * 2,
+        gapBetweenGroups = 8,
+        spaceForLabels = 180,
+        spaceForLegend = 200;
 
-    <!--// Zip the series data together (first values, second values, etc.)-->
-    <!--var eduzippedData = [];-->
-    <!--for (var i=0; i<edudata.labels.length; i++) {-->
-        <!--for (var j=0; j<edudata.series.length; j++) {-->
-            <!--eduzippedData.push(edudata.series[j].values[i]);-->
-        <!--}-->
-    <!--}-->
+    var educhart;
 
-    <!--// Color scale-->
-    <!--var color = d3.scale.category20();-->
-    <!--var chartHeight = barHeight * eduzippedData.length + gapBetweenGroups * edudata.labels.length;-->
 
-    <!--var x = d3.scale.linear()-->
-        <!--.domain([0, d3.max(eduzippedData)])-->
-        <!--.range([0, chartWidth]);-->
 
-    <!--// Specify the chart area and dimensions-->
-    <!--var educhart = d3.select("#edu_level_chart")-->
-        <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
-        <!--.attr("height", chartHeight);-->
+    $(document).ready(function () {
+        $(".survey_datasource").click(function () {
+            $.post('/requestdata', {name: $(this).attr('value')}, function (data) {
+                //edu chart
+                var edu_labels = data["last_grade_in_school"]["labels"];
+                var edu_surveydata = data["last_grade_in_school"]["values"];
+                var educhartHeight = barHeight * edu_surveydata.length*2 + gapBetweenGroups * edu_labels.length;
+                var x = d3.scale.linear()
+                    .domain([0, d3.max(edu_surveydata)])
+                    .range([0, chartWidth]);
 
-    <!--// Create bars-->
-    <!--var bar = educhart.selectAll("g")-->
-        <!--.data(eduzippedData)-->
-        <!--.enter().append("g")-->
-        <!--.attr("transform", function(d, i) {-->
-            <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/edudata.series.length))) + ")";-->
-        <!--});-->
+                // Specify the chart area and dimensions
+                educhart = d3.select("#edu_level_chart")
+                    .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+                    .attr("height", educhartHeight);
 
-    <!--// Create rectangles of the correct width-->
-    <!--bar.append("rect")-->
-        <!--.attr("fill", function(d,i) { if(i%2==0) return "#1f77b4";else return"#aec7e8";})-->
-        <!--.attr("class", "bar")-->
-        <!--.attr("width", x)-->
-        <!--.attr("height", barHeight - 1);-->
+                // Create bars
+                var bar = educhart.selectAll("g")
+                    .data(edu_surveydata)
+                    .enter().append("g")
+                    .attr("transform", function (d,i) {
+                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (0.5 )) + ")";
+                    });
 
-    <!--// Add text label in bar-->
-    <!--bar.append("text")-->
-        <!--.attr("x", function(d) { return x(d) + 3; })-->
-        <!--.attr("y", barHeight / 2)-->
-        <!--.attr("fill", "grey")-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("font","10px sans-serif")-->
-        <!--.text(function(d) { return d+"%"; });-->
+                // Create rectangles of the correct width
+                bar.append("rect")
+                    .attr("fill", "#1f77b4")
+                    .attr("class", "bar")
+                    .attr("width", x)
+                    .attr("height", barHeight - 1);
 
-    <!--// Draw labels-->
-    <!--bar.append("text")-->
-        <!--.attr("class", "label")-->
-        <!--.attr("x", function(d) { return - 10; })-->
-        <!--.attr("y", groupHeight / 2)-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("text-anchor","end")-->
-        <!--.style("font","14px sans-serif")-->
-        <!--.text(function(d,i) {-->
-            <!--if (i % edudata.series.length === 0)-->
-                <!--return edudata.labels[Math.floor(i/edudata.series.length)];-->
-            <!--else-->
-                <!--return ""});-->
+                // Add text label in bar
+                bar.append("text")
+                    .attr("x", function (d) {
+                        return x(d) + 3;
+                    })
+                    .attr("y", barHeight / 2)
+                    .attr("fill", "grey")
+                    .attr("dy", ".35em")
+                    .style("font", "10px sans-serif")
+                    .text(function (d) {
+                        return d + "%";
+                    });
 
-    <!--// Draw legend-->
-    <!--var legendRectSize = 18,-->
-        <!--legendSpacing  = 4;-->
+                // Draw labels
+                bar.append("text")
+                    .attr("class", "label")
+                    .attr("x", function (d) {
+                        return -10;
+                    })
+                    .attr("y", groupHeight / 2)
+                    .attr("dy", ".35em")
+                    .style("text-anchor", "end")
+                    .style("font", "14px sans-serif")
+                    .text(function (d,i) {
+                        return edu_labels[i];
+                    });
 
-    <!--var legend = educhart.selectAll('.legend')-->
-        <!--.data(edudata.series)-->
-        <!--.enter()-->
-        <!--.append('g')-->
-        <!--.attr('transform', function (d, i) {-->
-            <!--var height = legendRectSize + legendSpacing;-->
-            <!--var offset = -gapBetweenGroups/2;-->
-            <!--var horz = spaceForLabels + chartWidth + 40 - legendRectSize;-->
-            <!--var vert = i * height - offset;-->
-            <!--return 'translate(' + horz + ',' + vert + ')';-->
-        <!--});-->
+                //gender chart
+                var gender_labels = data["gender"]["labels"];
+                var gender_surveydata = data["gender"]["values"];
+                var genderchartHeight = barHeight * gender_surveydata.length*2 + gapBetweenGroups * gender_labels.length;
+                var x = d3.scale.linear()
+                    .domain([0, d3.max(gender_surveydata)])
+                    .range([0, chartWidth]);
 
-    <!--legend.append('rect')-->
-        <!--.attr('width', legendRectSize)-->
-        <!--.attr('height', legendRectSize)-->
-        <!--.style('fill', function (d, i) { return color(i); })-->
-        <!--.style('stroke', function (d, i) { return color(i); });-->
+                // Specify the chart area and dimensions
+                var genderchart = d3.select("#gender_chart")
+                    .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+                    .attr("height", genderchartHeight);
 
-    <!--legend.append('text')-->
-        <!--.attr('class', 'legend')-->
-        <!--.attr('x', legendRectSize + legendSpacing)-->
-        <!--.attr('y', legendRectSize - legendSpacing)-->
-        <!--.text(function (d) { return d.label; });-->
+                // Create bars
+                var bar = genderchart.selectAll("g")
+                    .data(gender_surveydata)
+                    .enter().append("g")
+                    .attr("transform", function (d,i) {
+                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (0.5 )) + ")";
+                    });
 
-    <!--//gender-->
+                // Create rectangles of the correct width
+                bar.append("rect")
+                    .attr("fill", "#1f77b4")
+                    .attr("class", "bar")
+                    .attr("width", x)
+                    .attr("height", barHeight - 1);
+
+                // Add text label in bar
+                bar.append("text")
+                    .attr("x", function (d) {
+                        return x(d) + 3;
+                    })
+                    .attr("y", barHeight / 2)
+                    .attr("fill", "grey")
+                    .attr("dy", ".35em")
+                    .style("font", "10px sans-serif")
+                    .text(function (d) {
+                        return d + "%";
+                    });
+
+                // Draw labels
+                bar.append("text")
+                    .attr("class", "label")
+                    .attr("x", function (d) {
+                        return -10;
+                    })
+                    .attr("y", groupHeight / 2)
+                    .attr("dy", ".35em")
+                    .style("text-anchor", "end")
+                    .style("font", "14px sans-serif")
+                    .text(function (d,i) {
+                        return gender_labels[i];
+                    });
+
+                //hispanic chart
+                var hispanic_labels = data["hispanic_origin"]["labels"];
+                var hispanic_surveydata = data["hispanic_origin"]["values"];
+                var hispanicchartHeight = barHeight * hispanic_surveydata.length*2 + gapBetweenGroups * hispanic_labels.length;
+                var x = d3.scale.linear()
+                    .domain([0, d3.max(hispanic_surveydata)])
+                    .range([0, chartWidth]);
+
+                // Specify the chart area and dimensions
+                var hispanicchart = d3.select("#hispanic_chart")
+                    .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+                    .attr("height", hispanicchartHeight);
+
+                // Create bars
+                var bar = hispanicchart.selectAll("g")
+                    .data(hispanic_surveydata)
+                    .enter().append("g")
+                    .attr("transform", function (d,i) {
+                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (0.5 )) + ")";
+                    });
+
+                // Create rectangles of the correct width
+                bar.append("rect")
+                    .attr("fill", "#1f77b4")
+                    .attr("class", "bar")
+                    .attr("width", x)
+                    .attr("height", barHeight - 1);
+
+                // Add text label in bar
+                bar.append("text")
+                    .attr("x", function (d) {
+                        return x(d) + 3;
+                    })
+                    .attr("y", barHeight / 2)
+                    .attr("fill", "grey")
+                    .attr("dy", ".35em")
+                    .style("font", "10px sans-serif")
+                    .text(function (d) {
+                        return d + "%";
+                    });
+
+                // Draw labels
+                bar.append("text")
+                    .attr("class", "label")
+                    .attr("x", function (d) {
+                        return -10;
+                    })
+                    .attr("y", groupHeight / 2)
+                    .attr("dy", ".35em")
+                    .style("text-anchor", "end")
+                    .style("font", "14px sans-serif")
+                    .text(function (d,i) {
+                        return hispanic_labels[i];
+                    });
+
+                //race chart
+                var race_labels = data["race"]["labels"];
+                var race_surveydata = data["race"]["values"];
+                var racechartHeight = barHeight * race_surveydata.length*2 + gapBetweenGroups * race_labels.length;
+                var x = d3.scale.linear()
+                    .domain([0, d3.max(race_surveydata)])
+                    .range([0, chartWidth]);
+
+                // Specify the chart area and dimensions
+                var racechart = d3.select("#race_chart")
+                    .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+                    .attr("height", racechartHeight);
+
+                // Create bars
+                var bar = racechart.selectAll("g")
+                    .data(race_surveydata)
+                    .enter().append("g")
+                    .attr("transform", function (d,i) {
+                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (0.5 )) + ")";
+                    });
+
+                // Create rectangles of the correct width
+                bar.append("rect")
+                    .attr("fill", "#1f77b4")
+                    .attr("class", "bar")
+                    .attr("width", x)
+                    .attr("height", barHeight - 1);
+
+                // Add text label in bar
+                bar.append("text")
+                    .attr("x", function (d) {
+                        return x(d) + 3;
+                    })
+                    .attr("y", barHeight / 2)
+                    .attr("fill", "grey")
+                    .attr("dy", ".35em")
+                    .style("font", "10px sans-serif")
+                    .text(function (d) {
+                        return d + "%";
+                    });
+
+                // Draw labels
+                bar.append("text")
+                    .attr("class", "label")
+                    .attr("x", function (d) {
+                        return -10;
+                    })
+                    .attr("y", groupHeight / 2)
+                    .attr("dy", ".35em")
+                    .style("text-anchor", "end")
+                    .style("font", "14px sans-serif")
+                    .text(function (d,i) {
+                        return race_labels[i];
+                    });
+
+                //party chart
+                var party_labels = data["party"]["labels"];
+                var party_surveydata = data["party"]["values"];
+                var partychartHeight = barHeight * party_surveydata.length*2 + gapBetweenGroups * party_labels.length;
+                var x = d3.scale.linear()
+                    .domain([0, d3.max(party_surveydata)])
+                    .range([0, chartWidth]);
+
+                // Specify the chart area and dimensions
+                var partychart = d3.select("#party_chart")
+                    .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+                    .attr("height", partychartHeight);
+
+                // Create bars
+                var bar = partychart.selectAll("g")
+                    .data(party_surveydata)
+                    .enter().append("g")
+                    .attr("transform", function (d,i) {
+                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (0.5 )) + ")";
+                    });
+
+                // Create rectangles of the correct width
+                bar.append("rect")
+                    .attr("fill", "#1f77b4")
+                    .attr("class", "bar")
+                    .attr("width", x)
+                    .attr("height", barHeight - 1);
+
+                // Add text label in bar
+                bar.append("text")
+                    .attr("x", function (d) {
+                        return x(d) + 3;
+                    })
+                    .attr("y", barHeight / 2)
+                    .attr("fill", "grey")
+                    .attr("dy", ".35em")
+                    .style("font", "10px sans-serif")
+                    .text(function (d) {
+                        return d + "%";
+                    });
+
+                // Draw labels
+                bar.append("text")
+                    .attr("class", "label")
+                    .attr("x", function (d) {
+                        return -10;
+                    })
+                    .attr("y", groupHeight / 2)
+                    .attr("dy", ".35em")
+                    .style("text-anchor", "end")
+                    .style("font", "14px sans-serif")
+                    .text(function (d,i) {
+                        return party_labels[i];
+                    });
+
+                //income chart
+                var income_labels = data["annul_family_income"]["labels"];
+                var income_surveydata = data["annul_family_income"]["values"];
+                var incomechartHeight = barHeight * income_surveydata.length*2 + gapBetweenGroups * income_labels.length;
+                var x = d3.scale.linear()
+                    .domain([0, d3.max(income_surveydata)])
+                    .range([0, chartWidth]);
+
+                // Specify the chart area and dimensions
+                var incomechart = d3.select("#income_chart")
+                    .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+                    .attr("height", incomechartHeight);
+
+                // Create bars
+                var bar = incomechart.selectAll("g")
+                    .data(income_surveydata)
+                    .enter().append("g")
+                    .attr("transform", function (d,i) {
+                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (0.5 )) + ")";
+                    });
+
+                // Create rectangles of the correct width
+                bar.append("rect")
+                    .attr("fill", "#1f77b4")
+                    .attr("class", "bar")
+                    .attr("width", x)
+                    .attr("height", barHeight - 1);
+
+                // Add text label in bar
+                bar.append("text")
+                    .attr("x", function (d) {
+                        return x(d) + 3;
+                    })
+                    .attr("y", barHeight / 2)
+                    .attr("fill", "grey")
+                    .attr("dy", ".35em")
+                    .style("font", "10px sans-serif")
+                    .text(function (d) {
+                        return d + "%";
+                    });
+
+                // Draw labels
+                bar.append("text")
+                    .attr("class", "label")
+                    .attr("x", function (d) {
+                        return -10;
+                    })
+                    .attr("y", groupHeight / 2)
+                    .attr("dy", ".35em")
+                    .style("text-anchor", "end")
+                    .style("font", "14px sans-serif")
+                    .text(function (d,i) {
+                        return income_labels[i];
+                    });
+
+                //political_view chart
+                var political_view_labels = data["political_view"]["labels"];
+                var political_view_surveydata = data["political_view"]["values"];
+                var political_viewchartHeight = barHeight * political_view_surveydata.length*2 + gapBetweenGroups * political_view_labels.length;
+                var x = d3.scale.linear()
+                    .domain([0, d3.max(political_view_surveydata)])
+                    .range([0, chartWidth]);
+
+                // Specify the chart area and dimensions
+                var political_viewchart = d3.select("#political_view_chart")
+                    .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+                    .attr("height", political_viewchartHeight);
+
+                // Create bars
+                var bar = political_viewchart.selectAll("g")
+                    .data(political_view_surveydata)
+                    .enter().append("g")
+                    .attr("transform", function (d,i) {
+                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (0.5 )) + ")";
+                    });
+
+                // Create rectangles of the correct width
+                bar.append("rect")
+                    .attr("fill", "#1f77b4")
+                    .attr("class", "bar")
+                    .attr("width", x)
+                    .attr("height", barHeight - 1);
+
+                // Add text label in bar
+                bar.append("text")
+                    .attr("x", function (d) {
+                        return x(d) + 3;
+                    })
+                    .attr("y", barHeight / 2)
+                    .attr("fill", "grey")
+                    .attr("dy", ".35em")
+                    .style("font", "10px sans-serif")
+                    .text(function (d) {
+                        return d + "%";
+                    });
+
+                // Draw labels
+                bar.append("text")
+                    .attr("class", "label")
+                    .attr("x", function (d) {
+                        return -10;
+                    })
+                    .attr("y", groupHeight / 2)
+                    .attr("dy", ".35em")
+                    .style("text-anchor", "end")
+                    .style("font", "14px sans-serif")
+                    .text(function (d,i) {
+                        return political_view_labels[i];
+                    });
+            });
+        });
+    });
+    $(document).ready(function () {
+        $(".baseline_datasource").click(function () {
+            $.post('/requestdata', {name: $(this).attr('value')}, function (data) {
+                var edu_baselinedata = data["last_grade_in_school"]["values"];
+                var bar = educhart.selectAll("g")
+                    .data(edu_baselinedata)
+                    .enter().append("g")
+                    .attr("transform", function (d,i) {
+                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (1 )) + ")";
+                    });
+
+                // Create rectangles of the correct width
+                bar.append("rect")
+                    .attr("fill", "#1f77b4")
+                    .attr("class", "bar")
+                    .attr("width", x)
+                    .attr("height", barHeight - 1);
+            });
+        });
+    });
+
+
+//    // Draw legend
+//    var legendRectSize = 18,
+//        legendSpacing = 4;
+//
+//    var legend = educhart.selectAll('.legend')
+//        .data(edudata.series)
+//        .enter()
+//        .append('g')
+//        .attr('transform', function (d, i) {
+//            var height = legendRectSize + legendSpacing;
+//            var offset = -gapBetweenGroups / 2;
+//            var horz = spaceForLabels + chartWidth + 40 - legendRectSize;
+//            var vert = i * height - offset;
+//            return 'translate(' + horz + ',' + vert + ')';
+//        });
+//
+//    legend.append('rect')
+//        .attr('width', legendRectSize)
+//        .attr('height', legendRectSize)
+//        .style('fill', function (d, i) {
+//            return color(i);
+//        })
+//        .style('stroke', function (d, i) {
+//            return color(i);
+//        });
+//
+//    legend.append('text')
+//        .attr('class', 'legend')
+//        .attr('x', legendRectSize + legendSpacing)
+//        .attr('y', legendRectSize - legendSpacing)
+//        .text(function (d) {
+//            if (d == 0) return "Current"; else return "Baseline";
+//        });
+
+    //    <!--//gender-->
     <!--var genderdata = {-->
-        <!--labels: [-->
-            <!--'Male', 'Female'-->
-        <!--],-->
-        <!--series: [-->
-            <!--{-->
-                <!--label: 'current',-->
-                <!--values: [47, 53]-->
-            <!--},-->
-            <!--{-->
-                <!--label: 'All Adults',-->
-                <!--values: [49, 51]-->
-            <!--}]-->
+    <!--labels: [-->
+    <!--'Male', 'Female'-->
+    <!--],-->
+    <!--series: [-->
+    <!--{-->
+    <!--label: 'current',-->
+    <!--values: [47, 53]-->
+    <!--},-->
+    <!--{-->
+    <!--label: 'All Adults',-->
+    <!--values: [49, 51]-->
+    <!--}]-->
 
     <!--};-->
-
-    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
+    //    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
     <!--var genderzippedData = [];-->
+    //
     <!--for (var i=0; i<genderdata.labels.length; i++) {-->
-        <!--for (var j=0; j<genderdata.series.length; j++) {-->
-            <!--genderzippedData.push(genderdata.series[j].values[i]);-->
-        <!--}-->
+    //
+    <!--for (var j=0; j<genderdata.series.length; j++) {-->
+    //
+    <!--genderzippedData.push(genderdata.series[j].values[i]);-->
+    //
     <!--}-->
-
-    <!--// Color scale-->
+    //
+    <!--}-->
+    //
+    //    <!--// Color scale-->
     <!--var chartHeight = barHeight * genderzippedData.length + gapBetweenGroups * genderdata.labels.length;-->
 
     <!--var x = d3.scale.linear()-->
-        <!--.domain([0, d3.max(genderzippedData)])-->
-        <!--.range([0, chartWidth]);-->
+    <!--.domain([0, d3.max(genderzippedData)])-->
+    <!--.range([0, chartWidth]);-->
 
-    <!--// Specify the chart area and dimensions-->
+    //    <!--// Specify the chart area and dimensions-->
+    //
     <!--var genderchart = d3.select("#gender_chart")-->
-        <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
-        <!--.attr("height", chartHeight);-->
-
-    <!--// Create bars-->
+    //
+    <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
+    //
+    <!--.attr("height", chartHeight);-->
+    //
+    //    <!--// Create bars-->
+    //
     <!--var bar = genderchart.selectAll("g")-->
-        <!--.data(genderzippedData)-->
-        <!--.enter().append("g")-->
-        <!--.attr("transform", function(d, i) {-->
-            <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/genderdata.series.length))) + ")";-->
-        <!--});-->
-
-    <!--// Create rectangles of the correct width-->
+    //
+    <!--.data(genderzippedData)-->
+    //
+    <!--.enter().append("g")-->
+    //
+    <!--.attr("transform", function(d, i) {-->
+    //
+    <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/genderdata.series.length))) + ")";-->
+    //
+    <!--});-->
+    //
+    //    <!--// Create rectangles of the correct width-->
+    //
     <!--bar.append("rect")-->
-        <!--.attr("fill", function(d,i) { return color(i % genderdata.series.length); })-->
-        <!--.attr("class", "bar")-->
-        <!--.attr("width", x)-->
-        <!--.attr("height", barHeight - 1);-->
-
-    <!--// Add text label in bar-->
+    //
+    <!--.attr("fill", function(d,i) { return color(i % genderdata.series.length); })-->
+    //
+    <!--.attr("class", "bar")-->
+    //
+    <!--.attr("width", x)-->
+    //
+    <!--.attr("height", barHeight - 1);-->
+    //
+    //    <!--// Add text label in bar-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("x", function(d) { return x(d) + 3; })-->
-
-        <!--.attr("y", barHeight / 2)-->
-        <!--.attr("fill", "grey")-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("font","10px sans-serif")-->
-        <!--.text(function(d) { return d+"%"; });-->
-
-    <!--// Draw labels-->
+    //
+    <!--.attr("x", function(d) { return x(d) + 3; })-->
+    //
+    //
+    <!--.attr("y", barHeight / 2)-->
+    //
+    <!--.attr("fill", "grey")-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("font","10px sans-serif")-->
+    //
+    <!--.text(function(d) { return d+"%"; });-->
+    //
+    //    <!--// Draw labels-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("class", "label")-->
-        <!--.attr("x", function(d) { return - 10; })-->
-        <!--.attr("y", groupHeight / 2)-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("text-anchor","end")-->
-        <!--.style("font","14px sans-serif")-->
-        <!--.text(function(d,i) {-->
-            <!--if (i % genderdata.series.length === 0)-->
-                <!--return genderdata.labels[Math.floor(i/genderdata.series.length)];-->
-            <!--else-->
-                <!--return ""});-->
-
-    <!--// genderchart.append("g")-->
-    <!--//       .attr("class", "y axis")-->
-    <!--//       .attr("transform", "translate(" + spaceForLabels + ", " + -gapBetweenGroups/2 + ")")-->
-    <!--//       .call(yAxis);-->
-
-    <!--//hispanic-->
+    //
+    <!--.attr("class", "label")-->
+    //
+    <!--.attr("x", function(d) { return - 10; })-->
+    //
+    <!--.attr("y", groupHeight / 2)-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("text-anchor","end")-->
+    //
+    <!--.style("font","14px sans-serif")-->
+    //
+    <!--.text(function(d,i) {-->
+    //
+    <!--if (i % genderdata.series.length === 0)-->
+    //
+    <!--return genderdata.labels[Math.floor(i/genderdata.series.length)];-->
+    //
+    <!--else-->
+    //
+    <!--return ""});-->
+    //
+    //    <!--// genderchart.append("g")-->
+    //    <!--//       .attr("class", "y axis")-->
+    //    <!--//       .attr("transform", "translate(" + spaceForLabels + ", " + -gapBetweenGroups/2 + ")")-->
+    //    <!--//       .call(yAxis);-->
+    //
+    //    <!--//hispanic-->
+    //
     <!--var hispanicdata = {-->
-        <!--labels: [-->
-            <!--'Hispanic origin', 'Non-Hispanic origin'-->
-        <!--],-->
-        <!--series: [-->
-            <!--{-->
-                <!--label: 'current',-->
-                <!--values: [8, 92]-->
-            <!--},-->
-            <!--{-->
-                <!--label: 'All Adults',-->
-                <!--values: [17, 83]-->
-            <!--}]-->
-
+    //
+    <!--labels: [-->
+    //
+    <!--'Hispanic origin', 'Non-Hispanic origin'-->
+    //
+    <!--],-->
+    //
+    <!--series: [-->
+    //
+    <!--{-->
+    //
+    <!--label: 'current',-->
+    //
+    <!--values: [8, 92]-->
+    //
+    <!--},-->
+    //
+    <!--{-->
+    //
+    <!--label: 'All Adults',-->
+    //
+    <!--values: [17, 83]-->
+    //
+    <!--}]-->
+    //
+    //
     <!--};-->
-
-    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
+    //    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
     <!--var hispaniczippedData = [];-->
+    //
     <!--for (var i=0; i<hispanicdata.labels.length; i++) {-->
-        <!--for (var j=0; j<hispanicdata.series.length; j++) {-->
-            <!--hispaniczippedData.push(hispanicdata.series[j].values[i]);-->
-        <!--}-->
+    //
+    <!--for (var j=0; j<hispanicdata.series.length; j++) {-->
+    //
+    <!--hispaniczippedData.push(hispanicdata.series[j].values[i]);-->
+    //
     <!--}-->
-
-    <!--// Color scale-->
+    //
+    <!--}-->
+    //
+    //    <!--// Color scale-->
+    //
     <!--var chartHeight = barHeight * hispaniczippedData.length + gapBetweenGroups * hispanicdata.labels.length;-->
-
+    //
+    //
     <!--var x = d3.scale.linear()-->
-        <!--.domain([0, d3.max(hispaniczippedData)])-->
-        <!--.range([0, chartWidth]);-->
-
-    <!--// Specify the chart area and dimensions-->
+    //
+    <!--.domain([0, d3.max(hispaniczippedData)])-->
+    //
+    <!--.range([0, chartWidth]);-->
+    //
+    //    <!--// Specify the chart area and dimensions-->
+    //
     <!--var hispanicchart = d3.select("#hispanic_chart")-->
-        <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
-        <!--.attr("height", chartHeight);-->
-
-    <!--// Create bars-->
+    //
+    <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
+    //
+    <!--.attr("height", chartHeight);-->
+    //
+    //    <!--// Create bars-->
+    //
     <!--var bar = hispanicchart.selectAll("g")-->
-        <!--.data(hispaniczippedData)-->
-        <!--.enter().append("g")-->
-        <!--.attr("transform", function(d, i) {-->
-            <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/hispanicdata.series.length))) + ")";-->
-        <!--});-->
-
-    <!--// Create rectangles of the correct width-->
+    //
+    <!--.data(hispaniczippedData)-->
+    //
+    <!--.enter().append("g")-->
+    //
+    <!--.attr("transform", function(d, i) {-->
+    //
+    <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/hispanicdata.series.length))) + ")";-->
+    //
+    <!--});-->
+    //
+    //    <!--// Create rectangles of the correct width-->
+    //
     <!--bar.append("rect")-->
-        <!--.attr("fill", function(d,i) { return color(i % hispanicdata.series.length); })-->
-        <!--.attr("class", "bar")-->
-        <!--.attr("width", x)-->
-        <!--.attr("height", barHeight - 1);-->
-
-    <!--// Add text label in bar-->
+    //
+    <!--.attr("fill", function(d,i) { return color(i % hispanicdata.series.length); })-->
+    //
+    <!--.attr("class", "bar")-->
+    //
+    <!--.attr("width", x)-->
+    //
+    <!--.attr("height", barHeight - 1);-->
+    //
+    //    <!--// Add text label in bar-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("x", function(d) { return x(d) + 3; })-->
-        <!--.attr("y", barHeight / 2)-->
-        <!--.attr("fill", "grey")-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("font","10px sans-serif")-->
-        <!--.text(function(d) { return d+"%"; });-->
-
-    <!--// Draw labels-->
+    //
+    <!--.attr("x", function(d) { return x(d) + 3; })-->
+    //
+    <!--.attr("y", barHeight / 2)-->
+    //
+    <!--.attr("fill", "grey")-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("font","10px sans-serif")-->
+    //
+    <!--.text(function(d) { return d+"%"; });-->
+    //
+    //    <!--// Draw labels-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("class", "label")-->
-        <!--.attr("x", function(d) { return - 10; })-->
-        <!--.attr("y", groupHeight / 2)-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("text-anchor","end")-->
-        <!--.style("font","14px sans-serif")-->
-        <!--.text(function(d,i) {-->
-            <!--if (i % hispanicdata.series.length === 0)-->
-                <!--return hispanicdata.labels[Math.floor(i/hispanicdata.series.length)];-->
-            <!--else-->
-                <!--return ""});-->
-    <!--//race-->
+    //
+    <!--.attr("class", "label")-->
+    //
+    <!--.attr("x", function(d) { return - 10; })-->
+    //
+    <!--.attr("y", groupHeight / 2)-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("text-anchor","end")-->
+    //
+    <!--.style("font","14px sans-serif")-->
+    //
+    <!--.text(function(d,i) {-->
+    //
+    <!--if (i % hispanicdata.series.length === 0)-->
+    //
+    <!--return hispanicdata.labels[Math.floor(i/hispanicdata.series.length)];-->
+    //
+    <!--else-->
+    //
+    <!--return ""});-->
+    //    <!--//race-->
+    //
     <!--var racedata = {-->
-        <!--labels: [-->
-            <!--'White', 'Black','Asian'-->
-        <!--],-->
-        <!--series: [-->
-            <!--{-->
-                <!--label: 'current',-->
-                <!--values: [85,12, 3]-->
-            <!--},-->
-            <!--{-->
-                <!--label: 'All Adults',-->
-                <!--values: [80, 14,6]-->
-            <!--}]-->
-
+    //
+    <!--labels: [-->
+    //
+    <!--'White', 'Black','Asian'-->
+    //
+    <!--],-->
+    //
+    <!--series: [-->
+    //
+    <!--{-->
+    //
+    <!--label: 'current',-->
+    //
+    <!--values: [85,12, 3]-->
+    //
+    <!--},-->
+    //
+    <!--{-->
+    //
+    <!--label: 'All Adults',-->
+    //
+    <!--values: [80, 14,6]-->
+    //
+    <!--}]-->
+    //
+    //
     <!--};-->
-
-    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
+    //    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
     <!--var racezippedData = [];-->
+    //
     <!--for (var i=0; i<racedata.labels.length; i++) {-->
-        <!--for (var j=0; j<racedata.series.length; j++) {-->
-            <!--racezippedData.push(racedata.series[j].values[i]);-->
-        <!--}-->
+    //
+    <!--for (var j=0; j<racedata.series.length; j++) {-->
+    //
+    <!--racezippedData.push(racedata.series[j].values[i]);-->
+    //
     <!--}-->
-
-    <!--// Color scale-->
+    //
+    <!--}-->
+    //
+    //    <!--// Color scale-->
+    //
     <!--var chartHeight = barHeight * racezippedData.length + gapBetweenGroups * racedata.labels.length;-->
-
+    //
+    //
     <!--var x = d3.scale.linear()-->
-        <!--.domain([0, d3.max(racezippedData)])-->
-        <!--.range([0, chartWidth]);-->
-
-    <!--// Specify the chart area and dimensions-->
+    //
+    <!--.domain([0, d3.max(racezippedData)])-->
+    //
+    <!--.range([0, chartWidth]);-->
+    //
+    //    <!--// Specify the chart area and dimensions-->
+    //
     <!--var racechart = d3.select("#race_chart")-->
-        <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
-        <!--.attr("height", chartHeight);-->
-
-    <!--// Create bars-->
+    //
+    <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
+    //
+    <!--.attr("height", chartHeight);-->
+    //
+    //    <!--// Create bars-->
+    //
     <!--var bar = racechart.selectAll("g")-->
-        <!--.data(racezippedData)-->
-        <!--.enter().append("g")-->
-        <!--.attr("transform", function(d, i) {-->
-            <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/racedata.series.length))) + ")";-->
-        <!--});-->
-
-    <!--// Create rectangles of the correct width-->
+    //
+    <!--.data(racezippedData)-->
+    //
+    <!--.enter().append("g")-->
+    //
+    <!--.attr("transform", function(d, i) {-->
+    //
+    <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/racedata.series.length))) + ")";-->
+    //
+    <!--});-->
+    //
+    //    <!--// Create rectangles of the correct width-->
+    //
     <!--bar.append("rect")-->
-        <!--.attr("fill", function(d,i) { return color(i % racedata.series.length); })-->
-        <!--.attr("class", "bar")-->
-        <!--.attr("width", x)-->
-        <!--.attr("height", barHeight - 1);-->
-
-    <!--// Add text label in bar-->
+    //
+    <!--.attr("fill", function(d,i) { return color(i % racedata.series.length); })-->
+    //
+    <!--.attr("class", "bar")-->
+    //
+    <!--.attr("width", x)-->
+    //
+    <!--.attr("height", barHeight - 1);-->
+    //
+    //    <!--// Add text label in bar-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("x", function(d) {return x(d) + 3; })-->
-        <!--.attr("y", barHeight / 2)-->
-        <!--.attr("fill", "grey")-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("font","10px sans-serif")-->
-        <!--.text(function(d) { return d+"%"; });-->
-
-    <!--// Draw labels-->
+    //
+    <!--.attr("x", function(d) {return x(d) + 3; })-->
+    //
+    <!--.attr("y", barHeight / 2)-->
+    //
+    <!--.attr("fill", "grey")-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("font","10px sans-serif")-->
+    //
+    <!--.text(function(d) { return d+"%"; });-->
+    //
+    //    <!--// Draw labels-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("class", "label")-->
-        <!--.attr("x", function(d) { return - 10; })-->
-        <!--.attr("y", groupHeight / 2)-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("text-anchor","end")-->
-        <!--.style("font","14px sans-serif")-->
-        <!--.text(function(d,i) {-->
-            <!--if (i % racedata.series.length === 0)-->
-                <!--return racedata.labels[Math.floor(i/racedata.series.length)];-->
-            <!--else-->
-                <!--return ""});-->
-    <!--//party-->
+    //
+    <!--.attr("class", "label")-->
+    //
+    <!--.attr("x", function(d) { return - 10; })-->
+    //
+    <!--.attr("y", groupHeight / 2)-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("text-anchor","end")-->
+    //
+    <!--.style("font","14px sans-serif")-->
+    //
+    <!--.text(function(d,i) {-->
+    //
+    <!--if (i % racedata.series.length === 0)-->
+    //
+    <!--return racedata.labels[Math.floor(i/racedata.series.length)];-->
+    //
+    <!--else-->
+    //
+    <!--return ""});-->
+    //    <!--//party-->
+    //
     <!--var partydata = {-->
-        <!--labels: [-->
-            <!--'Republican', 'Democrat','Independent','Something Else'-->
-        <!--],-->
-        <!--series: [-->
-            <!--{-->
-                <!--label: 'current',-->
-                <!--values: [27, 34,30,9]-->
-            <!--},-->
-            <!--{-->
-                <!--label: 'All Adults',-->
-                <!--values: [28, 38,32,2]-->
-            <!--}]-->
-
+    //
+    <!--labels: [-->
+    //
+    <!--'Republican', 'Democrat','Independent','Something Else'-->
+    //
+    <!--],-->
+    //
+    <!--series: [-->
+    //
+    <!--{-->
+    //
+    <!--label: 'current',-->
+    //
+    <!--values: [27, 34,30,9]-->
+    //
+    <!--},-->
+    //
+    <!--{-->
+    //
+    <!--label: 'All Adults',-->
+    //
+    <!--values: [28, 38,32,2]-->
+    //
+    <!--}]-->
+    //
+    //
     <!--};-->
-
-    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
+    //    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
     <!--var partyzippedData = [];-->
+    //
     <!--for (var i=0; i<partydata.labels.length; i++) {-->
-        <!--for (var j=0; j<partydata.series.length; j++) {-->
-            <!--partyzippedData.push(partydata.series[j].values[i]);-->
-        <!--}-->
+    //
+    <!--for (var j=0; j<partydata.series.length; j++) {-->
+    //
+    <!--partyzippedData.push(partydata.series[j].values[i]);-->
+    //
     <!--}-->
-
-    <!--// Color scale-->
+    //
+    <!--}-->
+    //
+    //    <!--// Color scale-->
+    //
     <!--var chartHeight = barHeight * partyzippedData.length + gapBetweenGroups * partydata.labels.length;-->
-
+    //
+    //
     <!--var x = d3.scale.linear()-->
-        <!--.domain([0, d3.max(partyzippedData)])-->
-        <!--.range([0, chartWidth]);-->
-
-    <!--// Specify the chart area and dimensions-->
+    //
+    <!--.domain([0, d3.max(partyzippedData)])-->
+    //
+    <!--.range([0, chartWidth]);-->
+    //
+    //    <!--// Specify the chart area and dimensions-->
+    //
     <!--var partychart = d3.select("#party_chart")-->
-        <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
-        <!--.attr("height", chartHeight);-->
-
-    <!--// Create bars-->
+    //
+    <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
+    //
+    <!--.attr("height", chartHeight);-->
+    //
+    //    <!--// Create bars-->
+    //
     <!--var bar = partychart.selectAll("g")-->
-        <!--.data(partyzippedData)-->
-        <!--.enter().append("g")-->
-        <!--.attr("transform", function(d, i) {-->
-            <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/partydata.series.length))) + ")";-->
-        <!--});-->
-
-    <!--// Create rectangles of the correct width-->
+    //
+    <!--.data(partyzippedData)-->
+    //
+    <!--.enter().append("g")-->
+    //
+    <!--.attr("transform", function(d, i) {-->
+    //
+    <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/partydata.series.length))) + ")";-->
+    //
+    <!--});-->
+    //
+    //    <!--// Create rectangles of the correct width-->
+    //
     <!--bar.append("rect")-->
-        <!--.attr("fill", function(d,i) { return color(i % partydata.series.length); })-->
-        <!--.attr("class", "bar")-->
-        <!--.attr("width", x)-->
-        <!--.attr("height", barHeight - 1);-->
-
-    <!--// Add text label in bar-->
+    //
+    <!--.attr("fill", function(d,i) { return color(i % partydata.series.length); })-->
+    //
+    <!--.attr("class", "bar")-->
+    //
+    <!--.attr("width", x)-->
+    //
+    <!--.attr("height", barHeight - 1);-->
+    //
+    //    <!--// Add text label in bar-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("x", function(d) { return x(d) + 3; })-->
-        <!--.attr("y", barHeight / 2)-->
-        <!--.attr("fill", "grey")-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("font","10px sans-serif")-->
-        <!--.text(function(d) { return d+"%"; });-->
-
-    <!--// Draw labels-->
+    //
+    <!--.attr("x", function(d) { return x(d) + 3; })-->
+    //
+    <!--.attr("y", barHeight / 2)-->
+    //
+    <!--.attr("fill", "grey")-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("font","10px sans-serif")-->
+    //
+    <!--.text(function(d) { return d+"%"; });-->
+    //
+    //    <!--// Draw labels-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("class", "label")-->
-        <!--.attr("x", function(d) { return - 10; })-->
-        <!--.attr("y", groupHeight / 2)-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("text-anchor","end")-->
-        <!--.style("font","14px sans-serif")-->
-        <!--.text(function(d,i) {-->
-            <!--if (i % partydata.series.length === 0)-->
-                <!--return partydata.labels[Math.floor(i/partydata.series.length)];-->
-            <!--else-->
-                <!--return ""});-->
-    <!--//income-->
+    //
+    <!--.attr("class", "label")-->
+    //
+    <!--.attr("x", function(d) { return - 10; })-->
+    //
+    <!--.attr("y", groupHeight / 2)-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("text-anchor","end")-->
+    //
+    <!--.style("font","14px sans-serif")-->
+    //
+    <!--.text(function(d,i) {-->
+    //
+    <!--if (i % partydata.series.length === 0)-->
+    //
+    <!--return partydata.labels[Math.floor(i/partydata.series.length)];-->
+    //
+    <!--else-->
+    //
+    <!--return ""});-->
+    //    <!--//income-->
+    //
     <!--var incomedata = {-->
-        <!--labels: [-->
-            <!--'Under $25,000', '$25,000 to $50,000','$50,000 to $100,000','$100,000 or more'-->
-        <!--],-->
-        <!--series: [-->
-            <!--{-->
-                <!--label: 'current',-->
-                <!--values: [8, 19,30,32]-->
-            <!--},-->
-            <!--{-->
-                <!--label: 'All Adults',-->
-                <!--values: [17, 23,32,28]-->
-            <!--}]-->
-
+    //
+    <!--labels: [-->
+    //
+    <!--'Under $25,000', '$25,000 to $50,000','$50,000 to $100,000','$100,000 or more'-->
+    //
+    <!--],-->
+    //
+    <!--series: [-->
+    //
+    <!--{-->
+    //
+    <!--label: 'current',-->
+    //
+    <!--values: [8, 19,30,32]-->
+    //
+    <!--},-->
+    //
+    <!--{-->
+    //
+    <!--label: 'All Adults',-->
+    //
+    <!--values: [17, 23,32,28]-->
+    //
+    <!--}]-->
+    //
+    //
     <!--};-->
-
-    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
+    //    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
     <!--var incomezippedData = [];-->
+    //
     <!--for (var i=0; i<incomedata.labels.length; i++) {-->
-        <!--for (var j=0; j<incomedata.series.length; j++) {-->
-            <!--incomezippedData.push(incomedata.series[j].values[i]);-->
-        <!--}-->
+    //
+    <!--for (var j=0; j<incomedata.series.length; j++) {-->
+    //
+    <!--incomezippedData.push(incomedata.series[j].values[i]);-->
+    //
     <!--}-->
-
-    <!--// Color scale-->
+    //
+    <!--}-->
+    //
+    //    <!--// Color scale-->
+    //
     <!--var chartHeight = barHeight * incomezippedData.length + gapBetweenGroups * incomedata.labels.length;-->
-
+    //
+    //
     <!--var x = d3.scale.linear()-->
-        <!--.domain([0, d3.max(incomezippedData)])-->
-        <!--.range([0, chartWidth]);-->
-
-    <!--// Specify the chart area and dimensions-->
+    //
+    <!--.domain([0, d3.max(incomezippedData)])-->
+    //
+    <!--.range([0, chartWidth]);-->
+    //
+    //    <!--// Specify the chart area and dimensions-->
+    //
     <!--var incomechart = d3.select("#income_chart")-->
-        <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
-        <!--.attr("height", chartHeight);-->
-
-    <!--// Create bars-->
+    //
+    <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
+    //
+    <!--.attr("height", chartHeight);-->
+    //
+    //    <!--// Create bars-->
+    //
     <!--var bar = incomechart.selectAll("g")-->
-        <!--.data(incomezippedData)-->
-        <!--.enter().append("g")-->
-        <!--.attr("transform", function(d, i) {-->
-            <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/incomedata.series.length))) + ")";-->
-        <!--});-->
-
-    <!--// Create rectangles of the correct width-->
+    //
+    <!--.data(incomezippedData)-->
+    //
+    <!--.enter().append("g")-->
+    //
+    <!--.attr("transform", function(d, i) {-->
+    //
+    <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/incomedata.series.length))) + ")";-->
+    //
+    <!--});-->
+    //
+    //    <!--// Create rectangles of the correct width-->
+    //
     <!--bar.append("rect")-->
-        <!--.attr("fill", function(d,i) { return color(i % incomedata.series.length); })-->
-        <!--.attr("class", "bar")-->
-        <!--.attr("width", x)-->
-        <!--.attr("height", barHeight - 1);-->
-
-    <!--// Add text label in bar-->
+    //
+    <!--.attr("fill", function(d,i) { return color(i % incomedata.series.length); })-->
+    //
+    <!--.attr("class", "bar")-->
+    //
+    <!--.attr("width", x)-->
+    //
+    <!--.attr("height", barHeight - 1);-->
+    //
+    //    <!--// Add text label in bar-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("x", function(d) { return x(d) + 3; })-->
-        <!--.attr("y", barHeight / 2)-->
-        <!--.attr("fill", "grey")-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("font","10px sans-serif")-->
-        <!--.text(function(d) { return d+"%"; });-->
-
-    <!--// Draw labels-->
+    //
+    <!--.attr("x", function(d) { return x(d) + 3; })-->
+    //
+    <!--.attr("y", barHeight / 2)-->
+    //
+    <!--.attr("fill", "grey")-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("font","10px sans-serif")-->
+    //
+    <!--.text(function(d) { return d+"%"; });-->
+    //
+    //    <!--// Draw labels-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("class", "label")-->
-        <!--.attr("x", function(d) { return - 10; })-->
-        <!--.attr("y", groupHeight / 2)-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("text-anchor","end")-->
-        <!--.style("font","14px sans-serif")-->
-        <!--.text(function(d,i) {-->
-            <!--if (i % incomedata.series.length === 0)-->
-                <!--return incomedata.labels[Math.floor(i/incomedata.series.length)];-->
-            <!--else-->
-                <!--return ""});-->
-    <!--//political_view-->
+    //
+    <!--.attr("class", "label")-->
+    //
+    <!--.attr("x", function(d) { return - 10; })-->
+    //
+    <!--.attr("y", groupHeight / 2)-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("text-anchor","end")-->
+    //
+    <!--.style("font","14px sans-serif")-->
+    //
+    <!--.text(function(d,i) {-->
+    //
+    <!--if (i % incomedata.series.length === 0)-->
+    //
+    <!--return incomedata.labels[Math.floor(i/incomedata.series.length)];-->
+    //
+    <!--else-->
+    //
+    <!--return ""});-->
+    //    <!--//political_view-->
+    //
     <!--var political_viewdata = {-->
-        <!--labels: [-->
-            <!--'Liberal', 'Moderate','Conservative'-->
-        <!--],-->
-        <!--series: [-->
-            <!--{-->
-                <!--label: 'current',-->
-                <!--values: [27,40,33]-->
-            <!--},-->
-            <!--{-->
-                <!--label: 'All Adults',-->
-                <!--values: [25, 40,35]-->
-            <!--}]-->
-
+    //
+    <!--labels: [-->
+    //
+    <!--'Liberal', 'Moderate','Conservative'-->
+    //
+    <!--],-->
+    //
+    <!--series: [-->
+    //
+    <!--{-->
+    //
+    <!--label: 'current',-->
+    //
+    <!--values: [27,40,33]-->
+    //
+    <!--},-->
+    //
+    <!--{-->
+    //
+    <!--label: 'All Adults',-->
+    //
+    <!--values: [25, 40,35]-->
+    //
+    <!--}]-->
+    //
+    //
     <!--};-->
-
-    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
+    //    <!--// Zip the series data together (first values, second values, etc.)-->
+    //
     <!--var political_viewzippedData = [];-->
+    //
     <!--for (var i=0; i<political_viewdata.labels.length; i++) {-->
-        <!--for (var j=0; j<political_viewdata.series.length; j++) {-->
-            <!--political_viewzippedData.push(political_viewdata.series[j].values[i]);-->
-        <!--}-->
+    //
+    <!--for (var j=0; j<political_viewdata.series.length; j++) {-->
+    //
+    <!--political_viewzippedData.push(political_viewdata.series[j].values[i]);-->
+    //
     <!--}-->
-
-    <!--// Color scale-->
+    //
+    <!--}-->
+    //
+    //    <!--// Color scale-->
+    //
     <!--var chartHeight = barHeight * political_viewzippedData.length + gapBetweenGroups * political_viewdata.labels.length;-->
-
+    //
+    //
     <!--var x = d3.scale.linear()-->
-        <!--.domain([0, d3.max(political_viewzippedData)])-->
-        <!--.range([0, chartWidth]);-->
-
-    <!--// Specify the chart area and dimensions-->
+    //
+    <!--.domain([0, d3.max(political_viewzippedData)])-->
+    //
+    <!--.range([0, chartWidth]);-->
+    //
+    //    <!--// Specify the chart area and dimensions-->
+    //
     <!--var political_viewchart = d3.select("#political_view_chart")-->
-        <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
-        <!--.attr("height", chartHeight);-->
-
-    <!--// Create bars-->
+    //
+    <!--.attr("width", spaceForLabels + chartWidth + spaceForLegend)-->
+    //
+    <!--.attr("height", chartHeight);-->
+    //
+    //    <!--// Create bars-->
+    //
     <!--var bar = political_viewchart.selectAll("g")-->
-        <!--.data(political_viewzippedData)-->
-        <!--.enter().append("g")-->
-        <!--.attr("transform", function(d, i) {-->
-            <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/political_viewdata.series.length))) + ")";-->
-        <!--});-->
-
-    <!--// Create rectangles of the correct width-->
+    //
+    <!--.data(political_viewzippedData)-->
+    //
+    <!--.enter().append("g")-->
+    //
+    <!--.attr("transform", function(d, i) {-->
+    //
+    <!--return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/political_viewdata.series.length))) + ")";-->
+    //
+    <!--});-->
+    //
+    //    <!--// Create rectangles of the correct width-->
+    //
     <!--bar.append("rect")-->
-        <!--.attr("fill", function(d,i) { return color(i % political_viewdata.series.length); })-->
-        <!--.attr("class", "bar")-->
-        <!--.attr("width", x)-->
-        <!--.attr("height", barHeight - 1);-->
-
-    <!--// Add text label in bar-->
+    //
+    <!--.attr("fill", function(d,i) { return color(i % political_viewdata.series.length); })-->
+    //
+    <!--.attr("class", "bar")-->
+    //
+    <!--.attr("width", x)-->
+    //
+    <!--.attr("height", barHeight - 1);-->
+    //
+    //    <!--// Add text label in bar-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("x", function(d) { return x(d) + 3; })-->
-        <!--.attr("y", barHeight / 2)-->
-        <!--.attr("fill", "grey")-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("font","10px sans-serif")-->
-        <!--.text(function(d) { return d+"%"; });-->
-
-    <!--// Draw labels-->
+    //
+    <!--.attr("x", function(d) { return x(d) + 3; })-->
+    //
+    <!--.attr("y", barHeight / 2)-->
+    //
+    <!--.attr("fill", "grey")-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("font","10px sans-serif")-->
+    //
+    <!--.text(function(d) { return d+"%"; });-->
+    //
+    //    <!--// Draw labels-->
+    //
     <!--bar.append("text")-->
-        <!--.attr("class", "label")-->
-        <!--.attr("x", function(d) { return - 10; })-->
-        <!--.attr("y", groupHeight / 2)-->
-        <!--.attr("dy", ".35em")-->
-        <!--.style("text-anchor","end")-->
-        <!--.style("font","14px sans-serif")-->
-        <!--.text(function(d,i) {-->
-            <!--if (i % political_viewdata.series.length === 0)-->
-                <!--return political_viewdata.labels[Math.floor(i/political_viewdata.series.length)];-->
-            <!--else-->
-                <!--return ""});-->
-
-    <!--//result chart-->
+    //
+    <!--.attr("class", "label")-->
+    //
+    <!--.attr("x", function(d) { return - 10; })-->
+    //
+    <!--.attr("y", groupHeight / 2)-->
+    //
+    <!--.attr("dy", ".35em")-->
+    //
+    <!--.style("text-anchor","end")-->
+    //
+    <!--.style("font","14px sans-serif")-->
+    //
+    <!--.text(function(d,i) {-->
+    //
+    <!--if (i % political_viewdata.series.length === 0)-->
+    //
+    <!--return political_viewdata.labels[Math.floor(i/political_viewdata.series.length)];-->
+    //
+    <!--else-->
+    //
+    <!--return ""});-->
+    //
+    //    <!--//result chart-->
+    //
     <!--var data=[50,50];-->
-
+    //
+    //
     <!--var width = 360,-->
-        <!--height = 300,-->
-        <!--barWidth = 100;-->
-
+    //
+    <!--height = 300,-->
+    //
+    <!--barWidth = 100;-->
+    //
+    //
     <!--var y = d3.scale.linear()-->
-        <!--.range([height, 0])-->
-        <!--.domain([0, d3.max(data)]);-->
-
+    //
+    <!--.range([height, 0])-->
+    //
+    <!--.domain([0, d3.max(data)]);-->
+    //
+    //
     <!--var chart = d3.select("#result_chart")-->
-        <!--.attr("width", width)-->
-        <!--.attr("height", height+30)-->
-        <!--.attr("transform", function(d, i) { return "translate(60,0)"; });-->
-
+    //
+    <!--.attr("width", width)-->
+    //
+    <!--.attr("height", height+30)-->
+    //
+    <!--.attr("transform", function(d, i) { return "translate(60,0)"; });-->
+    //
+    //
     <!--var bar=chart-->
-        <!--.selectAll("g")-->
-        <!--.data(data)-->
-        <!--.enter()-->
-        <!--.append("g")-->
-        <!--.attr("transform", function(d, i) { return "translate(" + i * barWidth*2+ ",0)"; })-->
-        <!--.attr("height",height);-->
-
-
+    //
+    <!--.selectAll("g")-->
+    //
+    <!--.data(data)-->
+    //
+    <!--.enter()-->
+    //
+    <!--.append("g")-->
+    //
+    <!--.attr("transform", function(d, i) { return "translate(" + i * barWidth*2+ ",0)"; })-->
+    //
+    <!--.attr("height",height);-->
+    //
+    //
+    //
     <!--bar.append("rect")-->
-        <!--.attr("y", function(d) { return y(d); })-->
-        <!--.attr("height", function(d) { return height - y(d); })-->
-        <!--.attr("width", barWidth - 5)-->
-        <!--.attr("fill", function(d,i) { if(i==0) return "#3989cb"; else return "#d75c5c";});-->
-
+    //
+    <!--.attr("y", function(d) { return y(d); })-->
+    //
+    <!--.attr("height", function(d) { return height - y(d); })-->
+    //
+    <!--.attr("width", barWidth - 5)-->
+    //
+    <!--.attr("fill", function(d,i) { if(i==0) return "#3989cb"; else return "#d75c5c";});-->
+    //
+    //
     <!--bar.append("text")-->
-        <!--.attr("x", barWidth / 2)-->
-        <!--.attr("y", function(d) { return y(d)+3; })-->
-        <!--.attr("dy", "1.5em")-->
-        <!--.attr("dx", "-1.1em")-->
-        <!--.text(function(d) { return d+ "%";});-->
-
+    //
+    <!--.attr("x", barWidth / 2)-->
+    //
+    <!--.attr("y", function(d) { return y(d)+3; })-->
+    //
+    <!--.attr("dy", "1.5em")-->
+    //
+    <!--.attr("dx", "-1.1em")-->
+    //
+    <!--.text(function(d) { return d+ "%";});-->
+    //
+    //
     <!--bar.append("text")-->
-        <!--.attr("x", barWidth / 2)-->
-        <!--.attr("y", height )-->
-        <!--.attr("dy", "1.5em")-->
-        <!--.attr("dx", "-1.95em")-->
-        <!--.text(function(d,i) { if(i==0) return "H.Clinton"; else return "D.Trump";});-->
+    //
+    <!--.attr("x", barWidth / 2)-->
+    //
+    <!--.attr("y", height )-->
+    //
+    <!--.attr("dy", "1.5em")-->
+    //
+    <!--.attr("dx", "-1.95em")-->
+    //
+    <!--.text(function(d,i) { if(i==0) return "H.Clinton"; else return "D.Trump";});-->
 
-<!--</script>-->
+</script>
 </body>

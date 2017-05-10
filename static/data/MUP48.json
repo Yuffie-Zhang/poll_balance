@@ -1,39 +1,33 @@
 {
     "last_grade_in_school":
         {
-            "Not a high school graduate":"2", //1+2
-            "High school graduate":"27", //3+4
-            "Some college education":"32",  //5+6
-            "College graduate":"23", //7
-            "Postgraduate education":"16" //8
+            "labels":["Not a high school graduate","High school graduate","Some college education","College graduate","Postgraduate education"],
+            "values":[2,27,32,23,16]
         }
     ,
     "age":{},
     "gender":
         {
-            "Male":"47",
-            "Female":"53"
+            "labels":["Male","Female"],
+            "values":[47,53]
         }
     ,
-    "hispanic_origin ":
+    "hispanic_origin":
         {
-            "Hispanic origin":"8",
-            "Non-Hispanic origin":"92"
+            "labels":["Hispanic origin","Non-Hispanic origin"],
+            "values":[8,92]
         }
     ,
     "race":
         {
-            "White":"85",
-            "Black":"12",
-            "Asian":"3"
+            "labels":["White","Black","Asian"],
+            "values":[85,12,3]
         }
     ,
     "party":
         {
-            "Republican":"27",
-            "Democrat":"34",
-            "Independent":"30",
-            "Something else":"9"
+            "labels":["Republican","Democrat","Independent","Something else"],
+            "values":[27,34,30,9]
         }
     ,
     "state":
@@ -42,17 +36,13 @@
       },
     "annul_family_income":
       {
-        "Under $25,000":"8",
-        "$25,000 to $50,000":"19",
-        "$50,000 to $100,000":"30",
-        "$100,000 or more":"32"
-
+            "labels":["Under $25,000","$25,000 to $50,000","$50,000 to $100,000","$100,000 or more"],
+            "values":[8,19,30,32]
       },
-    "Political View":
+    "political_view":
       {
-        "Liberal":"27",
-        "Moderate":"40",
-        "Conservative":"33"
+            "labels":["Liberal","Moderate","Conservative"],
+            "values":[27,40,33]
       }
 
 }

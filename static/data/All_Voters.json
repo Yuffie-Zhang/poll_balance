@@ -1,11 +1,11 @@
 {
     "last_grade_in_school":
         {
-            "Not a high school graduate":"14", //1+2
-            "High school graduate":"28", //3+4
-            "Some college education":"29",  //5+6
-            "College graduate":"18", //7
-            "Postgraduate education":"11" //8
+            "Not a high school graduate":"14",
+            "High school graduate":"28",
+            "Some college education":"29",
+            "College graduate":"18",
+            "Postgraduate education":"11"
         }
     ,
     "age":{},
