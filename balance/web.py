@@ -60,6 +60,11 @@ class WebApplication(object):
                 data = json.load(data_file)
                 cherrypy.response.headers['Content-Type'] = 'application/json'
                 return data
+        if name == "MUP126":
+            with open('./static/data/MUP126.json') as data_file:
+                data = json.load(data_file)
+                cherrypy.response.headers['Content-Type'] = 'application/json'
+                return data
         elif name=="All_Adults":
             with open('./static/data/All_Adults.json') as data_file:
                 data = json.load(data_file)
