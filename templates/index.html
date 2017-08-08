@@ -105,7 +105,94 @@
     </div>
 </div>
 
-{% include 'balance.html' %}
+<div class=container>
+    <div class="row">
+        <div class="col-sm-6" >
+                <!-- main view -->
+                <div id="result">
+                    <h3>Who will win the votes?</h3>
+                    <svg  id="result_chart"></svg>
+                </div>
+
+                <div class="balance_list">
+                    <b>Balance by:</b><span class="balance_by"/>
+                </div>
+
+                <!-- slider -->
+                <div class="slider_box">
+                    <span>0%&nbsp;&nbsp;</span>
+                    <input id="ex1" data-slider-id='Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/>
+                    <span>&nbsp;&nbsp;100%</span>
+                </div>
+        </div>
+        <!-- attributes -->
+        <div class="col-sm-6">
+            <div  class="chart" id="edu_level">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Last Grade in School"/>&nbsp;&nbsp;Last Grade in School:</p>
+                <svg  id="edu_level_chart"></svg>
+
+            </div>
+            <div  class="chart" id="gender">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Gender"/>&nbsp;&nbsp;Gender:</p>
+                <svg  id="gender_chart"></svg>
+            </div>
+            <div  class="chart" id="age">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Age"/>&nbsp;&nbsp;Age:</p>
+                <svg  id="age_chart"></svg>
+            </div>
+            <div  class="chart" id="state">
+                <p class="item_name"><input type="checkbox" class="check_box" value="State"/>&nbsp;&nbsp;State:</p>
+                <svg  id="state_chart"></svg>
+            </div>
+            <div  class="chart" id="hispanic">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Latino or Hispanic Oringin"/>&nbsp;&nbsp;Latino or Hispanic Oringin:</p>
+                <svg  id="hispanic_chart"></svg>
+            </div>
+            <div  class="chart" id="race">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Race"/>&nbsp;&nbsp;Race:</p>
+                <svg  id="race_chart"></svg>
+            </div>
+            <div  class="chart" id="party">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Party"/>&nbsp;&nbsp;Party:</p>
+                <svg  id="party_chart"></svg>
+            </div>
+            <div  class="chart" id="income">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Annual Family Income"/>&nbsp;&nbsp;Annual Family Income(MUP126 2016):</p>
+                <svg  id="income_chart"></svg>
+            </div>
+            <div  class="chart" id="political_view">
+                <p class="item_name"><input type="checkbox" class="check_box" value="Political View"/>&nbsp;&nbsp;Political View(MUP126 2016):</p>
+                <svg id="political_view_chart"></svg>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Slider
+    $('#ex1').slider({
+        formatter: function(value) {
+            return  value+'%';
+        }
+    });
+
+    //check box
+    $(document).ready(function(){
+        $(".check_box").change(function(){
+            if (this.checked) {
+                // the checkbox is now checked
+                $(".balance_by").append($(this).attr("value")+", ");
+            }
+            else{
+                // the checkbox is now unchecked
+                var todelete=$(this).attr("value")+", ";
+                $(".balance_by").text(function ( i, txt ) {
+                    return txt.replace( todelete, '' );
+                });
+            }
+        });
+    });
+</script>
+
 
 
 <script>
@@ -118,14 +205,14 @@
         spaceForLabels = 180,
         spaceForLegend = 200;
 
-    var educhart;
 
 
 
     $(document).ready(function () {
+        //draw survey data
         $(".survey_datasource").click(function () {
             $.post('/requestdata', {name: $(this).attr('value')}, function (data) {
-                //edu chart
+        //edu chart
                 var edu_labels = data["last_grade_in_school"]["labels"];
                 var edu_surveydata = data["last_grade_in_school"]["values"];
                 var educhartHeight = barHeight * edu_surveydata.length*2 + gapBetweenGroups * edu_labels.length;
@@ -134,7 +221,7 @@
                     .range([0, chartWidth]);
 
                 // Specify the chart area and dimensions
-                educhart = d3.select("#edu_level_chart")
+                var educhart = d3.select("#edu_level_chart")
                     .attr("width", spaceForLabels + chartWidth + spaceForLegend)
                     .attr("height", educhartHeight);
 
@@ -180,7 +267,7 @@
                         return edu_labels[i];
                     });
 
-                //gender chart
+        //gender chart
                 var gender_labels = data["gender"]["labels"];
                 var gender_surveydata = data["gender"]["values"];
                 var genderchartHeight = barHeight * gender_surveydata.length*2 + gapBetweenGroups * gender_labels.length;
@@ -235,7 +322,7 @@
                         return gender_labels[i];
                     });
 
-                //hispanic chart
+         //hispanic chart
                 var hispanic_labels = data["hispanic_origin"]["labels"];
                 var hispanic_surveydata = data["hispanic_origin"]["values"];
                 var hispanicchartHeight = barHeight * hispanic_surveydata.length*2 + gapBetweenGroups * hispanic_labels.length;
@@ -290,7 +377,7 @@
                         return hispanic_labels[i];
                     });
 
-                //race chart
+        //race chart
                 var race_labels = data["race"]["labels"];
                 var race_surveydata = data["race"]["values"];
                 var racechartHeight = barHeight * race_surveydata.length*2 + gapBetweenGroups * race_labels.length;
@@ -345,7 +432,7 @@
                         return race_labels[i];
                     });
 
-                //party chart
+         //party chart
                 var party_labels = data["party"]["labels"];
                 var party_surveydata = data["party"]["values"];
                 var partychartHeight = barHeight * party_surveydata.length*2 + gapBetweenGroups * party_labels.length;
@@ -400,7 +487,7 @@
                         return party_labels[i];
                     });
 
-                //income chart
+        //income chart
                 var income_labels = data["annul_family_income"]["labels"];
                 var income_surveydata = data["annul_family_income"]["values"];
                 var incomechartHeight = barHeight * income_surveydata.length*2 + gapBetweenGroups * income_labels.length;
@@ -455,7 +542,7 @@
                         return income_labels[i];
                     });
 
-                //political_view chart
+        //political_view chart
                 var political_view_labels = data["political_view"]["labels"];
                 var political_view_surveydata = data["political_view"]["values"];
                 var political_viewchartHeight = barHeight * political_view_surveydata.length*2 + gapBetweenGroups * political_view_labels.length;
@@ -509,29 +596,73 @@
                     .text(function (d,i) {
                         return political_view_labels[i];
                     });
-            });
-        });
-    });
-    $(document).ready(function () {
-        $(".baseline_datasource").click(function () {
-            $.post('/requestdata', {name: $(this).attr('value')}, function (data) {
-                var edu_baselinedata = data["last_grade_in_school"]["values"];
-                var bar = educhart.selectAll("g")
-                    .data(edu_baselinedata)
-                    .enter().append("g")
-                    .attr("transform", function (d,i) {
-                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (1 )) + ")";
-                    });
+         //result chart
+                 var result_labels = data["result"]["labels"];
+                 var result_surveydata = data["result"]["values"];
 
-                // Create rectangles of the correct width
-                bar.append("rect")
-                    .attr("fill", "#1f77b4")
-                    .attr("class", "bar")
-                    .attr("width", x)
-                    .attr("height", barHeight - 1);
+                 var width = 360,
+                 height = 300,
+                 barWidth = 100;
+
+                 var y = d3.scale.linear()
+                 .range([height, 0])
+                 .domain([0, d3.max(result_surveydata)]);
+
+                 var chart = d3.select("#result_chart")
+                 .attr("width", width)
+                 .attr("height", height+30)
+                 .attr("transform", function(d, i) { return "translate(60,0)"; });
+
+                 var bar=chart
+                 .selectAll("g")
+                 .data(result_surveydata)
+                 .enter()
+                 .append("g")
+                 .attr("transform", function(d, i) { return "translate(" + i * barWidth*2+ ",0)"; })
+                 .attr("height",height);
+
+                 bar.append("rect")
+                 .attr("y", function(d) { return y(d); })
+                 .attr("height", function(d) { return height - y(d); })
+                 .attr("width", barWidth - 5)
+                 .attr("fill", function(d,i) { if(i==1) return "#3989cb"; else return "#d75c5c";});
+                //draw percentage
+                 bar.append("text")
+                 .attr("x", barWidth / 2)
+                 .attr("y", function(d) { return y(d)+3; })
+                 .attr("dy", "1.5em")
+                 .attr("dx", "-1.1em")
+                 .text(function(d) { return d+ "%";});
+                //draw labels
+                 bar.append("text")
+                 .attr("x", barWidth / 2)
+                 .attr("y", height )
+                 .attr("dy", "1.5em").attr("dx", "-1.95em")
+                 .text(function(d,i) { return result_labels[i];});
             });
         });
     });
+    //draw baseline data
+//    $(document).ready(function () {
+//        $(".baseline_datasource").click(function () {
+//            $.post('/requestdata', {name: $(this).attr('value')}, function (data) {
+//                var edu_baselinedata = data["last_grade_in_school"]["values"];
+//                var bar = educhart.selectAll("g")
+//                    .data(edu_baselinedata)
+//                    .enter().append("g")
+//                    .attr("transform", function (d,i) {
+//                        return "translate(" + spaceForLabels + "," + (i * barHeight*2 + gapBetweenGroups * (1 )) + ")";
+//                    });
+//
+//                // Create rectangles of the correct width
+//                bar.append("rect")
+//                    .attr("fill", "#1f77b4")
+//                    .attr("class", "bar")
+//                    .attr("width", x)
+//                    .attr("height", barHeight - 1);
+//            });
+//        });
+//    });
 
 
 //    // Draw legend
@@ -1343,86 +1474,8 @@
     <!--else-->
     //
     <!--return ""});-->
-    //
-    //    <!--//result chart-->
-    //
-    <!--var data=[50,50];-->
-    //
-    //
-    <!--var width = 360,-->
-    //
-    <!--height = 300,-->
-    //
-    <!--barWidth = 100;-->
-    //
-    //
-    <!--var y = d3.scale.linear()-->
-    //
-    <!--.range([height, 0])-->
-    //
-    <!--.domain([0, d3.max(data)]);-->
-    //
-    //
-    <!--var chart = d3.select("#result_chart")-->
-    //
-    <!--.attr("width", width)-->
-    //
-    <!--.attr("height", height+30)-->
-    //
-    <!--.attr("transform", function(d, i) { return "translate(60,0)"; });-->
-    //
-    //
-    <!--var bar=chart-->
-    //
-    <!--.selectAll("g")-->
-    //
-    <!--.data(data)-->
-    //
-    <!--.enter()-->
-    //
-    <!--.append("g")-->
-    //
-    <!--.attr("transform", function(d, i) { return "translate(" + i * barWidth*2+ ",0)"; })-->
-    //
-    <!--.attr("height",height);-->
-    //
-    //
-    //
-    <!--bar.append("rect")-->
-    //
-    <!--.attr("y", function(d) { return y(d); })-->
-    //
-    <!--.attr("height", function(d) { return height - y(d); })-->
-    //
-    <!--.attr("width", barWidth - 5)-->
-    //
-    <!--.attr("fill", function(d,i) { if(i==0) return "#3989cb"; else return "#d75c5c";});-->
-    //
-    //
-    <!--bar.append("text")-->
-    //
-    <!--.attr("x", barWidth / 2)-->
-    //
-    <!--.attr("y", function(d) { return y(d)+3; })-->
-    //
-    <!--.attr("dy", "1.5em")-->
-    //
-    <!--.attr("dx", "-1.1em")-->
-    //
-    <!--.text(function(d) { return d+ "%";});-->
-    //
-    //
-    <!--bar.append("text")-->
-    //
-    <!--.attr("x", barWidth / 2)-->
-    //
-    <!--.attr("y", height )-->
-    //
-    <!--.attr("dy", "1.5em")-->
-    //
-    <!--.attr("dx", "-1.95em")-->
-    //
-    <!--.text(function(d,i) { if(i==0) return "H.Clinton"; else return "D.Trump";});-->
+
 
 </script>
+
 </body>
