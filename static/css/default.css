@@ -1,0 +1,53 @@
+
+    .header {
+        padding-bottom: 1.25rem;
+        margin-bottom: 2rem;
+        border-bottom: .05rem solid #eee;
+        background-color: #ADC7E8;
+
+    }
+
+    .item_name {
+        font-size: 18px;
+    }
+
+    .chart {
+        margin-bottom: 2rem;
+        border-bottom: .05rem solid #eee;
+    }
+
+    .chart .legend {
+        fill: black;
+        font: 14px sans-serif;
+        text-anchor: start;
+        font-size: 12px;
+    }
+
+    #Slider .slider-selection {
+        background: #ADC7E8;
+
+    }
+
+    .slider_box {
+        margin-bottom: 2rem;
+    }
+
+    .left {
+        position: fixed;
+    }
+
+    h3 {
+        margin-bottom: 7rem;
+    }
+
+    #result_chart {
+        margin-bottom: 7rem;
+    }
+
+    .balance_list {
+        margin-bottom: 3rem;
+    }
+
+    .bar:hover {
+        fill: grey;
+    }

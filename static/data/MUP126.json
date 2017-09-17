@@ -1,5 +1,5 @@
 {
-    "last_grade_in_school":
+    "edu":
         {
             "labels":["Not a high school graduate","High school graduate","Some college education","College graduate","Postgraduate education"],
             "values":[2,19,28,28,23]
@@ -18,7 +18,7 @@
             "values":[50,50]
         }
     ,
-    "hispanic_origin":
+    "hispanic":
         {
             "labels":["Hispanic origin","Non-Hispanic origin"],
             "values":[7,93]
@@ -41,7 +41,7 @@
             "labels":["Northeast","South","Midwest","West","Others"],
             "values":[19,37,23,20,1]
       },
-    "annul_family_income":
+    "income":
       {
             "labels":["Under $25,000","$25,000 to $50,000","$50,000 to $100,000","$100,000 or more"],
             "values":[11,21,33,35]

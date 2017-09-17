@@ -1,8 +1,11 @@
 import cherrypy
 import configparser
 import json
+import pandas as pd
+import numpy as np
 from abc import ABCMeta, abstractmethod
 from jinja2 import Environment, FileSystemLoader
+
 
 class BalanceJSONSerializable:
     __metaclass__ = ABCMeta
@@ -23,13 +26,16 @@ class BalanceJSONEncoder(json.JSONEncoder):
         for chunk in super().iterencode(value):
             yield chunk.encode('utf-8')
 
+
 # Custom json_handler which should be extended as needed to allow custom serialization of objects.
 def json_handler(*args, **kwargs):
     value = cherrypy.serving.request._json_inner_handler(*args, **kwargs)
     return WebApplication.json_encoder.iterencode(value)
 
+
 class WebApplication(object):
     json_encoder = BalanceJSONEncoder()
+
     def __init__(self):
         # Read the tempo config file to initialize the web application.
         self.config = configparser.ConfigParser()
@@ -44,7 +50,6 @@ class WebApplication(object):
         cherrypy.config.update({'tools.sessions.on': True})
         cherrypy.quickstart(self, "", "cfg/cherrypy.cfg")
 
-
     @cherrypy.expose
     def index(self, dataisset=None):
         # Render the user interface and return it to the browser.
@@ -54,8 +59,8 @@ class WebApplication(object):
 
     @cherrypy.expose
     @cherrypy.tools.json_out()
-    def requestdata(self,name):
-        if name=="MUP48":
+    def requestdata(self, name):
+        if name == "MUP48":
             with open('./static/data/MUP48.json') as data_file:
                 data = json.load(data_file)
                 cherrypy.response.headers['Content-Type'] = 'application/json'
@@ -65,18 +70,20 @@ class WebApplication(object):
                 data = json.load(data_file)
                 cherrypy.response.headers['Content-Type'] = 'application/json'
                 return data
-        if name=="All_Adults":
+        if name == "All_Adults":
             with open('./static/data/All_Adults.json') as data_file:
                 data = json.load(data_file)
                 cherrypy.response.headers['Content-Type'] = 'application/json'
                 return data
-        if name=="All_Voters":
+        if name == "All_Voters":
             with open('./static/data/All_Voters.json') as data_file:
                 data = json.load(data_file)
                 cherrypy.response.headers['Content-Type'] = 'application/json'
                 return data
 
+    @cherrypy.expose
+    @cherrypy.tools.json_out()
+    def dobalance(self,percentage,balancelist):
+        participant_info=pd.read_csv('./static/data/MUP48.csv')
 
-
-
-
+        return;
