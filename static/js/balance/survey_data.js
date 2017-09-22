@@ -7,12 +7,15 @@ var chartWidth = 200,
     gapBetweenGroups = 8,
     spaceForLabels = 180,
     spaceForLegend = 200;
+var result_width = 360,
+    result_height = 300,
+    result_barWidth = 100;
 var edu_survey_data, edu_baseline_data, edu_data, edu_x, gender_survey_data,gender_baseline_data, gender_data, gender_x,
     hispanic_survey_data,hispanic_baseline_data,hispanic_data, hispanic_x, race_survey_data,race_baseline_data,race_data,
     race_x, income_survey_data,income_baseline_data,income_data, income_x, political_view_survey_data,
     political_view_baseline_data,political_view_data, political_view_x, party_survey_data,party_baseline_data,
     party_data, party_x, region_survey_data,region_baseline_data,region_data, region_x, age_survey_data,age_baseline_data,
-    age_data, age_x;
+    age_data, age_x,result_data,result_y;
 //emptyarray to remove exit()
 var emptyarray = {};
 
@@ -596,19 +599,16 @@ function region_survey(data) {
 function result(data) {
     //result chart
     var result_labels = data["result"]["labels"];
-    var result_surveydata = data["result"]["values"];
+    result_data = data["result"]["values"];
 
-    var width = 360,
-        height = 300,
-        barWidth = 100;
 
-    var y = d3.scale.linear()
-        .range([height, 0])
-        .domain([0, d3.max(result_surveydata)]);
+    result_y = d3.scale.linear()
+        .range([result_height, 0])
+        .domain([0, d3.max(result_data)]);
 
     var result_chart = d3.select("#result_chart")
-        .attr("width", width)
-        .attr("height", height + 30)
+        .attr("width", result_width)
+        .attr("height", result_height + 30)
         .attr("transform", function (d, i) {
             return "translate(60,0)";
         });
@@ -618,30 +618,32 @@ function result(data) {
 
     var result_bar = result_chart
         .selectAll("g")
-        .data(result_surveydata)
+        .data(result_data)
         .enter()
         .append("g")
         .attr("transform", function (d, i) {
-            return "translate(" + i * barWidth * 2 + ",0)";
+            return "translate(" + i * result_barWidth * 2 + ",0)";
         })
-        .attr("height", height);
+        .attr("height", result_height);
 
     result_bar.append("rect")
+        .attr("class","bar")
         .attr("y", function (d) {
-            return y(d);
+            return result_y(d);
         })
         .attr("height", function (d) {
-            return height - y(d);
+            return result_height - result_y(d);
         })
-        .attr("width", barWidth - 5)
+        .attr("width", result_barWidth - 5)
         .attr("fill", function (d, i) {
             if (i == 1) return "#3989cb"; else return "#d75c5c";
         });
     //draw percentage
     result_bar.append("text")
-        .attr("x", barWidth / 2)
+        .attr("class","numlabel")
+        .attr("x", result_barWidth / 2)
         .attr("y", function (d) {
-            return y(d) + 3;
+            return result_y(d) + 3;
         })
         .attr("dy", "1.5em")
         .attr("dx", "-1.1em")
@@ -650,8 +652,8 @@ function result(data) {
         });
     //draw labels
     result_bar.append("text")
-        .attr("x", barWidth / 2)
-        .attr("y", height)
+        .attr("x", result_barWidth / 2)
+        .attr("y", result_height)
         .attr("dy", "1.5em").attr("dx", "-1.95em")
         .text(function (d, i) {
             return result_labels[i];

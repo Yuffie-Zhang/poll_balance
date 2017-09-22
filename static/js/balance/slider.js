@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
 
     $("input.slider").on("slide", function (slideEvt) {
-        $.post('/dobalance', {percentage: slideEvt.value, balancelist: $(".balance_by").text()}, function (data) {
+        $.post('/dobalance', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
             edu_balance(slideEvt.value);
             gender_balance(slideEvt.value);
             region_balance(slideEvt.value);
@@ -21,7 +21,7 @@ $(document).ready(function () {
             party_balance(slideEvt.value);
             income_balance(slideEvt.value);
             political_view_balance(slideEvt.value);
-            //result_balance(data);
+            result_balance(data);
         });
     });
 });
@@ -475,5 +475,35 @@ function political_view_balance(percentage) {
         .text(function (d) {
             return d + "%";
         });
+}
+function result_balance(data) {
+    //update result data
+    result_data = data["values"];
+    //update scale
+    result_y = d3.scale.linear()
+        .range([result_height, 0])
+        .domain([0, d3.max(result_data)]);
+    //bind elements with new data
+    d3.select("#result_chart").selectAll("g")
+        .data(result_data)
+        .enter()
+        .append("g")
+        .attr("transform", function (d, i) {
+            return "translate(" + i * result_barWidth * 2 + ",0)";
+        })
+        .attr("height", result_height);
+    d3.select("#result_chart").selectAll(".bar").data(result_data)
+        .attr("y",result_y)
+        .attr("height", function (d) {
+            return result_height - result_y(d);
+        });
+    d3.select("#result_chart").selectAll(".numlabel").data(result_data)
+        .attr("y", function (d) {
+            return result_y(d) + 3;
+        })
+        .text(function (d) {
+            return d + "%";
+        });
+
 }
 
