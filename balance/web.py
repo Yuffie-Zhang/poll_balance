@@ -115,15 +115,39 @@ class WebApplication(object):
             survey_percentage=len(group)/participant_len
             baseline_percentage=1
             for i in range(len(striplist)):
-                if name[i] == 4 or name[i] == 5 or name[i] == 9:
+                if name[i] == 9:
+                    valid=False
+                    break
+                if striplist[i]=="Race" and (name[i] == 4 or name[i] == 5):
+                    valid=False
+                    break
+                if striplist[i]== "Party" and name[i] ==4:
                     valid=False
                     break
             if valid==True:
                 for i in range(len(striplist)):
                     if striplist[i]=="Last Grade in School":
-                        baseline_percentage*=baseline_info["edu"]["values"][name[i]-1]
+                        if name[i] == 1 or name[i] == 2:
+                            baseline_percentage *= baseline_info["edu"]["values"][0]
+                        if name[i] == 3 or name[i] == 4:
+                            baseline_percentage *= baseline_info["edu"]["values"][1]
+                        if name[i] == 5 or name[i] == 6:
+                            baseline_percentage *= baseline_info["edu"]["values"][2]
+                        if name[i] == 7 or name[i] == 8:
+                            baseline_percentage *= baseline_info["edu"]["values"][name[i]-4]
                     if striplist[i]=="Age":
-                        baseline_percentage*=baseline_info["age"]["values"][name[i]-1]
+                        if 18 <= name[i] <= 24:
+                            baseline_percentage *= baseline_info["age"]["values"][0]
+                        if 25 <= name[i] <= 29:
+                            baseline_percentage *= baseline_info["age"]["values"][1]
+                        if 30 <= name[i] <= 39:
+                            baseline_percentage *= baseline_info["age"]["values"][2]
+                        if 40 <= name[i] <= 49:
+                            baseline_percentage *= baseline_info["age"]["values"][3]
+                        if 50 <= name[i] <= 65:
+                            baseline_percentage *= baseline_info["age"]["values"][4]
+                        else:
+                            baseline_percentage *= baseline_info["age"]["values"][5]
                     if striplist[i]=="Region":
                         baseline_percentage*=baseline_info["region"]["values"][name[i]-1]
                     if striplist[i]=="Gender":
@@ -139,12 +163,15 @@ class WebApplication(object):
             candidate_one_count=candidate_one_filter['id'].count()
             candidate_two_filter=group.loc[group['vote'] == 2]
             candidate_two_count=candidate_two_filter['id'].count()
-            candidate_one_score+=candidate_one_count*baseline_percentage/survey_percentage
-            candidate_two_score+=candidate_two_count*baseline_percentage/survey_percentage
-            sum=candidate_one_score+candidate_two_score
-            candidate_one_score=round(candidate_one_score/sum * 100)
-            candidate_two_score=round(candidate_two_score/sum * 100)
-            print(candidate_one_score)
-            print(candidate_two_score)
+            newpercentage = (baseline_percentage-survey_percentage) * int(percentage)/100
+            candidate_one_score += candidate_one_count*(survey_percentage+newpercentage)
+
+            candidate_two_score += candidate_two_count*(survey_percentage+newpercentage)
+        sum=candidate_one_score+candidate_two_score
+        candidate_one_score=round(candidate_one_score/sum * 100)
+        candidate_two_score=round(candidate_two_score/sum * 100)
+        print(percentage)
+        print(candidate_one_score)
+        print(candidate_two_score)
         cherrypy.response.headers['Content-Type'] = 'application/json'
         return {"values":[candidate_one_score,candidate_two_score]}
