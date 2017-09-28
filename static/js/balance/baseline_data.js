@@ -129,7 +129,7 @@ function age_baseline(data) {
         });
 }
 function region_baseline(data) {
-  //get new region_data
+    //get new region_data
     region_baseline_data = data["region"]["values"];
     region_data = region_survey_data.concat(region_baseline_data);
 
@@ -173,7 +173,7 @@ function region_baseline(data) {
 }
 function hispanic_baseline(data) {
 
-   //get new hispanic_data
+    //get new hispanic_data
     hispanic_baseline_data = data["hispanic"]["values"];
     hispanic_data = hispanic_survey_data.concat(hispanic_baseline_data);
 
@@ -396,40 +396,6 @@ $(document).ready(function () {
             party_baseline(data);
             income_baseline(data);
             political_view_baseline(data);
-            // Draw legend
-//                var legendRectSize = 18,
-//                    legendSpacing = 4;
-//
-//                var legend = d3.select("#edu_level_chart").selectAll('.legend')
-//                    .data(edu_data)
-//                    .enter()
-//                    .append('g')
-//                    .attr('transform', function (d, i) {
-//                        var height = legendRectSize + legendSpacing;
-//                        var offset = -gapBetweenGroups / 2;
-//                        var horz = spaceForLabels + chartWidth + 40 - legendRectSize;
-//                        var vert = i * height - offset;
-//                        return 'translate(' + horz + ',' + vert + ')';
-//                    });
-//
-//                legend.append('rect')
-//                    .attr('width', legendRectSize)
-//                    .attr('height', legendRectSize)
-//                    .style('fill', function (d, i) {
-//                        return color(i);
-//                    })
-//                    .style('stroke', function (d, i) {
-//                        return color(i);
-//                    });
-//
-//                legend.append('text')
-//                    .attr('class', 'legend')
-//                    .attr('x', legendRectSize + legendSpacing)
-//                    .attr('y', legendRectSize - legendSpacing)
-//                    .text(function (d) {
-//                        if (d == 0) return "Current"; else return "Baseline";
-//                    });
-
 
         });
     });

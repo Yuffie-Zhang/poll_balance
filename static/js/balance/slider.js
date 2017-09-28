@@ -22,6 +22,8 @@ $(document).ready(function () {
             income_balance(slideEvt.value);
             political_view_balance(slideEvt.value);
             result_balance(data);
+
+
         });
     });
 });

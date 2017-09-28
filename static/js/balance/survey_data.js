@@ -10,12 +10,15 @@ var chartWidth = 200,
 var result_width = 360,
     result_height = 300,
     result_barWidth = 100;
+var legendRectSize = 18,
+    legendTotalSize=40,
+    legendSpacing = 4;
 var edu_survey_data, edu_baseline_data, edu_data, edu_x, gender_survey_data,gender_baseline_data, gender_data, gender_x,
     hispanic_survey_data,hispanic_baseline_data,hispanic_data, hispanic_x, race_survey_data,race_baseline_data,race_data,
     race_x, income_survey_data,income_baseline_data,income_data, income_x, political_view_survey_data,
     political_view_baseline_data,political_view_data, political_view_x, party_survey_data,party_baseline_data,
     party_data, party_x, region_survey_data,region_baseline_data,region_data, region_x, age_survey_data,age_baseline_data,
-    age_data, age_x,result_data,result_y;
+    age_data, age_x,result_data,result_y,legend_data;
 //emptyarray to remove exit()
 var emptyarray = {};
 
@@ -33,9 +36,11 @@ $(document).ready(function () {
             income_survey(data);
             political_view_survey(data);
             result(data);
+
         });
     });
 });
+
 
 function edu_survey(data) {
 //edu chart
