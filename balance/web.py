@@ -93,6 +93,11 @@ class WebApplication(object):
     @cherrypy.expose
     @cherrypy.tools.json_out()
     def dobalance(self, percentage, balancebylist):
+        ne={"NY", "NJ", "PA", "CT", "MA", "VT", "NH", "ME", "RI"}
+        s= {"OK"  ,  "TX"  ,  "LA"  ,  "AR"  ,  "KY" ,"TN","MS","AL","FL","GA","SC", "NC"  ,  "VA"  ,  "WV"  ,  "MD",  "DE"  ,  "DC"}
+        mw={"ND","SD","NE","KS","MN","IA","MO","WI","IL","IN","MI","OH"}
+        w={"WA","OR","ID","MT","WY","CA","NV","UT","CO","AZ","NM"}
+        o={"HI","AK"}
         #get polling data
         participant_info = pd.read_csv('./static/data/' + survey_data + '.csv')
         participant_len=len(participant_info)
@@ -149,7 +154,17 @@ class WebApplication(object):
                         else:
                             baseline_percentage *= baseline_info["age"]["values"][5]
                     if striplist[i]=="Region":
-                        baseline_percentage*=baseline_info["region"]["values"][name[i]-1]
+                        if name[i] in ne:
+                            baseline_percentage *= baseline_info["region"]["values"][0]
+                        if name[i] in s:
+                            baseline_percentage *= baseline_info["region"]["values"][1]
+                        if name[i] in mw:
+                            baseline_percentage *= baseline_info["region"]["values"][2]
+                        if name[i] in w:
+                            baseline_percentage *= baseline_info["region"]["values"][3]
+                        if name[i] in o:
+                            baseline_percentage *= baseline_info["region"]["values"][4]
+
                     if striplist[i]=="Gender":
                         baseline_percentage*=baseline_info["gender"]["values"][name[i]-1]/100
                     if striplist[i]=="Latino or Hispanic Origin":
@@ -168,8 +183,8 @@ class WebApplication(object):
 
             candidate_two_score += candidate_two_count*(survey_percentage+newpercentage)
         sum=candidate_one_score+candidate_two_score
-        candidate_one_score=round(candidate_one_score/sum * 100)
-        candidate_two_score=round(candidate_two_score/sum * 100)
+        candidate_one_score=round(candidate_one_score/sum * 100,2)
+        candidate_two_score=round(candidate_two_score/sum * 100,2)
         print(percentage)
         print(candidate_one_score)
         print(candidate_two_score)
