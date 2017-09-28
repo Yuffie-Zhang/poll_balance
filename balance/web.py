@@ -109,37 +109,42 @@ class WebApplication(object):
         # #score for candidates
         candidate_one_score = 0
         candidate_two_score = 0
-        # for name, group in gb:
-        #     #contains 9 or not
-        #     valid=True
-        #     survey_percentage=len(group)/participant_len
-        #     baseline_percentage=1
-        #     for i in range(len(balancelist) - 1):
-        #         if(name[i] == 9):
-        #             valid=False
-        #             break
-        #     if valid==True:
-        #         for i in range(len(balancelist)-1):
-        #             if balancelist[i]=="Last Grade in School":
-        #                 baseline_percentage*=baseline_info["edu"][name[i]-1]
-        #             if balancelist[i]=="Age":
-        #                 baseline_percentage*=baseline_info["age"][name[i]-1]
-        #             if balancelist[i]=="Region":
-        #                 baseline_percentage*=baseline_info["region"][name[i]-1]
-        #             if balancelist[i]=="Gender":
-        #                 baseline_percentage*=baseline_info["gender"][name[i]-1]
-        #             if balancelist[i]=="Latino or Hispanic Origin":
-        #                 baseline_percentage*=baseline_info["hispanic"][name[i]-1]
-        #             if balancelist[i]=="Race":
-        #                 baseline_percentage*=baseline_info["race"][name[i]-1]
-        #             if balancelist[i]=="Party":
-        #                 baseline_percentage*=baseline_info["party"][name[i]-1]
-        #     #vote for the first candidate in this subgroup
-        #     candidate_one_filter=group.loc[group['vote'] == 1]
-        #     candidate_one_count=candidate_one_filter['id'].count()
-        #     candidate_two_filter=group.loc[group['vote'] == 1]
-        #     candidate_two_count=candidate_two_filter['id'].count()
-        #     candidate_one_score+=candidate_one_count*baseline_percentage/survey_percentage
-        #     candidate_two_score+=candidate_two_count*baseline_percentage/survey_percentage
+        for name, group in gb:
+            #contains 9 or not
+            valid=True
+            survey_percentage=len(group)/participant_len
+            baseline_percentage=1
+            for i in range(len(striplist)):
+                if name[i] == 4 or name[i] == 5 or name[i] == 9:
+                    valid=False
+                    break
+            if valid==True:
+                for i in range(len(striplist)):
+                    if striplist[i]=="Last Grade in School":
+                        baseline_percentage*=baseline_info["edu"]["values"][name[i]-1]
+                    if striplist[i]=="Age":
+                        baseline_percentage*=baseline_info["age"]["values"][name[i]-1]
+                    if striplist[i]=="Region":
+                        baseline_percentage*=baseline_info["region"]["values"][name[i]-1]
+                    if striplist[i]=="Gender":
+                        baseline_percentage*=baseline_info["gender"]["values"][name[i]-1]/100
+                    if striplist[i]=="Latino or Hispanic Origin":
+                        baseline_percentage*=baseline_info["hispanic"]["values"][name[i]-1]
+                    if striplist[i]=="Race":
+                        baseline_percentage*=baseline_info["race"]["values"][name[i]-1]/100
+                    if striplist[i]=="Party":
+                        baseline_percentage*=baseline_info["party"]["values"][name[i]-1]
+            #vote for the first candidate in this subgroup
+            candidate_one_filter=group.loc[group['vote'] == 1]
+            candidate_one_count=candidate_one_filter['id'].count()
+            candidate_two_filter=group.loc[group['vote'] == 2]
+            candidate_two_count=candidate_two_filter['id'].count()
+            candidate_one_score+=candidate_one_count*baseline_percentage/survey_percentage
+            candidate_two_score+=candidate_two_count*baseline_percentage/survey_percentage
+            sum=candidate_one_score+candidate_two_score
+            candidate_one_score=round(candidate_one_score/sum * 100)
+            candidate_two_score=round(candidate_two_score/sum * 100)
+            print(candidate_one_score)
+            print(candidate_two_score)
         cherrypy.response.headers['Content-Type'] = 'application/json'
         return {"values":[candidate_one_score,candidate_two_score]}
