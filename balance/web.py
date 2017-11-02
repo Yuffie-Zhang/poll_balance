@@ -185,8 +185,5 @@ class WebApplication(object):
         sum=candidate_one_score+candidate_two_score
         candidate_one_score=round(candidate_one_score/sum * 100,2)
         candidate_two_score=round(candidate_two_score/sum * 100,2)
-        print(percentage)
-        print(candidate_one_score)
-        print(candidate_two_score)
         cherrypy.response.headers['Content-Type'] = 'application/json'
         return {"values":[candidate_one_score,candidate_two_score]}

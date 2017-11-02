@@ -48,7 +48,7 @@
     "political_view":
       {
             "labels":["Liberal","Moderate","Conservative"],
-            "values":[22,35,39]
+            "values":[24,36,40]
       }
 
 }
