@@ -10,7 +10,7 @@ $(document).ready(function () {
         }
     });
 
-    $("input.slider").on("slide", function (slideEvt) {
+    $("input.slider").on("slideStop", function (slideEvt) {
         $.post('/dobalance', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
             edu_balance(slideEvt.value);
             gender_balance(slideEvt.value);
@@ -22,8 +22,6 @@ $(document).ready(function () {
             income_balance(slideEvt.value);
             political_view_balance(slideEvt.value);
             result_balance(data);
-
-
         });
     });
 });
@@ -481,6 +479,7 @@ function political_view_balance(percentage) {
 function result_balance(data) {
     //update result data
     result_data = data["values"];
+    //console.log(result_data);
     //update scale
     result_y = d3.scale.linear()
         .range([result_height, 0])
