@@ -93,6 +93,9 @@ class WebApplication(object):
     @cherrypy.expose
     @cherrypy.tools.json_out()
     def dobalance(self, percentage, balancebylist):
+        if percentage == 0:
+            cherrypy.response.headers['Content-Type'] = 'application/json'
+            return {"values":[47,53]}
         ne={"NY", "NJ", "PA", "CT", "MA", "VT", "NH", "ME", "RI"}
         s= {"OK"  ,  "TX"  ,  "LA"  ,  "AR"  ,  "KY" ,"TN","MS","AL","FL","GA","SC", "NC"  ,  "VA"  ,  "WV"  ,  "MD",  "DE"  ,  "DC"}
         mw={"ND","SD","NE","KS","MN","IA","MO","WI","IL","IN","MI","OH"}
@@ -114,76 +117,85 @@ class WebApplication(object):
         # #score for candidates
         candidate_one_score = 0
         candidate_two_score = 0
-        for name, group in gb:
-            #contains 9 or not
-            valid=True
-            survey_percentage=len(group)/participant_len
-            baseline_percentage=1
-            for i in range(len(striplist)):
-                if name[i] == 9:
+        #only one dimension
+        if len(striplist)==1:
+            for name, group in gb:
+                valid=True
+                survey_percentage = len(group) / participant_len
+                baseline_percentage = 1
+                if name == 9:
                     valid=False
-                    break
-                if striplist[i]=="Race" and (name[i] == 4 or name[i] == 5):
+                if striplist[0]=="Race" and (name == 4 or name==5):
                     valid=False
-                    break
-                if striplist[i]== "Party" and name[i] ==4:
-                    valid=False
-                    break
-            if valid==True:
+                if striplist[0] == "Party" and name == 4:
+                    valid = False
+                if valid==True:
+                    if striplist[0] == "Last Grade in School":
+                        baseline_percentage *= baseline_info["edu"]["values"][name] / 100
+                    if striplist[0] == "Age":
+                        baseline_percentage *= baseline_info["age"]["values"][name] / 100
+                    if striplist[0] == "Region":
+                        baseline_percentage *= baseline_info["region"]["values"][name] / 100
+                    if striplist[0] == "Gender":
+                        baseline_percentage *= baseline_info["gender"]["values"][name - 1] / 100
+                    if striplist[0] == "Latino or Hispanic Origin":
+                        baseline_percentage *= baseline_info["hispanic"]["values"][name - 1]
+                    if striplist[0] == "Race":
+                        baseline_percentage *= baseline_info["race"]["values"][name - 1] / 100
+                    if striplist[0] == "Party":
+                        baseline_percentage *= baseline_info["party"]["values"][name - 1]/100
+                candidate_one_filter = group.loc[group['vote'] == 1]
+                candidate_one_count = candidate_one_filter['id'].count()
+                candidate_two_filter = group.loc[group['vote'] == 2]
+                candidate_two_count = candidate_two_filter['id'].count()
+                newpercentage = (baseline_percentage - survey_percentage) * int(percentage) / 100+survey_percentage
+                candidate_one_score += candidate_one_count * newpercentage/survey_percentage
+                candidate_two_score += candidate_two_count * newpercentage/survey_percentage
+                print(candidate_one_score, candidate_two_score)
+        else:
+            for name, group in gb:
+                #contains 9 or not
+                valid=True
+                survey_percentage=len(group)/participant_len
+                baseline_percentage=1
                 for i in range(len(striplist)):
-                    if striplist[i]=="Last Grade in School":
-                        if name[i] == 1 or name[i] == 2:
-                            baseline_percentage *= baseline_info["edu"]["values"][0]
-                        if name[i] == 3 or name[i] == 4:
-                            baseline_percentage *= baseline_info["edu"]["values"][1]
-                        if name[i] == 5 or name[i] == 6:
-                            baseline_percentage *= baseline_info["edu"]["values"][2]
-                        if name[i] == 7 or name[i] == 8:
-                            baseline_percentage *= baseline_info["edu"]["values"][name[i]-4]
-                    if striplist[i]=="Age":
-                        if 18 <= name[i] <= 24:
-                            baseline_percentage *= baseline_info["age"]["values"][0]
-                        if 25 <= name[i] <= 29:
-                            baseline_percentage *= baseline_info["age"]["values"][1]
-                        if 30 <= name[i] <= 39:
-                            baseline_percentage *= baseline_info["age"]["values"][2]
-                        if 40 <= name[i] <= 49:
-                            baseline_percentage *= baseline_info["age"]["values"][3]
-                        if 50 <= name[i] <= 65:
-                            baseline_percentage *= baseline_info["age"]["values"][4]
-                        else:
-                            baseline_percentage *= baseline_info["age"]["values"][5]
-                    if striplist[i]=="Region":
-                        if name[i] in ne:
-                            baseline_percentage *= baseline_info["region"]["values"][0]
-                        if name[i] in s:
-                            baseline_percentage *= baseline_info["region"]["values"][1]
-                        if name[i] in mw:
-                            baseline_percentage *= baseline_info["region"]["values"][2]
-                        if name[i] in w:
-                            baseline_percentage *= baseline_info["region"]["values"][3]
-                        if name[i] in o:
-                            baseline_percentage *= baseline_info["region"]["values"][4]
-
-                    if striplist[i]=="Gender":
-                        baseline_percentage*=baseline_info["gender"]["values"][name[i]-1]/100
-                    if striplist[i]=="Latino or Hispanic Origin":
-                        baseline_percentage*=baseline_info["hispanic"]["values"][name[i]-1]
-                    if striplist[i]=="Race":
-                        baseline_percentage*=baseline_info["race"]["values"][name[i]-1]/100
-                    if striplist[i]=="Party":
-                        baseline_percentage*=baseline_info["party"]["values"][name[i]-1]
-            #vote for the first candidate in this subgroup
-            candidate_one_filter=group.loc[group['vote'] == 1]
-            candidate_one_count=candidate_one_filter['id'].count()
-            candidate_two_filter=group.loc[group['vote'] == 2]
-            candidate_two_count=candidate_two_filter['id'].count()
-            newpercentage = (baseline_percentage-survey_percentage) * int(percentage)/100
-            candidate_one_score += candidate_one_count*(survey_percentage+newpercentage)
-
-            candidate_two_score += candidate_two_count*(survey_percentage+newpercentage)
+                    if name[i] == 9:
+                        valid=False
+                        break
+                    if striplist[i]=="Race" and (name[i] == 4 or name[i] == 5):
+                        valid=False
+                        break
+                    if striplist[i]== "Party" and name[i] ==4:
+                        valid=False
+                        break
+                if valid==True:
+                    for i in range(len(striplist)):
+                        if striplist[i]=="Last Grade in School":
+                            baseline_percentage *= baseline_info["edu"]["values"][name[i]] / 100
+                        if striplist[i]=="Age":
+                            baseline_percentage *= baseline_info["age"]["values"][name[i]] / 100
+                        if striplist[i]=="Region":
+                            baseline_percentage *= baseline_info["region"]["values"][name[i]] / 100
+                        if striplist[i]=="Gender":
+                            baseline_percentage*=baseline_info["gender"]["values"][name[i]-1]/100
+                        if striplist[i]=="Latino or Hispanic Origin":
+                            baseline_percentage*=baseline_info["hispanic"]["values"][name[i]-1]/100
+                        if striplist[i]=="Race":
+                            baseline_percentage*=baseline_info["race"]["values"][name[i]-1]/100
+                        if striplist[i]=="Party":
+                            baseline_percentage*=baseline_info["party"]["values"][name[i]-1]/100
+                #vote for the first candidate in this subgroup
+                candidate_one_filter=group.loc[group['vote'] == 1]
+                candidate_one_count=candidate_one_filter['id'].count()
+                candidate_two_filter=group.loc[group['vote'] == 2]
+                candidate_two_count=candidate_two_filter['id'].count()
+                newpercentage = (baseline_percentage-survey_percentage) * int(percentage)/100 + survey_percentage
+                candidate_one_score += candidate_one_count*newpercentage/survey_percentage
+                candidate_two_score += candidate_two_count*newpercentage/survey_percentage
         sum=candidate_one_score+candidate_two_score
-        candidate_one_score=round(candidate_one_score/sum * 100,2)
-        candidate_two_score=round(candidate_two_score/sum * 100,2)
+        candidate_one_score=round(candidate_one_score/sum * 100,4)
+        candidate_two_score=round(candidate_two_score/sum * 100,4)
+        print(candidate_one_score, candidate_two_score)
+        # multiple dimensions
         cherrypy.response.headers['Content-Type'] = 'application/json'
         return {"values":[candidate_one_score,candidate_two_score]}
