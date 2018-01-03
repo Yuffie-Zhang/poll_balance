@@ -69,7 +69,6 @@ class WebApplication(object):
                 cherrypy.response.headers['Content-Type'] = 'application/json'
                 return data
         if name == "MUP126":
-
             survey_data = "MUP126"
             with open('./static/data/MUP126.json') as data_file:
                 data = json.load(data_file)
@@ -198,4 +197,4 @@ class WebApplication(object):
         print(candidate_one_score, candidate_two_score)
         # multiple dimensions
         cherrypy.response.headers['Content-Type'] = 'application/json'
-        return {"values":[candidate_one_score,candidate_two_score]}
+        return {"results":[candidate_one_score,candidate_two_score]}

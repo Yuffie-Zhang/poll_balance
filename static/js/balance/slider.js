@@ -478,7 +478,7 @@ function political_view_balance(percentage) {
 }
 function result_balance(data) {
     //update result data
-    result_data = data["values"];
+    result_data = data["results"];
     //console.log(result_data);
     //update scale
     result_y = d3.scale.linear()
