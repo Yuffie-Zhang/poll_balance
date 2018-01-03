@@ -646,12 +646,12 @@ function result(data) {
     //draw percentage
     result_bar.append("text")
         .attr("class","numlabel")
-        .attr("x", result_barWidth / 2)
+        .attr("x", result_barWidth / 3)
         .attr("y", function (d) {
             return result_y(d) + 3;
         })
         .attr("dy", "1.5em")
-        .attr("dx", "-1.1em")
+        .attr("dx", "-1.5em")
         .text(function (d) {
             return d + "%";
         });
