@@ -1,0 +1,54 @@
+{
+    "edu":
+        {
+            "labels":["Not a high school graduate","High school graduate","Some college education","College graduate","Postgraduate education"],
+            "values":[16,28,29,17,11]
+        }
+    ,
+     "age":
+        {
+            "labels":["18 ~ 24","25 ~ 29","30 ~ 39","40 ~ 49","50 ~ 65","65+"],
+            "values":[12,10,19,18,25,16]
+        }
+    ,
+    "gender":
+        {
+            "labels":["Male","Female"],
+            "values":[50,50]
+        }
+    ,
+    "hispanic":
+        {
+            "labels":["Hispanic origin","Non-Hispanic origin"],
+            "values":[18,82]
+        }
+    ,
+    "race":
+        {
+            "labels":["White","Black","Asian"],
+            "values":[81,13,6]
+        }
+    ,
+    "party":
+        {
+            "labels":["Republican","Democrat","Independent","Something else"],
+            "values":[29,35,35,1]
+        }
+    ,
+    "region":
+      {
+            "labels":["Northeast","South","Midwest","West","Others"],
+            "values":[21,36,23,19,1]
+      },
+    "income":
+      {
+            "labels":["Under $25,000","$25,000 to $50,000","$50,000 to $100,000","$100,000 or more"],
+            "values":[17,23,32,28]
+      },
+    "political_view":
+      {
+            "labels":["Liberal","Moderate","Conservative"],
+            "values":[24,36,40]
+      }
+
+}

@@ -92,9 +92,9 @@ class WebApplication(object):
     @cherrypy.expose
     @cherrypy.tools.json_out()
     def dobalance(self, percentage, balancebylist):
-        # if percentage == 0:
-        #     cherrypy.response.headers['Content-Type'] = 'application/json'
-        #     return {"values":[47,53]}
+        if percentage == 0:
+            cherrypy.response.headers['Content-Type'] = 'application/json'
+            return {"values":[47,53]}
         ne={"NY", "NJ", "PA", "CT", "MA", "VT", "NH", "ME", "RI"}
         s= {"OK"  ,  "TX"  ,  "LA"  ,  "AR"  ,  "KY" ,"TN","MS","AL","FL","GA","SC", "NC"  ,  "VA"  ,  "WV"  ,  "MD",  "DE"  ,  "DC"}
         mw={"ND","SD","NE","KS","MN","IA","MO","WI","IL","IN","MI","OH"}
@@ -197,4 +197,4 @@ class WebApplication(object):
         print(candidate_one_score, candidate_two_score)
         # multiple dimensions
         cherrypy.response.headers['Content-Type'] = 'application/json'
-        return {"results":[candidate_one_score,candidate_two_score]}
+        return {"values":[candidate_one_score,candidate_two_score]}

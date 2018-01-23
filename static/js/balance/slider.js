@@ -19,11 +19,14 @@ $(document).ready(function () {
             age_balance(slideEvt.value);
             race_balance(slideEvt.value);
             party_balance(slideEvt.value);
-            income_balance(slideEvt.value);
-            political_view_balance(slideEvt.value);
+            // income_balance(slideEvt.value,data);
+            // political_view_balance(slideEvt.value,data);
             result_balance(data);
         });
-    });
+    })
+    .on("slideStop", function (slideEvt) {
+        alert(' clicked');
+    })
 });
 
 function edu_balance(percentage) {
@@ -376,109 +379,109 @@ function party_balance(percentage) {
             return d + "%";
         });
 }
-function income_balance(percentage) {
-    //if in balance list
-    if ($(".balance_by").text().indexOf("Annual Family Income") !== -1) {
-        var income_balance_data = [];
-        for (i = 0; i < income_survey_data.length; i++) {
-            income_balance_data.push(Math.round(income_survey_data[i] + (income_baseline_data[i] - income_survey_data[i]) * percentage / 100));
-        }
-    }
-    //if not in balance list
-    else {
-        var income_balance_data = income_survey_data;
-    }
-    //update array
-    income_data = income_survey_data.concat(income_balance_data.concat(income_baseline_data));
-    //update selection
-    var income_update = d3.select("#income_chart").selectAll("g").data(income_data);
-
-    //get enter selection
-    var income_enter = income_update.enter().append("g")
-        .attr("transform", function (d, i) {
-            return "translate(" + spaceForLabels + "," + (groupHeight * (i - income_survey_data.length * 2) + 2 * barHeight + gapBetweenGroups * (0.5 + (i - income_survey_data.length * 2)) ) + ")";
-        });
-    //create rects for new data
-    income_enter.append("rect")
-        .attr("class", "bar")
-        .attr("height", barHeight - 1);
-    //create number labels for new data
-    income_enter.append("text")
-        .attr("class", "numlabel")
-        .attr("y", barHeight / 2)
-        .attr("fill", "grey")
-        .attr("dy", ".35em")
-        .style("font", "10px sans-serif")
-    ;
-    //change attributes for all elements
-    d3.select("#income_chart").selectAll(".bar").data(income_data)
-        .attr("fill", function (d, i) {
-            if (i < income_survey_data.length) return "#1f77b4";
-            else if (i < income_survey_data.length * 2) return "#5AC2C6";
-            else return "#aec7e8";
-        })
-        .attr("width", income_x);
-    d3.select("#income_chart").selectAll(".numlabel").data(income_data)
-        .attr("x", function (d) {
-            return income_x(d) + 3;
-        })
-        .text(function (d) {
-            return d + "%";
-        });
-}
-function political_view_balance(percentage) {
-    //if in balance list
-    if ($(".balance_by").text().indexOf("Political View") !== -1) {
-        var political_view_balance_data = [];
-        for (i = 0; i < political_view_survey_data.length; i++) {
-            political_view_balance_data.push(Math.round(political_view_survey_data[i] + (political_view_baseline_data[i] - political_view_survey_data[i]) * percentage / 100));
-        }
-    }
-    //if not in balance list
-    else {
-        var political_view_balance_data = political_view_survey_data;
-    }
-    //update array
-    political_view_data = political_view_survey_data.concat(political_view_balance_data.concat(political_view_baseline_data));
-    //update selection
-    var political_view_update = d3.select("#political_view_chart").selectAll("g").data(political_view_data);
-
-    //get enter selection
-    var political_view_enter = political_view_update.enter().append("g")
-        .attr("transform", function (d, i) {
-            return "translate(" + spaceForLabels + "," + (groupHeight * (i - political_view_survey_data.length * 2) + 2 * barHeight + gapBetweenGroups * (0.5 + (i - political_view_survey_data.length * 2)) ) + ")";
-        });
-    //create rects for new data
-    political_view_enter.append("rect")
-        .attr("class", "bar")
-        .attr("height", barHeight - 1);
-    //create number labels for new data
-    political_view_enter.append("text")
-        .attr("class", "numlabel")
-        .attr("y", barHeight / 2)
-        .attr("fill", "grey")
-        .attr("dy", ".35em")
-        .style("font", "10px sans-serif")
-    ;
-    //change attributes for all elements
-    d3.select("#political_view_chart").selectAll(".bar").data(political_view_data)
-        .attr("fill", function (d, i) {
-            if (i < political_view_survey_data.length) return "#1f77b4";
-            else if (i < political_view_survey_data.length * 2) return "#5AC2C6";
-            else return "#aec7e8";
-        })
-        .attr("width", political_view_x);
-    d3.select("#political_view_chart").selectAll(".numlabel").data(political_view_data)
-        .attr("x", function (d) {
-            return political_view_x(d) + 3;
-        })
-        .text(function (d) {
-            return d + "%";
-        });
-}
+// function income_balance(percentage,data) {
+//     //if in balance list
+//     if ($(".balance_by").text().indexOf("Annual Family Income") !== -1) {
+//         var income_balance_data = [];
+//         for (i = 0; i < income_survey_data.length; i++) {
+//             income_balance_data.push(Math.round(income_survey_data[i] + (income_baseline_data[i] - income_survey_data[i]) * percentage / 100));
+//         }
+//     }
+//     //if not in balance list
+//     else {
+//         var income_balance_data = data["income"];
+//     }
+//     //update array
+//     income_data = income_survey_data.concat(income_balance_data.concat(income_baseline_data));
+//     //update selection
+//     var income_update = d3.select("#income_chart").selectAll("g").data(income_data);
+//
+//     //get enter selection
+//     var income_enter = income_update.enter().append("g")
+//         .attr("transform", function (d, i) {
+//             return "translate(" + spaceForLabels + "," + (groupHeight * (i - income_survey_data.length * 2) + 2 * barHeight + gapBetweenGroups * (0.5 + (i - income_survey_data.length * 2)) ) + ")";
+//         });
+//     //create rects for new data
+//     income_enter.append("rect")
+//         .attr("class", "bar")
+//         .attr("height", barHeight - 1);
+//     //create number labels for new data
+//     income_enter.append("text")
+//         .attr("class", "numlabel")
+//         .attr("y", barHeight / 2)
+//         .attr("fill", "grey")
+//         .attr("dy", ".35em")
+//         .style("font", "10px sans-serif")
+//     ;
+//     //change attributes for all elements
+//     d3.select("#income_chart").selectAll(".bar").data(income_data)
+//         .attr("fill", function (d, i) {
+//             if (i < income_survey_data.length) return "#1f77b4";
+//             else if (i < income_survey_data.length * 2) return "#5AC2C6";
+//             else return "#aec7e8";
+//         })
+//         .attr("width", income_x);
+//     d3.select("#income_chart").selectAll(".numlabel").data(income_data)
+//         .attr("x", function (d) {
+//             return income_x(d) + 3;
+//         })
+//         .text(function (d) {
+//             return d + "%";
+//         });
+// }
+// function political_view_balance(percentage) {
+//     //if in balance list
+//     if ($(".balance_by").text().indexOf("Political View") !== -1) {
+//         var political_view_balance_data = [];
+//         for (i = 0; i < political_view_survey_data.length; i++) {
+//             political_view_balance_data.push(Math.round(political_view_survey_data[i] + (political_view_baseline_data[i] - political_view_survey_data[i]) * percentage / 100));
+//         }
+//     }
+//     //if not in balance list
+//     else {
+//         var political_view_balance_data = political_view_survey_data;
+//     }
+//     //update array
+//     political_view_data = political_view_survey_data.concat(political_view_balance_data.concat(political_view_baseline_data));
+//     //update selection
+//     var political_view_update = d3.select("#political_view_chart").selectAll("g").data(political_view_data);
+//
+//     //get enter selection
+//     var political_view_enter = political_view_update.enter().append("g")
+//         .attr("transform", function (d, i) {
+//             return "translate(" + spaceForLabels + "," + (groupHeight * (i - political_view_survey_data.length * 2) + 2 * barHeight + gapBetweenGroups * (0.5 + (i - political_view_survey_data.length * 2)) ) + ")";
+//         });
+//     //create rects for new data
+//     political_view_enter.append("rect")
+//         .attr("class", "bar")
+//         .attr("height", barHeight - 1);
+//     //create number labels for new data
+//     political_view_enter.append("text")
+//         .attr("class", "numlabel")
+//         .attr("y", barHeight / 2)
+//         .attr("fill", "grey")
+//         .attr("dy", ".35em")
+//         .style("font", "10px sans-serif")
+//     ;
+//     //change attributes for all elements
+//     d3.select("#political_view_chart").selectAll(".bar").data(political_view_data)
+//         .attr("fill", function (d, i) {
+//             if (i < political_view_survey_data.length) return "#1f77b4";
+//             else if (i < political_view_survey_data.length * 2) return "#5AC2C6";
+//             else return "#aec7e8";
+//         })
+//         .attr("width", political_view_x);
+//     d3.select("#political_view_chart").selectAll(".numlabel").data(political_view_data)
+//         .attr("x", function (d) {
+//             return political_view_x(d) + 3;
+//         })
+//         .text(function (d) {
+//             return d + "%";
+//         });
+// }
 function result_balance(data) {
     //update result data
-    result_data = data["results"];
+    result_data = data["values"];
     //console.log(result_data);
     //update scale
     result_y = d3.scale.linear()

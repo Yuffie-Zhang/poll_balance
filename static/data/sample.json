@@ -1,507 +1,2004 @@
-/**
- * Created by yz on 11/30/17.
- *Randomly generate 500 people
- */
-{
-"subjects": [
-{"id": 0, "edu": 2, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 2},
-{"id": 1, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 2, "political_view": 3},
-{"id": 2, "edu": 3, "region": 1, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 1},
-{"id": 3, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 2},
-{"id": 4, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 3},
-{"id": 5, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 1, "income": 4, "political_view": 3},
-{"id": 6, "edu": 2, "region": 4, "gender": 2, "hispanic": 1, "race": 2, "age": 4, "party": 3, "income": 2, "political_view": 1},
-{"id": 7, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 3},
-{"id": 8, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 3, "political_view": 3},
-{"id": 9, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 2, "political_view": 1},
-{"id": 10, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 1, "political_view": 2},
-{"id": 11, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 1, "political_view": 2},
-{"id": 12, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 4, "political_view": 2},
-{"id": 13, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 1, "political_view": 3},
-{"id": 14, "edu": 5, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 1},
-{"id": 15, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 6, "party": 1, "income": 4, "political_view": 1},
-{"id": 16, "edu": 4, "region": 1, "gender": 1, "hispanic": 2, "race": 3, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 17, "edu": 4, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 3, "party": 3, "income": 2, "political_view": 3},
-{"id": 18, "edu": 4, "region": 5, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 1},
-{"id": 19, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 2},
-{"id": 20, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 1, "political_view": 2},
-{"id": 21, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 2, "age": 6, "party": 2, "income": 1, "political_view": 3},
-{"id": 22, "edu": 4, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 6, "party": 1, "income": 4, "political_view": 3},
-{"id": 23, "edu": 4, "region": 1, "gender": 2, "hispanic": 1, "race": 1, "age": 6, "party": 2, "income": 2, "political_view": 3},
-{"id": 24, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 2, "income": 4, "political_view": 3},
-{"id": 25, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 2, "age": 2, "party": 1, "income": 3, "political_view": 1},
-{"id": 26, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 3},
-{"id": 27, "edu": 3, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 2},
-{"id": 28, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 3},
-{"id": 29, "edu": 4, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 2},
-{"id": 30, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 3, "age": 5, "party": 3, "income": 3, "political_view": 3},
-{"id": 31, "edu": 5, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 1, "political_view": 1},
-{"id": 32, "edu": 1, "region": 2, "gender": 2, "hispanic": 1, "race": 2, "age": 6, "party": 3, "income": 3, "political_view": 2},
-{"id": 33, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 3, "political_view": 1},
-{"id": 34, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 2, "political_view": 3},
-{"id": 35, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 2, "political_view": 2},
-{"id": 36, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 4, "political_view": 3},
-{"id": 37, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 1, "political_view": 1},
-{"id": 38, "edu": 4, "region": 4, "gender": 2, "hispanic": 2, "race": 2, "age": 4, "party": 1, "income": 3, "political_view": 1},
-{"id": 39, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 1, "political_view": 3},
-{"id": 40, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 4, "political_view": 3},
-{"id": 41, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 2},
-{"id": 42, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 6, "party": 3, "income": 1, "political_view": 3},
-{"id": 43, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 3, "income": 4, "political_view": 1},
-{"id": 44, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 3, "political_view": 3},
-{"id": 45, "edu": 5, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 3, "income": 4, "political_view": 2},
-{"id": 46, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 3, "political_view": 3},
-{"id": 47, "edu": 4, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 3, "political_view": 3},
-{"id": 48, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 2},
-{"id": 49, "edu": 4, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 2, "party": 3, "income": 2, "political_view": 1},
-{"id": 50, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 3, "party": 1, "income": 1, "political_view": 1},
-{"id": 51, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 3, "age": 6, "party": 2, "income": 3, "political_view": 3},
-{"id": 52, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 3, "political_view": 1},
-{"id": 53, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 3, "political_view": 1},
-{"id": 54, "edu": 3, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 4, "income": 1, "political_view": 3},
-{"id": 55, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 3},
-{"id": 56, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 2, "income": 4, "political_view": 3},
-{"id": 57, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 2, "age": 1, "party": 2, "income": 4, "political_view": 3},
-{"id": 58, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 3, "age": 5, "party": 1, "income": 2, "political_view": 2},
-{"id": 59, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 3, "age": 6, "party": 1, "income": 3, "political_view": 2},
-{"id": 60, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 1, "political_view": 3},
-{"id": 61, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 1, "political_view": 2},
-{"id": 62, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 3, "political_view": 3},
-{"id": 63, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 3},
-{"id": 64, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 2, "income": 1, "political_view": 3},
-{"id": 65, "edu": 3, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 2, "party": 3, "income": 4, "political_view": 3},
-{"id": 66, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 3},
-{"id": 67, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 2, "political_view": 2},
-{"id": 68, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 3},
-{"id": 69, "edu": 5, "region": 4, "gender": 1, "hispanic": 2, "race": 2, "age": 3, "party": 3, "income": 4, "political_view": 1},
-{"id": 70, "edu": 4, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 4, "political_view": 3},
-{"id": 71, "edu": 1, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 2},
-{"id": 72, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 2, "political_view": 1},
-{"id": 73, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 3, "age": 1, "party": 2, "income": 4, "political_view": 3},
-{"id": 74, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 3, "income": 2, "political_view": 3},
-{"id": 75, "edu": 1, "region": 5, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 2},
-{"id": 76, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 1},
-{"id": 77, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 78, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 2, "income": 1, "political_view": 2},
-{"id": 79, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 2, "income": 4, "political_view": 2},
-{"id": 80, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 2},
-{"id": 81, "edu": 1, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 82, "edu": 5, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 3},
-{"id": 83, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 3},
-{"id": 84, "edu": 5, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 1, "party": 4, "income": 3, "political_view": 1},
-{"id": 85, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 1},
-{"id": 86, "edu": 4, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 2},
-{"id": 87, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 1, "political_view": 1},
-{"id": 88, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 2, "political_view": 2},
-{"id": 89, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 1, "political_view": 3},
-{"id": 90, "edu": 2, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 2, "political_view": 2},
-{"id": 91, "edu": 5, "region": 1, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 2, "political_view": 3},
-{"id": 92, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 2},
-{"id": 93, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 1, "political_view": 2},
-{"id": 94, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 1, "political_view": 1},
-{"id": 95, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 3, "political_view": 1},
-{"id": 96, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 3, "income": 4, "political_view": 2},
-{"id": 97, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 3},
-{"id": 98, "edu": 2, "region": 5, "gender": 2, "hispanic": 1, "race": 2, "age": 5, "party": 1, "income": 3, "political_view": 2},
-{"id": 99, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 3, "age": 5, "party": 1, "income": 4, "political_view": 2},
-{"id": 100, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 2, "political_view": 2},
-{"id": 101, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 2, "income": 4, "political_view": 2},
-{"id": 102, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 3, "political_view": 1},
-{"id": 103, "edu": 3, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 6, "party": 1, "income": 4, "political_view": 3},
-{"id": 104, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 1},
-{"id": 105, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 2},
-{"id": 106, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 3},
-{"id": 107, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 4, "political_view": 3},
-{"id": 108, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 3},
-{"id": 109, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 2, "party": 1, "income": 2, "political_view": 2},
-{"id": 110, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 2, "income": 3, "political_view": 3},
-{"id": 111, "edu": 2, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 1},
-{"id": 112, "edu": 4, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 3},
-{"id": 113, "edu": 4, "region": 1, "gender": 2, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 4, "political_view": 1},
-{"id": 114, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 3, "political_view": 2},
-{"id": 115, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 2, "political_view": 3},
-{"id": 116, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 3},
-{"id": 117, "edu": 5, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 2},
-{"id": 118, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 1, "political_view": 2},
-{"id": 119, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 3, "age": 4, "party": 3, "income": 4, "political_view": 1},
-{"id": 120, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 4, "political_view": 3},
-{"id": 121, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 2, "political_view": 3},
-{"id": 122, "edu": 3, "region": 3, "gender": 1, "hispanic": 2, "race": 3, "age": 4, "party": 2, "income": 3, "political_view": 3},
-{"id": 123, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 2, "income": 2, "political_view": 3},
-{"id": 124, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 1, "political_view": 2},
-{"id": 125, "edu": 4, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 3},
-{"id": 126, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 2, "age": 5, "party": 2, "income": 2, "political_view": 3},
-{"id": 127, "edu": 1, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 1},
-{"id": 128, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 3, "political_view": 1},
-{"id": 129, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 3, "age": 4, "party": 3, "income": 3, "political_view": 3},
-{"id": 130, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 4, "political_view": 2},
-{"id": 131, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 2},
-{"id": 132, "edu": 5, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 2, "political_view": 1},
-{"id": 133, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 1, "political_view": 1},
-{"id": 134, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 2},
-{"id": 135, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 4, "political_view": 2},
-{"id": 136, "edu": 5, "region": 2, "gender": 1, "hispanic": 2, "race": 3, "age": 5, "party": 3, "income": 1, "political_view": 3},
-{"id": 137, "edu": 4, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 3, "political_view": 3},
-{"id": 138, "edu": 1, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 1},
-{"id": 139, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 4, "political_view": 1},
-{"id": 140, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 1},
-{"id": 141, "edu": 5, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 2},
-{"id": 142, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 3},
-{"id": 143, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 4, "political_view": 2},
-{"id": 144, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 4, "political_view": 3},
-{"id": 145, "edu": 3, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 3},
-{"id": 146, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 3, "political_view": 2},
-{"id": 147, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 2, "income": 1, "political_view": 3},
-{"id": 148, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 3, "income": 4, "political_view": 1},
-{"id": 149, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 2},
-{"id": 150, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 4, "political_view": 3},
-{"id": 151, "edu": 4, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 3, "political_view": 1},
-{"id": 152, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 1},
-{"id": 153, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 3, "age": 2, "party": 2, "income": 3, "political_view": 3},
-{"id": 154, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 3, "age": 2, "party": 1, "income": 3, "political_view": 2},
-{"id": 155, "edu": 5, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 4, "party": 3, "income": 1, "political_view": 1},
-{"id": 156, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 3, "political_view": 2},
-{"id": 157, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 3},
-{"id": 158, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 2},
-{"id": 159, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 1},
-{"id": 160, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 2},
-{"id": 161, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 3},
-{"id": 162, "edu": 1, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 3},
-{"id": 163, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 4, "political_view": 1},
-{"id": 164, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 3, "political_view": 2},
-{"id": 165, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 4, "income": 4, "political_view": 1},
-{"id": 166, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 1, "political_view": 3},
-{"id": 167, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 6, "party": 3, "income": 3, "political_view": 3},
-{"id": 168, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 3},
-{"id": 169, "edu": 3, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 3, "income": 1, "political_view": 2},
-{"id": 170, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 4, "income": 1, "political_view": 2},
-{"id": 171, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 1},
-{"id": 172, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 3},
-{"id": 173, "edu": 1, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 4, "political_view": 1},
-{"id": 174, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 2, "political_view": 2},
-{"id": 175, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 1, "political_view": 3},
-{"id": 176, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 1},
-{"id": 177, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 3},
-{"id": 178, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 4, "political_view": 2},
-{"id": 179, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 3, "age": 5, "party": 3, "income": 2, "political_view": 3},
-{"id": 180, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 2},
-{"id": 181, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 3},
-{"id": 182, "edu": 5, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 4, "political_view": 3},
-{"id": 183, "edu": 5, "region": 3, "gender": 1, "hispanic": 2, "race": 3, "age": 5, "party": 3, "income": 4, "political_view": 2},
-{"id": 184, "edu": 4, "region": 4, "gender": 1, "hispanic": 2, "race": 2, "age": 3, "party": 3, "income": 4, "political_view": 3},
-{"id": 185, "edu": 2, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 3, "political_view": 1},
-{"id": 186, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 187, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 3},
-{"id": 188, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 2, "political_view": 3},
-{"id": 189, "edu": 2, "region": 1, "gender": 2, "hispanic": 1, "race": 3, "age": 6, "party": 3, "income": 2, "political_view": 3},
-{"id": 190, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 191, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 192, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 2, "political_view": 3},
-{"id": 193, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 1, "political_view": 1},
-{"id": 194, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 3},
-{"id": 195, "edu": 2, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 3},
-{"id": 196, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 2, "age": 3, "party": 2, "income": 1, "political_view": 2},
-{"id": 197, "edu": 5, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 3, "political_view": 2},
-{"id": 198, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 1, "political_view": 3},
-{"id": 199, "edu": 4, "region": 3, "gender": 2, "hispanic": 2, "race": 3, "age": 1, "party": 3, "income": 1, "political_view": 3},
-{"id": 200, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 3, "age": 5, "party": 1, "income": 3, "political_view": 2},
-{"id": 201, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 2},
-{"id": 202, "edu": 5, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 5, "party": 1, "income": 4, "political_view": 2},
-{"id": 203, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 1, "political_view": 3},
-{"id": 204, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 2},
-{"id": 205, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 2, "political_view": 1},
-{"id": 206, "edu": 3, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 2, "political_view": 3},
-{"id": 207, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 3, "income": 3, "political_view": 2},
-{"id": 208, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 2},
-{"id": 209, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 1, "political_view": 3},
-{"id": 210, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 3, "political_view": 2},
-{"id": 211, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 3},
-{"id": 212, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 6, "party": 1, "income": 4, "political_view": 2},
-{"id": 213, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 3, "political_view": 2},
-{"id": 214, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 1, "political_view": 2},
-{"id": 215, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 3},
-{"id": 216, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 3, "political_view": 3},
-{"id": 217, "edu": 3, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 2, "political_view": 3},
-{"id": 218, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 4, "political_view": 3},
-{"id": 219, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 1, "political_view": 2},
-{"id": 220, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 5, "party": 2, "income": 4, "political_view": 1},
-{"id": 221, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 4, "political_view": 3},
-{"id": 222, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 1},
-{"id": 223, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 2},
-{"id": 224, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 3, "age": 4, "party": 1, "income": 2, "political_view": 3},
-{"id": 225, "edu": 5, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 1, "political_view": 3},
-{"id": 226, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 1},
-{"id": 227, "edu": 3, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 2, "income": 3, "political_view": 1},
-{"id": 228, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 1, "political_view": 2},
-{"id": 229, "edu": 1, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 3},
-{"id": 230, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 3, "political_view": 2},
-{"id": 231, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 2, "age": 3, "party": 2, "income": 3, "political_view": 2},
-{"id": 232, "edu": 1, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 1, "political_view": 1},
-{"id": 233, "edu": 5, "region": 5, "gender": 1, "hispanic": 2, "race": 2, "age": 2, "party": 3, "income": 2, "political_view": 2},
-{"id": 234, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 5, "party": 3, "income": 2, "political_view": 1},
-{"id": 235, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 1, "political_view": 3},
-{"id": 236, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 3, "political_view": 2},
-{"id": 237, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 4, "political_view": 3},
-{"id": 238, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 3, "political_view": 2},
-{"id": 239, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 1, "income": 1, "political_view": 3},
-{"id": 240, "edu": 5, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 3, "political_view": 3},
-{"id": 241, "edu": 3, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 2},
-{"id": 242, "edu": 5, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 1, "party": 1, "income": 4, "political_view": 2},
-{"id": 243, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 5, "party": 2, "income": 2, "political_view": 2},
-{"id": 244, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 3, "political_view": 2},
-{"id": 245, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 1},
-{"id": 246, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 1, "political_view": 2},
-{"id": 247, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 2},
-{"id": 248, "edu": 2, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 2, "political_view": 1},
-{"id": 249, "edu": 5, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 1, "political_view": 2},
-{"id": 250, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 3},
-{"id": 251, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 2},
-{"id": 252, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 5, "party": 2, "income": 3, "political_view": 2},
-{"id": 253, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 3},
-{"id": 254, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 2, "political_view": 3},
-{"id": 255, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 1},
-{"id": 256, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 3, "age": 1, "party": 2, "income": 3, "political_view": 2},
-{"id": 257, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 3, "political_view": 2},
-{"id": 258, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 1},
-{"id": 259, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 3, "political_view": 2},
-{"id": 260, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 1, "political_view": 3},
-{"id": 261, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 2, "age": 4, "party": 3, "income": 3, "political_view": 3},
-{"id": 262, "edu": 2, "region": 4, "gender": 2, "hispanic": 1, "race": 2, "age": 4, "party": 3, "income": 1, "political_view": 2},
-{"id": 263, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 2},
-{"id": 264, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 4, "income": 4, "political_view": 3},
-{"id": 265, "edu": 4, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 3},
-{"id": 266, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 1},
-{"id": 267, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 6, "party": 3, "income": 4, "political_view": 1},
-{"id": 268, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 4, "political_view": 1},
-{"id": 269, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 1},
-{"id": 270, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 1, "political_view": 3},
-{"id": 271, "edu": 1, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 1},
-{"id": 272, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 3, "income": 4, "political_view": 2},
-{"id": 273, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 3},
-{"id": 274, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 1, "income": 4, "political_view": 3},
-{"id": 275, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 1},
-{"id": 276, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 3},
-{"id": 277, "edu": 5, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 1},
-{"id": 278, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 4, "income": 3, "political_view": 3},
-{"id": 279, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 1, "political_view": 2},
-{"id": 280, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 4, "political_view": 1},
-{"id": 281, "edu": 4, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 2, "political_view": 2},
-{"id": 282, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 2, "political_view": 3},
-{"id": 283, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 1},
-{"id": 284, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 2, "political_view": 2},
-{"id": 285, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 1, "political_view": 3},
-{"id": 286, "edu": 1, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 2, "political_view": 2},
-{"id": 287, "edu": 5, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 3, "political_view": 3},
-{"id": 288, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 3, "income": 2, "political_view": 1},
-{"id": 289, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 5, "party": 3, "income": 1, "political_view": 3},
-{"id": 290, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 3, "age": 3, "party": 2, "income": 3, "political_view": 3},
-{"id": 291, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 3, "political_view": 3},
-{"id": 292, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 2, "political_view": 2},
-{"id": 293, "edu": 2, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 2},
-{"id": 294, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 4, "political_view": 2},
-{"id": 295, "edu": 3, "region": 1, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 3},
-{"id": 296, "edu": 3, "region": 3, "gender": 2, "hispanic": 2, "race": 2, "age": 5, "party": 2, "income": 2, "political_view": 3},
-{"id": 297, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 3},
-{"id": 298, "edu": 4, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 1, "political_view": 3},
-{"id": 299, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 1},
-{"id": 300, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 4, "political_view": 2},
-{"id": 301, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 4, "income": 2, "political_view": 1},
-{"id": 302, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 3},
-{"id": 303, "edu": 4, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 4, "political_view": 2},
-{"id": 304, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 2, "party": 2, "income": 3, "political_view": 2},
-{"id": 305, "edu": 4, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 3, "political_view": 3},
-{"id": 306, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 3},
-{"id": 307, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 3},
-{"id": 308, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 4, "political_view": 1},
-{"id": 309, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 2, "political_view": 3},
-{"id": 310, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 3},
-{"id": 311, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 3},
-{"id": 312, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 2},
-{"id": 313, "edu": 3, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 3, "political_view": 1},
-{"id": 314, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 1, "political_view": 1},
-{"id": 315, "edu": 3, "region": 1, "gender": 2, "hispanic": 1, "race": 1, "age": 6, "party": 3, "income": 4, "political_view": 2},
-{"id": 316, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 1, "income": 3, "political_view": 3},
-{"id": 317, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 1},
-{"id": 318, "edu": 1, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 1},
-{"id": 319, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 3, "age": 5, "party": 3, "income": 1, "political_view": 3},
-{"id": 320, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 1, "political_view": 1},
-{"id": 321, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 3},
-{"id": 322, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 3, "income": 3, "political_view": 3},
-{"id": 323, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 1},
-{"id": 324, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 325, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 2},
-{"id": 326, "edu": 5, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 2, "political_view": 1},
-{"id": 327, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 1, "income": 3, "political_view": 3},
-{"id": 328, "edu": 1, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 3},
-{"id": 329, "edu": 5, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 4, "political_view": 3},
-{"id": 330, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 3, "income": 2, "political_view": 1},
-{"id": 331, "edu": 5, "region": 2, "gender": 2, "hispanic": 1, "race": 2, "age": 3, "party": 3, "income": 3, "political_view": 2},
-{"id": 332, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 1, "political_view": 3},
-{"id": 333, "edu": 4, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 1},
-{"id": 334, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 1},
-{"id": 335, "edu": 4, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 2},
-{"id": 336, "edu": 1, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 3},
-{"id": 337, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 1, "political_view": 3},
-{"id": 338, "edu": 1, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 3, "political_view": 3},
-{"id": 339, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 4, "political_view": 3},
-{"id": 340, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 3},
-{"id": 341, "edu": 1, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 2, "political_view": 2},
-{"id": 342, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 2, "political_view": 1},
-{"id": 343, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 3, "age": 3, "party": 2, "income": 1, "political_view": 2},
-{"id": 344, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 2, "age": 6, "party": 1, "income": 3, "political_view": 1},
-{"id": 345, "edu": 1, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 4, "political_view": 2},
-{"id": 346, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 5, "party": 3, "income": 4, "political_view": 1},
-{"id": 347, "edu": 1, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 2},
-{"id": 348, "edu": 1, "region": 4, "gender": 1, "hispanic": 2, "race": 3, "age": 3, "party": 2, "income": 2, "political_view": 2},
-{"id": 349, "edu": 5, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 1, "political_view": 2},
-{"id": 350, "edu": 4, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 4, "income": 3, "political_view": 3},
-{"id": 351, "edu": 1, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 3},
-{"id": 352, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 4, "political_view": 3},
-{"id": 353, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 3},
-{"id": 354, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 4, "political_view": 2},
-{"id": 355, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 1, "political_view": 1},
-{"id": 356, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 2, "political_view": 2},
-{"id": 357, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 3, "age": 2, "party": 1, "income": 4, "political_view": 1},
-{"id": 358, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 4, "political_view": 2},
-{"id": 359, "edu": 5, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 3, "political_view": 2},
-{"id": 360, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 2},
-{"id": 361, "edu": 5, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 3},
-{"id": 362, "edu": 2, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 4, "political_view": 2},
-{"id": 363, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 3, "income": 2, "political_view": 3},
-{"id": 364, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 2},
-{"id": 365, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 4, "political_view": 3},
-{"id": 366, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 1, "political_view": 2},
-{"id": 367, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 2},
-{"id": 368, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 4, "political_view": 1},
-{"id": 369, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 3, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 370, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 3, "political_view": 1},
-{"id": 371, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 6, "party": 1, "income": 3, "political_view": 2},
-{"id": 372, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 3, "age": 4, "party": 3, "income": 1, "political_view": 3},
-{"id": 373, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 2},
-{"id": 374, "edu": 5, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 3},
-{"id": 375, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 4, "political_view": 2},
-{"id": 376, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 3},
-{"id": 377, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 1, "political_view": 3},
-{"id": 378, "edu": 2, "region": 5, "gender": 2, "hispanic": 1, "race": 1, "age": 1, "party": 3, "income": 3, "political_view": 1},
-{"id": 379, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 2, "age": 3, "party": 1, "income": 3, "political_view": 2},
-{"id": 380, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 1, "political_view": 2},
-{"id": 381, "edu": 3, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 4, "political_view": 3},
-{"id": 382, "edu": 1, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 2, "political_view": 2},
-{"id": 383, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 1},
-{"id": 384, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 2},
-{"id": 385, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 4, "political_view": 2},
-{"id": 386, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 4, "political_view": 3},
-{"id": 387, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 1, "political_view": 2},
-{"id": 388, "edu": 3, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 6, "party": 1, "income": 2, "political_view": 3},
-{"id": 389, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 3, "political_view": 2},
-{"id": 390, "edu": 5, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 4, "political_view": 2},
-{"id": 391, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 3},
-{"id": 392, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 1, "party": 3, "income": 4, "political_view": 3},
-{"id": 393, "edu": 5, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 2, "political_view": 3},
-{"id": 394, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 4, "political_view": 2},
-{"id": 395, "edu": 3, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 2, "political_view": 3},
-{"id": 396, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 2, "political_view": 2},
-{"id": 397, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 3},
-{"id": 398, "edu": 1, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 2},
-{"id": 399, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 3},
-{"id": 400, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 3, "income": 4, "political_view": 3},
-{"id": 401, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 4, "political_view": 2},
-{"id": 402, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 2, "political_view": 2},
-{"id": 403, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 4, "political_view": 2},
-{"id": 404, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 4, "political_view": 3},
-{"id": 405, "edu": 3, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 1, "political_view": 1},
-{"id": 406, "edu": 4, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 6, "party": 2, "income": 2, "political_view": 1},
-{"id": 407, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 4, "political_view": 2},
-{"id": 408, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 3, "age": 5, "party": 2, "income": 4, "political_view": 3},
-{"id": 409, "edu": 4, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 1, "political_view": 3},
-{"id": 410, "edu": 3, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 2},
-{"id": 411, "edu": 5, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 1, "political_view": 3},
-{"id": 412, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 3},
-{"id": 413, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 3},
-{"id": 414, "edu": 1, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 3},
-{"id": 415, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 4, "income": 4, "political_view": 2},
-{"id": 416, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 2, "political_view": 2},
-{"id": 417, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 2},
-{"id": 418, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 4, "political_view": 3},
-{"id": 419, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 2, "political_view": 2},
-{"id": 420, "edu": 5, "region": 4, "gender": 2, "hispanic": 1, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 1},
-{"id": 421, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 4, "political_view": 3},
-{"id": 422, "edu": 1, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 1},
-{"id": 423, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 3, "political_view": 1},
-{"id": 424, "edu": 2, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 2},
-{"id": 425, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 1, "political_view": 3},
-{"id": 426, "edu": 2, "region": 4, "gender": 1, "hispanic": 1, "race": 2, "age": 4, "party": 3, "income": 1, "political_view": 2},
-{"id": 427, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 6, "party": 2, "income": 2, "political_view": 2},
-{"id": 428, "edu": 3, "region": 3, "gender": 2, "hispanic": 2, "race": 2, "age": 5, "party": 3, "income": 1, "political_view": 3},
-{"id": 429, "edu": 1, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 2},
-{"id": 430, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 1, "political_view": 3},
-{"id": 431, "edu": 2, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 2},
-{"id": 432, "edu": 3, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 4, "political_view": 2},
-{"id": 433, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 3},
-{"id": 434, "edu": 4, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 4, "political_view": 2},
-{"id": 435, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 2},
-{"id": 436, "edu": 2, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 2},
-{"id": 437, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 3},
-{"id": 438, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 4, "political_view": 2},
-{"id": 439, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 2, "income": 2, "political_view": 3},
-{"id": 440, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 1, "political_view": 3},
-{"id": 441, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 1},
-{"id": 442, "edu": 4, "region": 3, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 3, "income": 3, "political_view": 2},
-{"id": 443, "edu": 3, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 3},
-{"id": 444, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 2, "political_view": 1},
-{"id": 445, "edu": 4, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 2, "income": 2, "political_view": 2},
-{"id": 446, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 2, "age": 6, "party": 2, "income": 1, "political_view": 2},
-{"id": 447, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 1, "political_view": 2},
-{"id": 448, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 4, "political_view": 1},
-{"id": 449, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 1, "political_view": 3},
-{"id": 450, "edu": 1, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 4, "political_view": 2},
-{"id": 451, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 2, "political_view": 2},
-{"id": 452, "edu": 3, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 3},
-{"id": 453, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 3, "income": 3, "political_view": 3},
-{"id": 454, "edu": 4, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 2, "political_view": 2},
-{"id": 455, "edu": 4, "region": 3, "gender": 1, "hispanic": 2, "race": 3, "age": 3, "party": 2, "income": 3, "political_view": 2},
-{"id": 456, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 3, "age": 6, "party": 3, "income": 3, "political_view": 2},
-{"id": 457, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 4, "political_view": 3},
-{"id": 458, "edu": 3, "region": 1, "gender": 2, "hispanic": 2, "race": 2, "age": 2, "party": 1, "income": 2, "political_view": 2},
-{"id": 459, "edu": 2, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 4, "political_view": 1},
-{"id": 460, "edu": 4, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 4, "political_view": 2},
-{"id": 461, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 3},
-{"id": 462, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 3},
-{"id": 463, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 1, "income": 3, "political_view": 2},
-{"id": 464, "edu": 2, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 2, "income": 1, "political_view": 3},
-{"id": 465, "edu": 4, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 2},
-{"id": 466, "edu": 5, "region": 1, "gender": 1, "hispanic": 2, "race": 3, "age": 4, "party": 1, "income": 4, "political_view": 2},
-{"id": 467, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 1, "party": 3, "income": 3, "political_view": 1},
-{"id": 468, "edu": 5, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 1, "income": 4, "political_view": 1},
-{"id": 469, "edu": 3, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 2, "political_view": 2},
-{"id": 470, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 3, "party": 1, "income": 4, "political_view": 2},
-{"id": 471, "edu": 3, "region": 3, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 3, "income": 4, "political_view": 1},
-{"id": 472, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 1, "political_view": 2},
-{"id": 473, "edu": 1, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 1, "income": 4, "political_view": 2},
-{"id": 474, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 4, "political_view": 2},
-{"id": 475, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 4, "political_view": 2},
-{"id": 476, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 4, "political_view": 3},
-{"id": 477, "edu": 2, "region": 1, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 3},
-{"id": 478, "edu": 1, "region": 1, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 2},
-{"id": 479, "edu": 2, "region": 4, "gender": 2, "hispanic": 2, "race": 1, "age": 4, "party": 3, "income": 3, "political_view": 2},
-{"id": 480, "edu": 1, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 5, "party": 1, "income": 1, "political_view": 2},
-{"id": 481, "edu": 3, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 4, "political_view": 3},
-{"id": 482, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 3},
-{"id": 483, "edu": 3, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 2, "party": 1, "income": 4, "political_view": 3},
-{"id": 484, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 2},
-{"id": 485, "edu": 3, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 1, "political_view": 1},
-{"id": 486, "edu": 2, "region": 3, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 3, "income": 4, "political_view": 3},
-{"id": 487, "edu": 4, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 2},
-{"id": 488, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 2, "age": 3, "party": 1, "income": 4, "political_view": 2},
-{"id": 489, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 3, "party": 2, "income": 4, "political_view": 2},
-{"id": 490, "edu": 5, "region": 4, "gender": 1, "hispanic": 2, "race": 1, "age": 4, "party": 4, "income": 4, "political_view": 2},
-{"id": 491, "edu": 2, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 4, "party": 1, "income": 1, "political_view": 1},
-{"id": 492, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 1, "party": 3, "income": 3, "political_view": 3},
-{"id": 493, "edu": 5, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 2, "party": 1, "income": 4, "political_view": 2},
-{"id": 494, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 1, "political_view": 2},
-{"id": 495, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 6, "party": 3, "income": 4, "political_view": 3},
-{"id": 496, "edu": 3, "region": 2, "gender": 1, "hispanic": 2, "race": 2, "age": 2, "party": 2, "income": 2, "political_view": 3},
-{"id": 497, "edu": 3, "region": 2, "gender": 2, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 4, "political_view": 1},
-{"id": 498, "edu": 2, "region": 2, "gender": 2, "hispanic": 2, "race": 1, "age": 6, "party": 1, "income": 1, "political_view": 2},
-{"id": 499, "edu": 2, "region": 2, "gender": 2, "hispanic": 1, "race": 3, "age": 5, "party": 2, "income": 4, "political_view": 2},
-  ]}
+{"subjects":[
+
+{"id": 0, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 1, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 2, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 3, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 4, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 5, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 6, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 7, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 8, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 9, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 10, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 0, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 11, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 12, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 13, "edu": 4, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 14, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 2, "age": 2, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 15, "edu": 2, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 16, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 17, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 18, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 19, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 20, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 21, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 22, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 23, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 24, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 2, "age": 2, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 25, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 26, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 27, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 28, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 29, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 30, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 31, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 32, "edu": 0, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 33, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 34, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 0, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 35, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 36, "edu": 0, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 37, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 38, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 39, "edu": 1, "region": 4, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 40, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 1, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 41, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 42, "edu": 1, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 43, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 44, "edu": 0, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 45, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 46, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 47, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 48, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 49, "edu": 0, "region": 0, "gender": 1, "hispanic": 0, "race": 1, "age": 1, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 50, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 51, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 52, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 53, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 54, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 55, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 56, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 57, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 58, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 59, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 2, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 60, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 61, "edu": 3, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 62, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 63, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 64, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 65, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 66, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 67, "edu": 0, "region": 3, "gender": 0, "hispanic": 0, "race": 1, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 68, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 69, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 70, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 71, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 72, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 73, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 74, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 75, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 76, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 1, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 77, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 78, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 79, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 80, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 81, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 82, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 83, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 84, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 85, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 86, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 87, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 88, "edu": 0, "region": 3, "gender": 1, "hispanic": 1, "race": 2, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 89, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 90, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 91, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 92, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 93, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 94, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 95, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 96, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 97, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 98, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 99, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 100, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 101, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 102, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 103, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 5, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 104, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 105, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 106, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 107, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 108, "edu": 4, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 109, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 1, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 110, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 111, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 112, "edu": 0, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 113, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 114, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 115, "edu": 2, "region": 4, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 116, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 117, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 118, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 119, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 120, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 121, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 122, "edu": 3, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 123, "edu": 4, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 124, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 125, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 3, "income": 3, "political_view": 2}
+,
+{"id": 126, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 127, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 2, "age": 0, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 128, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 129, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 130, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 131, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 2, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 132, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 133, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 134, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 135, "edu": 2, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 0, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 136, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 2, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 137, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 138, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 139, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 140, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 141, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 142, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 2, "age": 2, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 143, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 144, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 145, "edu": 1, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 146, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 147, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 148, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 149, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 150, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 151, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 152, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 153, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 154, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 155, "edu": 2, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 156, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 157, "edu": 4, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 158, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 159, "edu": 4, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 160, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 161, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 162, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 163, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 2, "age": 5, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 164, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 165, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 166, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 167, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 168, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 169, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 170, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 171, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 172, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 173, "edu": 0, "region": 1, "gender": 1, "hispanic": 0, "race": 1, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 174, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 2, "age": 3, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 175, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 176, "edu": 4, "region": 1, "gender": 1, "hispanic": 0, "race": 2, "age": 4, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 177, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 178, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 179, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 180, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 181, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 182, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 183, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 184, "edu": 4, "region": 1, "gender": 0, "hispanic": 0, "race": 1, "age": 4, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 185, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 3, "party": 3, "income": 3, "political_view": 1}
+,
+{"id": 186, "edu": 2, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 1, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 187, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 188, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 1, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 189, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 190, "edu": 3, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 191, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 192, "edu": 3, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 0, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 193, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 194, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 195, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 196, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 197, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 198, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 199, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 200, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 201, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 202, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 203, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 204, "edu": 4, "region": 4, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 205, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 206, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 207, "edu": 0, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 208, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 209, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 210, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 211, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 212, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 213, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 214, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 215, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 216, "edu": 4, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 217, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 218, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 219, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 220, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 221, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 2, "age": 4, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 222, "edu": 3, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 223, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 4, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 224, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 225, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 226, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 227, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 228, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 229, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 230, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 231, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 232, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 233, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 234, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 235, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 236, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 237, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 238, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 239, "edu": 0, "region": 2, "gender": 1, "hispanic": 0, "race": 2, "age": 3, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 240, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 241, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 242, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 243, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 244, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 245, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 246, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 247, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 248, "edu": 0, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 249, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 250, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 251, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 252, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 253, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 254, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 255, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 1, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 256, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 5, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 257, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 258, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 259, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 260, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 261, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 262, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 263, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 264, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 265, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 266, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 267, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 268, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 269, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 270, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 271, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 272, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 273, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 274, "edu": 1, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 275, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 276, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 277, "edu": 1, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 278, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 279, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 280, "edu": 2, "region": 1, "gender": 1, "hispanic": 0, "race": 2, "age": 2, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 281, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 282, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 283, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 284, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 285, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 286, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 1, "age": 4, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 287, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 288, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 289, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 290, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 1, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 291, "edu": 3, "region": 3, "gender": 1, "hispanic": 0, "race": 1, "age": 2, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 292, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 293, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 294, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 295, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 296, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 297, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 298, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 299, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 300, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 301, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 302, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 303, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 304, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 305, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 306, "edu": 4, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 307, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 308, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 309, "edu": 3, "region": 1, "gender": 1, "hispanic": 0, "race": 2, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 310, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 5, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 311, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 312, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 313, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 314, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 315, "edu": 2, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 316, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 317, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 318, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 319, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 320, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 321, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 322, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 323, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 324, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 325, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 326, "edu": 2, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 327, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 328, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 329, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 2, "age": 3, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 330, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 331, "edu": 0, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 332, "edu": 2, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 333, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 334, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 335, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 336, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 337, "edu": 4, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 338, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 339, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 340, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 341, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 342, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 343, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 344, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 345, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 346, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 347, "edu": 4, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 348, "edu": 4, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 349, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 350, "edu": 0, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 351, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 352, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 353, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 354, "edu": 0, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 355, "edu": 1, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 356, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 357, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 358, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 359, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 360, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 361, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 2, "age": 4, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 362, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 363, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 364, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 2, "age": 5, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 365, "edu": 0, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 366, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 367, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 368, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 369, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 370, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 371, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 372, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 373, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 374, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 2, "age": 1, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 375, "edu": 3, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 376, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 377, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 378, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 379, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 380, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 381, "edu": 2, "region": 0, "gender": 1, "hispanic": 0, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 382, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 383, "edu": 2, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 384, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 385, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 386, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 387, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 388, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 2, "age": 1, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 389, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 390, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 391, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 392, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 393, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 394, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 395, "edu": 4, "region": 0, "gender": 0, "hispanic": 0, "race": 1, "age": 3, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 396, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 397, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 1, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 398, "edu": 4, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 399, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 400, "edu": 0, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 401, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 402, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 403, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 404, "edu": 2, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 405, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 406, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 407, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 408, "edu": 1, "region": 4, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 409, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 410, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 411, "edu": 4, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 412, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 413, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 414, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 415, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 416, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 417, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 0, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 418, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 419, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 420, "edu": 0, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 421, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 422, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 423, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 424, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 425, "edu": 4, "region": 4, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 426, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 427, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 428, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 429, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 430, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 431, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 2, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 432, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 433, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 434, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 435, "edu": 2, "region": 3, "gender": 1, "hispanic": 0, "race": 1, "age": 5, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 436, "edu": 4, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 437, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 438, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 439, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 440, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 441, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 442, "edu": 2, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 443, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 444, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 445, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 446, "edu": 1, "region": 2, "gender": 1, "hispanic": 0, "race": 2, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 447, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 448, "edu": 2, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 449, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 450, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 2, "age": 4, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 451, "edu": 1, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 452, "edu": 0, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 453, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 0, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 454, "edu": 0, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 455, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 456, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 457, "edu": 3, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 458, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 459, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 460, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 461, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 462, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 463, "edu": 3, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 464, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 465, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 466, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 2, "age": 2, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 467, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 468, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 469, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 470, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 471, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 472, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 473, "edu": 4, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 474, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 475, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 476, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 477, "edu": 2, "region": 1, "gender": 1, "hispanic": 0, "race": 1, "age": 2, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 478, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 479, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 2, "age": 2, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 480, "edu": 4, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 481, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 482, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 483, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 484, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 485, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 486, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 0, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 487, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 488, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 2, "age": 4, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 489, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 490, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 491, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 492, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 493, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 494, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 495, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 496, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 497, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 498, "edu": 4, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 499, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 500, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 501, "edu": 3, "region": 4, "gender": 1, "hispanic": 1, "race": 1, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 502, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 503, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 504, "edu": 1, "region": 3, "gender": 1, "hispanic": 0, "race": 1, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 505, "edu": 0, "region": 4, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 506, "edu": 0, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 507, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 508, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 509, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 510, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 511, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 512, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 513, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 514, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 515, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 516, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 517, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 1, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 518, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 519, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 2, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 520, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 521, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 522, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 523, "edu": 4, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 524, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 3, "income": 2, "political_view": 2}
+,
+{"id": 525, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 526, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 2, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 527, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 528, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 529, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 530, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 531, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 532, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 533, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 534, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 535, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 536, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 537, "edu": 3, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 538, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 539, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 540, "edu": 1, "region": 2, "gender": 0, "hispanic": 0, "race": 1, "age": 4, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 541, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 542, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 543, "edu": 3, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 544, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 545, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 546, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 547, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 548, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 549, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 550, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 551, "edu": 0, "region": 0, "gender": 1, "hispanic": 0, "race": 1, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 552, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 4, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 553, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 554, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 555, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 556, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 2, "age": 5, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 557, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 3, "income": 2, "political_view": 2}
+,
+{"id": 558, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 559, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 560, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 5, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 561, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 562, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 563, "edu": 4, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 564, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 565, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 566, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 567, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 568, "edu": 4, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 569, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 570, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 571, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 572, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 573, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 574, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 0, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 575, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 576, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 577, "edu": 0, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 578, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 579, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 580, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 581, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 582, "edu": 0, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 583, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 584, "edu": 4, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 585, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 586, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 587, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 3, "income": 1, "political_view": 2}
+,
+{"id": 588, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 589, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 2, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 590, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 591, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 592, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 593, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 594, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 595, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 596, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 0, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 597, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 598, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 599, "edu": 2, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 600, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 601, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 602, "edu": 0, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 603, "edu": 3, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 604, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 605, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 606, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 607, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 608, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 609, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 610, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 2, "age": 5, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 611, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 612, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 3, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 613, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 614, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 615, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 616, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 617, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 618, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 619, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 620, "edu": 2, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 621, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 622, "edu": 4, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 623, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 624, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 625, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 626, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 627, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 628, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 629, "edu": 3, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 630, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 631, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 632, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 633, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 634, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 635, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 636, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 637, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 638, "edu": 4, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 639, "edu": 4, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 640, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 641, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 642, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 643, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 644, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 645, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 646, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 647, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 648, "edu": 3, "region": 3, "gender": 1, "hispanic": 0, "race": 1, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 649, "edu": 3, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 650, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 651, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 652, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 653, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 654, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 655, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 656, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 657, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 658, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 659, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 660, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 661, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 662, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 663, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 664, "edu": 2, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 665, "edu": 4, "region": 1, "gender": 0, "hispanic": 0, "race": 2, "age": 4, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 666, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 667, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 668, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 669, "edu": 3, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 1, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 670, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 671, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 672, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 673, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 674, "edu": 4, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 675, "edu": 1, "region": 3, "gender": 1, "hispanic": 0, "race": 2, "age": 1, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 676, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 677, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 678, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 679, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 680, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 681, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 682, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 2, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 683, "edu": 1, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 684, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 685, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 686, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 687, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 688, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 689, "edu": 0, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 690, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 691, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 692, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 693, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 694, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 695, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 696, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 697, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 698, "edu": 2, "region": 3, "gender": 1, "hispanic": 0, "race": 2, "age": 4, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 699, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 700, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 701, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 702, "edu": 3, "region": 3, "gender": 1, "hispanic": 0, "race": 1, "age": 4, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 703, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 704, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 3, "income": 2, "political_view": 0}
+,
+{"id": 705, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 706, "edu": 4, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 707, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 708, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 709, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 710, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 711, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 2, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 712, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 713, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 714, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 715, "edu": 4, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 716, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 717, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 718, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 0, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 719, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 720, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 721, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 722, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 723, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 724, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 725, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 726, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 2, "age": 1, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 727, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 728, "edu": 4, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 729, "edu": 2, "region": 3, "gender": 0, "hispanic": 0, "race": 1, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 730, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 731, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 732, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 733, "edu": 3, "region": 4, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 734, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 735, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 736, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 737, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 738, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 2, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 739, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 740, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 741, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 742, "edu": 3, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 1, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 743, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 744, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 745, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 746, "edu": 4, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 1, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 747, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 2, "age": 5, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 748, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 2, "age": 3, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 749, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 750, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 751, "edu": 0, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 752, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 753, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 754, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 755, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 756, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 757, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 758, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 759, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 760, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 761, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 762, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 763, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 764, "edu": 1, "region": 2, "gender": 1, "hispanic": 0, "race": 2, "age": 4, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 765, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 0, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 766, "edu": 3, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 767, "edu": 3, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 768, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 769, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 770, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 771, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 772, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 773, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 774, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 775, "edu": 4, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 776, "edu": 1, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 777, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 778, "edu": 0, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 779, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 3, "income": 1, "political_view": 2}
+,
+{"id": 780, "edu": 0, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 781, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 782, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 783, "edu": 2, "region": 4, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 784, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 785, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 786, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 787, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 1, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 788, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 789, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 790, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 1, "age": 4, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 791, "edu": 4, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 3, "income": 2, "political_view": 1}
+,
+{"id": 792, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 793, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 794, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 795, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 796, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 797, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 798, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 799, "edu": 4, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 800, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 801, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 802, "edu": 4, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 803, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 804, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 805, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 806, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 807, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 808, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 809, "edu": 3, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 810, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 1, "age": 4, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 811, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 812, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 813, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 0, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 814, "edu": 3, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 815, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 816, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 0, "political_view": 1}
+,
+{"id": 817, "edu": 4, "region": 3, "gender": 1, "hispanic": 0, "race": 1, "age": 0, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 818, "edu": 0, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 819, "edu": 1, "region": 4, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 820, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 821, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 822, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 0, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 823, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 824, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 825, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 826, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 827, "edu": 0, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 828, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 829, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 830, "edu": 3, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 831, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 832, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 833, "edu": 4, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 834, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 835, "edu": 4, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 836, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 837, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 838, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 839, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 3, "income": 3, "political_view": 2}
+,
+{"id": 840, "edu": 4, "region": 0, "gender": 1, "hispanic": 0, "race": 1, "age": 0, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 841, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 842, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 843, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 844, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 0}
+,
+{"id": 845, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 846, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 847, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 2, "age": 4, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 848, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 849, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 850, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 851, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 852, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 853, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 854, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 855, "edu": 1, "region": 0, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 856, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 857, "edu": 1, "region": 3, "gender": 1, "hispanic": 0, "race": 1, "age": 4, "party": 1, "income": 3, "political_view": 2}
+,
+{"id": 858, "edu": 2, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 859, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 860, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 861, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 862, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 863, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 864, "edu": 3, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 865, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 866, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 867, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 868, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 869, "edu": 1, "region": 1, "gender": 0, "hispanic": 0, "race": 2, "age": 0, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 870, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 2, "party": 3, "income": 3, "political_view": 2}
+,
+{"id": 871, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 872, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 873, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 874, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 875, "edu": 3, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 876, "edu": 4, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 877, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 878, "edu": 0, "region": 3, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 879, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 880, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 881, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 882, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 883, "edu": 2, "region": 0, "gender": 1, "hispanic": 0, "race": 1, "age": 2, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 884, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 885, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 886, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 887, "edu": 2, "region": 3, "gender": 1, "hispanic": 0, "race": 1, "age": 0, "party": 2, "income": 1, "political_view": 0}
+,
+{"id": 888, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 889, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 5, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 890, "edu": 4, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 891, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 892, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 893, "edu": 1, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 894, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 895, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 896, "edu": 3, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 1, "political_view": 0}
+,
+{"id": 897, "edu": 1, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 898, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 899, "edu": 3, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 1, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 900, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 901, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 902, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 903, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 2, "age": 1, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 904, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 1, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 905, "edu": 4, "region": 0, "gender": 1, "hispanic": 1, "race": 2, "age": 3, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 906, "edu": 0, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 2}
+,
+{"id": 907, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 908, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 909, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 2, "age": 2, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 910, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 911, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 912, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 913, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 2, "age": 3, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 914, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 1}
+,
+{"id": 915, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 916, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 917, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 918, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 919, "edu": 2, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 920, "edu": 3, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 921, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 922, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 923, "edu": 3, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 924, "edu": 3, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 925, "edu": 1, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 926, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 927, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 928, "edu": 4, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 0, "income": 1, "political_view": 0}
+,
+{"id": 929, "edu": 0, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 930, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 931, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 932, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 933, "edu": 1, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 3, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 934, "edu": 4, "region": 2, "gender": 1, "hispanic": 0, "race": 2, "age": 0, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 935, "edu": 3, "region": 3, "gender": 1, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 2, "political_view": 1}
+,
+{"id": 936, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 1, "political_view": 2}
+,
+{"id": 937, "edu": 2, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 0, "income": 0, "political_view": 2}
+,
+{"id": 938, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 2, "age": 3, "party": 1, "income": 0, "political_view": 0}
+,
+{"id": 939, "edu": 0, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 940, "edu": 2, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 3, "income": 0, "political_view": 0}
+,
+{"id": 941, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 1}
+,
+{"id": 942, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 943, "edu": 0, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 944, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 945, "edu": 1, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 2}
+,
+{"id": 946, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 947, "edu": 2, "region": 1, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 948, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 1, "age": 0, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 949, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 950, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 951, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 952, "edu": 1, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 953, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 954, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 4, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 955, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 1, "political_view": 1}
+,
+{"id": 956, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 957, "edu": 4, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 958, "edu": 1, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 959, "edu": 3, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 0, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 960, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 1}
+,
+{"id": 961, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 962, "edu": 1, "region": 4, "gender": 1, "hispanic": 0, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 1}
+,
+{"id": 963, "edu": 3, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 964, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 965, "edu": 4, "region": 1, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 966, "edu": 2, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 967, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 1, "income": 2, "political_view": 2}
+,
+{"id": 968, "edu": 1, "region": 2, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 1, "political_view": 2}
+,
+{"id": 969, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 970, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 971, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 2, "political_view": 0}
+,
+{"id": 972, "edu": 1, "region": 1, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 973, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 974, "edu": 2, "region": 2, "gender": 0, "hispanic": 0, "race": 1, "age": 3, "party": 0, "income": 1, "political_view": 2}
+,
+{"id": 975, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 1, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 976, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 2, "party": 1, "income": 2, "political_view": 1}
+,
+{"id": 977, "edu": 2, "region": 3, "gender": 0, "hispanic": 0, "race": 0, "age": 3, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 978, "edu": 2, "region": 1, "gender": 0, "hispanic": 0, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 0}
+,
+{"id": 979, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 5, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 980, "edu": 4, "region": 3, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 981, "edu": 1, "region": 1, "gender": 0, "hispanic": 1, "race": 2, "age": 5, "party": 1, "income": 0, "political_view": 1}
+,
+{"id": 982, "edu": 3, "region": 3, "gender": 0, "hispanic": 1, "race": 1, "age": 1, "party": 2, "income": 0, "political_view": 2}
+,
+{"id": 983, "edu": 2, "region": 2, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 0, "political_view": 1}
+,
+{"id": 984, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 985, "edu": 0, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 2}
+,
+{"id": 986, "edu": 2, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 987, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 988, "edu": 1, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 5, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 989, "edu": 4, "region": 2, "gender": 1, "hispanic": 0, "race": 0, "age": 2, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 990, "edu": 1, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 3, "political_view": 0}
+,
+{"id": 991, "edu": 1, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 4, "party": 0, "income": 2, "political_view": 2}
+,
+{"id": 992, "edu": 2, "region": 2, "gender": 1, "hispanic": 1, "race": 0, "age": 0, "party": 1, "income": 3, "political_view": 0}
+,
+{"id": 993, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 3, "party": 0, "income": 1, "political_view": 1}
+,
+{"id": 994, "edu": 4, "region": 0, "gender": 1, "hispanic": 1, "race": 0, "age": 3, "party": 2, "income": 2, "political_view": 2}
+,
+{"id": 995, "edu": 4, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 4, "party": 2, "income": 3, "political_view": 1}
+,
+{"id": 996, "edu": 2, "region": 0, "gender": 0, "hispanic": 1, "race": 0, "age": 5, "party": 2, "income": 2, "political_view": 0}
+,
+{"id": 997, "edu": 4, "region": 0, "gender": 1, "hispanic": 0, "race": 0, "age": 0, "party": 0, "income": 0, "political_view": 0}
+,
+{"id": 998, "edu": 4, "region": 3, "gender": 0, "hispanic": 1, "race": 0, "age": 2, "party": 2, "income": 3, "political_view": 0}
+,
+{"id": 999, "edu": 0, "region": 0, "gender": 1, "hispanic": 1, "race": 1, "age": 3, "party": 2, "income": 3, "political_view": 0}
+
+
+]}

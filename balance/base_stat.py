@@ -5,9 +5,9 @@ def base_stat(baseline_data):
     with open('../static/data/'+baseline_data+'.json') as data_file:
         baseline_info = json.load(data_file)
     res=[]
-    for i in range (0,500):
+    for i in range (0,1000):
         person={}
-        person['id']=i
+        person["id"]=i
         person['edu']=getRandom(baseline_info['edu']['values'])
         person['region']=getRandom(baseline_info['region']['values'])
         person['gender'] = getRandom(baseline_info['gender']['values'])
@@ -18,6 +18,7 @@ def base_stat(baseline_data):
         person['income'] = getRandom(baseline_info['income']['values'])
         person['political_view'] = getRandom(baseline_info['political_view']['values'])
         res.append(person)
+        res.append(",")
     for i in res:
         print(i)
 
@@ -30,7 +31,7 @@ def getRandom(stat_data):
     r=randint(0,100)
     for i in range(len(stat_data)):
         if r<= new_values[i]:
-            return i+1
+            return i
 
 
 
