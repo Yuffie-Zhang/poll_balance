@@ -12,24 +12,47 @@ $(document).ready(function () {
 
     $("input.slider").on("slideStop", function (slideEvt) {
         $.post('/dobalance', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
-            edu_balance(slideEvt.value);
-            gender_balance(slideEvt.value);
-            region_balance(slideEvt.value);
-            hispanic_balance(slideEvt.value);
-            age_balance(slideEvt.value);
-            race_balance(slideEvt.value);
-            party_balance(slideEvt.value);
-            // income_balance(slideEvt.value,data);
-            // political_view_balance(slideEvt.value,data);
             result_balance(data);
         });
     })
     .on("slideStop", function (slideEvt) {
-        alert(' clicked');
-    })
+         $.post('/recaledu', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
+            edu_balance(slideEvt.value,data);
+        });
+     })
+    .on("slideStop", function (slideEvt) {
+         $.post('/recalgender', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
+            gender_balance(slideEvt.value,data);
+        });
+     })
+    .on("slideStop", function (slideEvt) {
+         $.post('/recalregion', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
+            region_balance(slideEvt.value,data);
+        });
+     })
+    .on("slideStop", function (slideEvt) {
+         $.post('/recalhispanic', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
+            hispanic_balance(slideEvt.value,data);
+        });
+     })
+    .on("slideStop", function (slideEvt) {
+         $.post('/recalage', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
+            age_balance(slideEvt.value,data);
+        });
+     })
+    .on("slideStop", function (slideEvt) {
+         $.post('/recalrace', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
+            race_balance(slideEvt.value,data);
+        });
+     })
+    .on("slideStop", function (slideEvt) {
+         $.post('/recalparty', {percentage: slideEvt.value, balancebylist: $(".balance_by").text()}, function (data) {
+            party_balance(slideEvt.value,data);
+        });
+     })
 });
 
-function edu_balance(percentage) {
+function edu_balance(percentage,data) {
     //if in balance list
     if ($(".balance_by").text().indexOf("Last Grade in School") !== -1) {
         var edu_balance_data = [];
@@ -39,7 +62,7 @@ function edu_balance(percentage) {
     }
     //if not in balance list
     else {
-        var edu_balance_data = edu_survey_data;
+        var edu_balance_data = data["values"];
     }
     //update array
     edu_data = edu_survey_data.concat(edu_balance_data.concat(edu_baseline_data));
@@ -79,7 +102,7 @@ function edu_balance(percentage) {
             return d + "%";
         });
 }
-function gender_balance(percentage) {
+function gender_balance(percentage,data) {
     //if in balance list
     if ($(".balance_by").text().indexOf("Gender") !== -1) {
         var gender_balance_data = [];
@@ -89,7 +112,7 @@ function gender_balance(percentage) {
     }
     //if not in balance list
     else {
-        var gender_balance_data = gender_survey_data;
+        var gender_balance_data = data["values"];
     }
     //update array
     gender_data = gender_survey_data.concat(gender_balance_data.concat(gender_baseline_data));
@@ -129,7 +152,7 @@ function gender_balance(percentage) {
             return d + "%";
         });
 }
-function region_balance(percentage) {
+function region_balance(percentage,data) {
     //if in balance list
     if ($(".balance_by").text().indexOf("Region") !== -1) {
         var region_balance_data = [];
@@ -139,7 +162,7 @@ function region_balance(percentage) {
     }
     //if not in balance list
     else {
-        var region_balance_data = region_survey_data;
+        var region_balance_data = data["values"];
     }
     //update array
     region_data = region_survey_data.concat(region_balance_data.concat(region_baseline_data));
@@ -179,7 +202,7 @@ function region_balance(percentage) {
             return d + "%";
         });
 }
-function hispanic_balance(percentage) {
+function hispanic_balance(percentage,data) {
     //if in balance list
     if ($(".balance_by").text().indexOf("Latino or Hispanic Oringin") !== -1) {
         var hispanic_balance_data = [];
@@ -189,7 +212,7 @@ function hispanic_balance(percentage) {
     }
     //if not in balance list
     else {
-        var hispanic_balance_data = hispanic_survey_data;
+        var hispanic_balance_data = data["values"];
     }
     //update array
     hispanic_data = hispanic_survey_data.concat(hispanic_balance_data.concat(hispanic_baseline_data));
@@ -229,7 +252,7 @@ function hispanic_balance(percentage) {
             return d + "%";
         });
 }
-function age_balance(percentage) {
+function age_balance(percentage,data) {
     //if in balance list
     if ($(".balance_by").text().indexOf("Age") !== -1) {
         var age_balance_data = [];
@@ -239,7 +262,7 @@ function age_balance(percentage) {
     }
     //if not in balance list
     else {
-        var age_balance_data = age_survey_data;
+        var age_balance_data = data["values"];
     }
     //update array
     age_data = age_survey_data.concat(age_balance_data.concat(age_baseline_data));
@@ -279,7 +302,7 @@ function age_balance(percentage) {
             return d + "%";
         });
 }
-function race_balance(percentage) {
+function race_balance(percentage,data) {
     //if in balance list
     if ($(".balance_by").text().indexOf("Race") !== -1) {
         var race_balance_data = [];
@@ -289,7 +312,7 @@ function race_balance(percentage) {
     }
     //if not in balance list
     else {
-        var race_balance_data = race_survey_data;
+        var race_balance_data = data["values"];
     }
     //update array
     race_data = race_survey_data.concat(race_balance_data.concat(race_baseline_data));
@@ -329,7 +352,7 @@ function race_balance(percentage) {
             return d + "%";
         });
 }
-function party_balance(percentage) {
+function party_balance(percentage,data) {
     //if in balance list
     if ($(".balance_by").text().indexOf("Party") !== -1) {
         var party_balance_data = [];
@@ -339,7 +362,7 @@ function party_balance(percentage) {
     }
     //if not in balance list
     else {
-        var party_balance_data = party_survey_data;
+        var party_balance_data = data["values"];
     }
     //update array
     party_data = party_survey_data.concat(party_balance_data.concat(party_baseline_data));
@@ -497,7 +520,7 @@ function result_balance(data) {
         })
         .attr("height", result_height);
     d3.select("#result_chart").selectAll(".bar").data(result_data)
-        .attr("y",result_y)
+        .attr("y", result_y)
         .attr("height", function (d) {
             return result_height - result_y(d);
         });
