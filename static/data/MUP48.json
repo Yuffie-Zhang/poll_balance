@@ -2,13 +2,13 @@
     "edu":
         {
             "labels":["Not a high school graduate","High school graduate","Some college education","College graduate","Postgraduate education"],
-            "values":[2,27,32,23,16]
+            "values":[2,26,32,24,16]
         }
     ,
     "age":
         {
             "labels":["18 ~ 24","25 ~ 29","30 ~ 39","40 ~ 49","50 ~ 65","65+"],
-            "values":[9,5,12,17,32,25]
+            "values":[9,5,11,16,33,26]
         }
     ,
 
@@ -21,25 +21,25 @@
     "hispanic":
         {
             "labels":["Hispanic origin","Non-Hispanic origin"],
-            "values":[8,92]
+            "values":[7,93]
         }
     ,
     "race":
         {
             "labels":["White","Black","Asian"],
-            "values":[85,12,3]
+            "values":[86,11,3]
         }
     ,
     "party":
         {
             "labels":["Republican","Democrat","Independent","Something else"],
-            "values":[27,34,30,9]
+            "values":[27,35,29,10]
         }
     ,
     "region":
       {
             "labels":["Northeast","South","Midwest","West","Others"],
-            "values":[19,37,23,20,1]
+            "values":[19,38,24,19,1]
       },
     "income":
       {
